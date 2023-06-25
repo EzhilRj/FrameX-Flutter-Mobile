@@ -12,7 +12,7 @@ public class LoginTest extends Setup {
     @Test
     public static void TC_001_VerifyLogin() throws Exception {
 
-        Assert.assertTrue(LoginintoApp("abdultf","abdultf","framedemo_d1","8248606917"));
+        Assert.assertTrue(LoginintoApp("akamali","akamali","framedemo_d1","8248606917"));
 
     }
 

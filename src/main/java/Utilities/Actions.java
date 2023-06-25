@@ -143,10 +143,7 @@ public class Actions {
     }
 
     public static boolean Source(String value) {
-        if (driver.getPageSource().contains(value)) {
-            return true;
-        }
-        return false;
+        return driver.getPageSource().contains(value);
     }
 
     public static void Scroll(String action) throws InterruptedException {
@@ -169,7 +166,7 @@ public class Actions {
     public void captureScreen(ITestResult result) throws IOException {
 
         if (result.getStatus() == ITestResult.FAILURE) {
-            TakesScreenshot ts = (TakesScreenshot) driver;
+            TakesScreenshot ts = driver;
             File source = ts.getScreenshotAs(OutputType.FILE); // capture screenshot file
             File target = new File(Screenshotpath + result.getName() + ".png");
 

@@ -1,19 +1,15 @@
 package Modules;
 
 import Base.Setup;
-import io.appium.java_client.AppiumBy;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 import static UiObjects.CallPlan_Objects.*;
 import static UiObjects.HomePage_Objects.Callplan;
 import static Utilities.Actions.*;
 import static Utilities.Constants.*;
-import static Utilities.DBConfig.Db;
-import static Utilities.DBConfig.GetDatas;
+import static Utilities.DBConfig.*;
+import static Utilities.Utils.Datasetter;
 
 public class CallPlan_Module extends Setup {
 
@@ -35,49 +31,42 @@ public class CallPlan_Module extends Setup {
         }
     }
 
-    public static void Category_Lists(String Category) throws Exception {
 
+    public static void Category_Lists() throws Exception {
         List<String> categoryNames = GetDatas(Categorymasterquery, "Name");
-        categoryNames.forEach(categoryName -> {
-            if (Source(categoryName)) {
-                click("Xpath", getcategoryattribute(categoryName));
+        for (String category : categoryNames) {
+            if (Source(category)) {
+                click("Xpath", SetCategoryAttribute(category));
+                List<String> formNames = GetDatas(FormMasterquery, "FormName");
+                for (String form : formNames) {
+                    if (Source(form)) {
+                        WebdriverWait("ACCESSIBILITYID", form,10);
+                        //   click("ACCESSIBILITYID", form);
+                        List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where FormName = '"+form+"'");
+                        for (Object field : fieldnames) {
+                            if (field instanceof LinkedHashMap<?, ?> fieldData) {
+                                String fieldName = (String) fieldData.get("FieldName");
+                                String Ctrltype =  (String) fieldData.get("ControlType");
+                                String Datatype =  (String) fieldData.get("DataType");
+                                if (Source(fieldName)) {
+                                    if(Ctrltype.equals("TextBox")){
+                                        Enter("Xpath",SetTextFieldAttribute(fieldName),  Datasetter(Datatype));
+                                        System.out.println(driver.getPageSource());
+                                    } else if (Ctrltype.equals("DropDownList")) {
+                                        click("ACCESSIBILITYID",fieldName);
+                                        click("ACCESSIBILITYID",Stocknotavailable);
+                                    }
 
-                //Getting Formnames
-                List<String> formNames = null;
-                try {
-                    formNames = GetDatas(FormFieldsquery, "Form Name");
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-                for (String formname : formNames) {
-                    if (Source(formname)) {
-                        click("ACCESSIBILITYID",formname );
-
-                    } else {
-                        System.out.println("App is not have formlist  "+formname);
-
+                                }
+                            }
+                        }
                     }
-                }
-
-            } else {
-                try {
-                    Scroll("up");
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                if (Source(categoryName)) {
-                    click("Xpath", getcategoryattribute(categoryName));
+                    driver.navigate().back();
+                    click("Xpath",NextButton);
                 }
             }
-        });
+        }
     }
-
-    public static void Forms_Lists() throws Exception {
-
-
-
-    }
-
 
 
 
@@ -95,4 +84,22 @@ public class CallPlan_Module extends Setup {
         return integerList;
     }
 
+    public static String RandomStrings() {
+
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder randomString = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            int index = random.nextInt(characters.length());
+            char randomChar = characters.charAt(index);
+            randomString.append(randomChar);
+        }
+
+        return randomString.toString();
+    }
+
+
+
 }
+

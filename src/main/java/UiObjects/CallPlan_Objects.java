@@ -1,21 +1,44 @@
 package UiObjects;
 
+import java.util.List;
+
+import static Utilities.DBConfig.GetDataObject;
+
 public class CallPlan_Objects {
 
 	public static String sync = "Sync";
-	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: 13294')]";
+	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: 10043')]";
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
 	public static String Startworkbutton = "//android.view.View[@content-desc='Start Work']";
 
-	// CATEGORY LIST PAGE
 
-	public static String getcategoryattribute(String cate){
 
-	String JuiceList = "//android.view.View[contains(@content-desc, '"+cate+"')]";
+	//This Return Xpath
+	public static String SetCategoryAttribute(String cate){
 
-		return JuiceList;
+	  String categorylocator = "//android.view.View[contains(@content-desc, '"+cate+"')]";
+
+		return categorylocator;
 	}
 
+
+	//This Return Xpath
+	public static String SetTextFieldAttribute(String field){
+
+		String FormslistsLocator = " //*[@text='"+field+"']";
+
+		return FormslistsLocator;
+	}
+
+	//public static String NextButton = "//android.view.View[@content-desc='Next']";
+
+	public static String DataTypeGetter(String form) throws Exception {
+
+		List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = '"+form+"'");
+
+
+		return fieldnames.toString();
+	}
 
 	// Form
 	public static String Form_StockAvailablity = "Stk_Availability";

@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 import static Base.Setup.log;
-import static UiObjects.CallPlan_Objects.getcategoryattribute;
+import static UiObjects.CallPlan_Objects.SetCategoryAttribute;
 import static Utilities.Actions.*;
 import static Utilities.Constants.*;
 
@@ -76,8 +76,7 @@ public class DBConfig {
                         // Getting Fieldnames
                         List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = 'Stk_Availability'");
                         for (Object field : fieldnames) {
-                            if (field instanceof LinkedHashMap) {
-                                LinkedHashMap<?, ?> fieldData = (LinkedHashMap<?, ?>) field;
+                            if (field instanceof LinkedHashMap<?, ?> fieldData) {
                                 if(fieldData.get("FieldName").equals("Quantity")){
                                     if(fieldData.get("ControlType").equals("TextBox")){
 

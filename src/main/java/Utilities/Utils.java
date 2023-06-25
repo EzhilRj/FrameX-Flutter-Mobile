@@ -1,25 +1,18 @@
 package Utilities;
 
 
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
+import java.util.Random;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 
 import static Base.Setup.driver;
-import static Utilities.Constants.Screenshotpath;
 
 public class Utils {
 
@@ -46,17 +39,46 @@ public class Utils {
 
     }
 
-    @AfterMethod
-    public void captureScreen(ITestResult result) throws IOException {
+    public static String Datasetter(String type){
 
-        if (result.getStatus() == ITestResult.FAILURE) {
-            TakesScreenshot ts = (TakesScreenshot) driver;
-            File source = ts.getScreenshotAs(OutputType.FILE); // capture screenshot file
-            File target = new File(Screenshotpath + result.getName() + ".png");
+        if(type.equals("Int")){
 
-            FileUtils.copyFile(source, target);
+            return Randomint().toString();
+        } else if (type.equals("Varchar")) {
+
+            return RandomStrings();
         }
 
+        return null;
+    }
+
+    public static List<Integer> Randomint() {
+
+        Random random = new Random();
+        List<Integer> integerList = new ArrayList<>();
+        // Generate a random integer between 0 and 9
+        int randomInt = random.nextInt(10);
+        integerList.add(randomInt);
+        // Generate a random integer between 10 and 20
+        int randomIntInRange = random.nextInt(11) + 10;
+        integerList.add(randomIntInRange);
+
+        return integerList;
+    }
+
+    public static String RandomStrings() {
+
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder randomString = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < 7; i++) {
+            int index = random.nextInt(characters.length());
+            char randomChar = characters.charAt(index);
+            randomString.append(randomChar);
+        }
+
+        return randomString.toString();
     }
 
 }

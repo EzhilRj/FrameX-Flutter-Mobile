@@ -67,7 +67,7 @@ public class Listeners implements ITestListener {
         test.log(Status.FAIL, "Test Method " + result.getMethod().getMethodName() + " Failed...");
         test.log(Status.FAIL, result.getThrowable());
         try{
-            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            TakesScreenshot screenshot = driver;
             String base64Screenshot = screenshot.getScreenshotAs(OutputType.BASE64);
             test.fail("Screenshot is Attached here :  ", MediaEntityBuilder.createScreenCaptureFromBase64String("data:image/png;base64," + base64Screenshot).build());
         } catch (Exception e) {
