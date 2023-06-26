@@ -10,16 +10,9 @@
         <methods>
           <include name="StartApp"/>
           <include name="TearApp"/>
-          <include name="TC_002_VerifyCallPlan"/>
+          <include name="TC_003_VerifyCategoryLists"/>
         </methods>
       </class> <!-- Tests.CallPlanTest -->
-      <class name="Tests.LoginTest">
-        <methods>
-          <include name="TC_001_VerifyLogin"/>
-          <include name="StartApp"/>
-          <include name="TearApp"/>
-        </methods>
-      </class> <!-- Tests.LoginTest -->
     </classes>
   </test> <!-- FramexFunctional Test(failed) -->
 </suite> <!-- Failed suite [FrameXFlutter V28.0] -->

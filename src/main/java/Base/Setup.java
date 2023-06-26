@@ -1,25 +1,27 @@
 package Base;
 
-import com.aventstack.extentreports.Status;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.NetworkSpeed;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import com.google.common.collect.ImmutableMap;
+import static Utilities.Constants.Apppath;
+import static Utilities.Constants.Devicename;
+import static Utilities.Constants.LogConfiguration;
+import static Utilities.Constants.ServerPath;
+import static Utilities.Listeners.test;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import static Utilities.Constants.*;
-import static Utilities.Listeners.test;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.Status;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class Setup {
 

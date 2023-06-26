@@ -61,38 +61,4 @@ public class DBConfig {
         });
         return stringMapValues;
     }
-
-
-
-    public static void main(String[] args) throws Exception {
-        // Getting Category names
-        List<String> categoryNames = GetDatas(Categorymasterquery, "Name");
-        for (String category : categoryNames) {
-            if (category.equals("100 JUICE 1 LTR")) {
-                // Getting Form names
-                List<String> formNames = GetDatas(FormFieldsquery, "Form Name");
-                for (String form : formNames) {
-                    if (form.equals("Stk_Availability")) {
-                        // Getting Fieldnames
-                        List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = 'Stk_Availability'");
-                        for (Object field : fieldnames) {
-                            if (field instanceof LinkedHashMap<?, ?> fieldData) {
-                                if(fieldData.get("FieldName").equals("Quantity")){
-                                    if(fieldData.get("ControlType").equals("TextBox")){
-
-                                        System.out.println("YES BRO");
-                                    }
-
-                                }
-                            } else {
-                                System.out.println("Invalid object type. Expected LinkedHashMap.");
-                            }
-                        }
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
 }

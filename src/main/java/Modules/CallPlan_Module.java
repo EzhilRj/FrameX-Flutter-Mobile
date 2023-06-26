@@ -2,6 +2,7 @@ package Modules;
 
 import Base.Setup;
 
+import java.text.MessageFormat;
 import java.util.*;
 
 import static UiObjects.CallPlan_Objects.*;
@@ -14,6 +15,7 @@ import static Utilities.Utils.Datasetter;
 public class CallPlan_Module extends Setup {
 
     public static void CallPlan() throws Exception {
+
         click("ACCESSIBILITYID", Callplan);
         driver.navigate().back();
         click("ACCESSIBILITYID", Callplan);
@@ -32,74 +34,58 @@ public class CallPlan_Module extends Setup {
     }
 
 
-    public static void Category_Lists() throws Exception {
+    public static void DataBinder() throws Exception {
+
+        //Getting Category lists
         List<String> categoryNames = GetDatas(Categorymasterquery, "Name");
         for (String category : categoryNames) {
             if (Source(category)) {
                 click("Xpath", SetCategoryAttribute(category));
+                //Getting Formnames
                 List<String> formNames = GetDatas(FormMasterquery, "FormName");
                 for (String form : formNames) {
                     if (Source(form)) {
+                        String formName = form.replace(" ","_");
                         WebdriverWait("ACCESSIBILITYID", form,10);
-                        //   click("ACCESSIBILITYID", form);
-                        List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where FormName = '"+form+"'");
-                        for (Object field : fieldnames) {
-                            if (field instanceof LinkedHashMap<?, ?> fieldData) {
-                                String fieldName = (String) fieldData.get("FieldName");
-                                String Ctrltype =  (String) fieldData.get("ControlType");
-                                String Datatype =  (String) fieldData.get("DataType");
-                                if (Source(fieldName)) {
-                                    if(Ctrltype.equals("TextBox")){
-                                        Enter("Xpath",SetTextFieldAttribute(fieldName),  Datasetter(Datatype));
-                                        System.out.println(driver.getPageSource());
-                                    } else if (Ctrltype.equals("DropDownList")) {
-                                        click("ACCESSIBILITYID",fieldName);
-                                        click("ACCESSIBILITYID",Stocknotavailable);
+                        //Getting Productnames
+                        //Get  Product Column Header
+                        String ProductColumn = GetDatas( MessageFormat.format(ProductColumnquery , "'"+formName+"'"),"ProductColumn").get(0);
+                        // Get Product  Column List
+                        List<String> Productnames = GetDatas( MessageFormat.format(Productquery , formName,"10535","'"+ category +"'",ProductColumn),"ProductName");
+                        for (String productName : Productnames) {
+                            if(Source(productName)){
+                                click("Xpath",SetCategoryAttribute(productName));
+                                //Getting Fieldnames
+                                List<Object> fieldnames = GetDataObject( MessageFormat.format(FormFieldsquery , "'"+formName+"'"));
+                                for (Object field : fieldnames) {
+                                    if (field instanceof LinkedHashMap<?, ?> fieldData) {
+                                        String fieldName = (String) fieldData.get("FieldName");
+                                        String Ctrltype = (String) fieldData.get("ControlType");
+                                        String Datatype = (String) fieldData.get("DataType");
+                                        if (Source(fieldName)) {
+                                            if (Ctrltype.equals("TextBox")) {
+                                                if(Datatype.equalsIgnoreCase("int")){
+                                                    Enter("Xpath", SetTextFieldAttribute(fieldName), Datasetter(Datatype,fieldName));
+                                                } else if (Datatype.contains("Varchar")) {
+                                                    Enter("Xpath", SetTextFieldAttribute(fieldName), Datasetter(Datatype,fieldName));
+                                                }
+                                            } else if (Ctrltype.equals("DropDownList")) {
+                                                click("ACCESSIBILITYID", fieldName);
+                                                click("ACCESSIBILITYID", Stocknotavailable);
+                                            }
+                                        }
                                     }
-
                                 }
                             }
+                            driver.hideKeyboard();
                         }
+                        click("Xpath",NextButton);
                     }
-                    driver.navigate().back();
-                    click("Xpath",NextButton);
+
                 }
             }
         }
     }
-
-
-
-    public static List<Integer> Randomint() {
-
-        Random random = new Random();
-        List<Integer> integerList = new ArrayList<>();
-        // Generate a random integer between 0 and 9
-        int randomInt = random.nextInt(10);
-        integerList.add(randomInt);
-        // Generate a random integer between 10 and 20
-        int randomIntInRange = random.nextInt(11) + 10;
-        integerList.add(randomIntInRange);
-
-        return integerList;
-    }
-
-    public static String RandomStrings() {
-
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder randomString = new StringBuilder();
-
-        Random random = new Random();
-        for (int i = 0; i < 7; i++) {
-            int index = random.nextInt(characters.length());
-            char randomChar = characters.charAt(index);
-            randomString.append(randomChar);
-        }
-
-        return randomString.toString();
-    }
-
-
 
 }
 

@@ -1,0 +1,396 @@
+2023-06-26 11:21:26,267 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 11:21:26,339 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 11:21:26,340 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 11:22:07,194 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 11:22:07,244 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 11:22:07,244 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 11:22:23,323 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 11:22:31,805 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 11:22:33,244 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 11:57:55,571 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 11:57:55,642 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 11:57:55,642 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 11:58:13,541 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 11:58:21,666 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 11:58:22,250 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 11:59:07,548 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 11:59:07,664 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 16:22:50,340 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:22:50,475 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:22:50,476 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:23:12,310 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:23:21,430 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:23:22,020 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:27:03,843 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:27:03,930 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:27:03,931 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:27:43,044 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:27:43,136 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:27:43,137 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:27:56,066 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:27:56,137 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:27:56,137 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:28:28,691 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:28:28,782 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:28:28,783 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:28:47,010 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:28:55,281 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:28:55,864 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:31:53,376 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:31:53,461 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:31:53,461 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:32:50,511 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:32:50,590 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:32:50,590 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:33:08,419 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:33:16,720 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:33:17,309 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:42:35,249 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:42:35,319 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:42:35,319 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:46:01,558 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:46:01,657 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:46:01,658 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:46:19,081 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:46:27,194 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:46:27,772 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:49:56,277 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:49:56,350 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:49:56,351 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:50:36,546 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:50:36,647 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:50:36,647 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:50:53,575 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:51:01,802 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:51:04,140 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:52:49,343 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:52:49,411 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:52:49,413 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:53:17,956 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:53:18,022 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:53:18,022 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:53:36,692 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:53:44,885 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:53:45,469 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 16:55:29,811 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:55:29,865 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:55:29,865 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:55:55,943 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 16:55:56,022 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 16:55:56,022 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 16:56:13,204 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 16:56:21,322 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 16:56:21,904 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:02:11,565 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:02:11,623 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:02:11,624 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:02:39,781 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:02:39,856 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:02:39,856 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:02:58,365 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:03:06,554 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:03:07,981 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:05:16,860 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:05:16,914 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:05:16,914 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:06:01,091 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:06:01,161 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:06:01,161 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:06:19,334 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:06:27,480 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:06:29,638 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:09:34,536 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:09:34,610 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:09:34,610 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:10:00,158 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:10:00,259 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:10:00,260 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:10:17,344 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:10:25,457 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:10:26,037 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:13:28,819 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:13:28,884 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:13:28,885 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:16:14,332 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:16:14,412 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:16:14,412 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:16:31,845 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:16:39,974 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:16:40,542 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:36:23,252 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:36:23,304 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:36:23,304 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:37:03,687 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:37:03,717 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:37:03,718 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:37:16,461 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:37:24,378 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:37:25,809 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:39:01,143 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 17:39:01,196 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 17:39:31,580 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:39:31,611 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:39:31,611 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:39:44,382 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:39:52,398 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:39:52,973 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:40:36,859 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 17:40:36,916 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 17:44:00,048 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:44:00,082 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:44:00,082 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:44:12,560 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:44:20,337 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:44:22,629 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:45:21,712 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:45:21,746 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:45:21,746 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:45:35,313 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:45:43,128 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:45:46,914 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:50:50,149 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:50:50,199 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:50:50,200 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:51:09,255 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:51:09,294 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:51:09,294 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:51:22,935 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:51:30,767 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:51:32,910 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 17:54:42,892 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:54:42,965 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:54:42,966 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:55:03,729 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 17:55:03,763 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 17:55:03,764 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 17:55:17,316 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 17:55:24,698 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 17:55:27,131 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:01:29,253 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:01:29,326 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:01:29,326 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:01:58,249 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:01:58,329 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:01:58,330 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:02:41,626 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:02:41,695 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:02:41,696 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:04:41,470 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:04:41,556 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:04:41,556 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:04:58,872 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:05:07,323 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:05:09,946 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:16:26,471 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:16:26,563 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:16:26,563 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:16:45,237 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:16:53,554 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:16:54,128 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:19:31,974 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:19:32,054 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:19:32,056 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:19:53,743 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:19:53,772 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:19:53,772 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:20:07,435 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:20:15,241 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:20:17,622 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:27:11,512 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:27:11,553 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:27:11,553 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:27:22,252 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:27:30,250 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:27:30,806 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:36:49,476 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:36:49,517 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:36:49,518 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:37:03,429 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:37:11,261 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:37:13,759 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:39:33,268 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:39:33,320 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:39:33,320 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:39:55,295 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:39:55,325 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:39:55,325 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:40:08,606 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:40:16,490 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:40:18,937 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:42:15,373 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:42:15,410 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:42:15,410 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:42:27,862 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:42:35,690 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:42:38,259 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:47:08,294 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 18:47:08,450 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 18:47:54,267 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:47:54,298 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:47:54,299 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:48:07,048 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:48:14,981 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:48:17,525 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:48:35,936 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 18:48:35,993 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 18:48:50,117 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:48:50,148 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:48:50,148 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:49:02,843 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:49:10,636 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:49:12,074 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 18:51:49,505 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:51:49,545 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:51:49,545 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:52:09,536 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 18:52:09,568 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 18:52:09,568 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 18:52:22,290 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 18:52:30,015 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 18:52:32,390 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:15:25,213 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:15:25,264 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:15:25,265 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:15:50,043 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:15:50,074 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:15:50,075 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:16:03,428 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:16:11,525 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:16:12,952 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:18:48,851 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 19:18:48,984 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 19:24:13,217 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:24:13,276 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:24:13,277 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:24:27,098 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:24:34,948 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:24:37,422 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:26:59,256 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:26:59,344 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:26:59,345 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:27:29,740 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:27:29,775 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:27:29,776 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:27:44,537 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:27:52,190 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:27:52,762 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:51:15,963 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:51:15,996 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:51:15,996 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:51:29,791 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:51:37,616 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:51:39,044 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:55:00,266 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:55:00,301 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:55:00,301 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:55:12,889 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:55:20,830 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:55:23,175 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:56:16,773 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:56:16,818 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:56:16,818 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:56:47,420 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:56:47,449 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:56:47,449 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:57:00,983 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:57:08,739 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:57:12,633 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:58:12,807 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:58:12,847 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:58:12,847 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:58:32,520 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:58:32,560 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:58:32,560 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:58:45,720 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 19:58:53,549 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 19:58:56,064 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 19:59:35,719 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:59:35,763 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:59:35,763 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 19:59:55,900 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 19:59:55,934 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 19:59:55,934 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:00:09,906 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:00:17,842 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:00:18,421 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:03:43,163 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:03:43,194 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:03:43,194 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:03:56,485 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:04:04,314 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:04:06,677 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:04:20,427 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 20:04:20,486 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 20:04:36,438 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:04:36,467 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:04:36,468 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:04:49,128 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:04:57,093 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:04:57,668 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:06:02,945 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:06:02,976 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:06:02,976 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:06:16,006 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:06:23,836 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:06:26,216 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:06:39,644 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 20:06:39,697 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 20:07:30,617 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:07:30,657 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:07:30,657 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:07:43,095 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:07:50,855 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:07:51,439 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:22:50,323 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:22:50,351 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:22:50,353 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:23:03,227 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:23:10,998 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:23:11,553 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:23:44,967 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:23:45,010 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:23:45,010 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:24:09,758 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:24:09,792 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:24:09,792 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:24:22,851 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:24:30,850 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:24:34,508 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:42:06,934 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:42:07,038 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:42:07,038 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:42:25,856 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:42:33,997 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:42:36,503 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:49:15,325 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:49:15,409 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:49:15,410 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:49:42,654 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:49:42,760 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:49:42,760 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:50:01,671 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:50:09,994 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:50:10,583 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:50:38,275 [main] INFO  Base.Setup  - -----Application is Closed -----
+2023-06-26 20:50:38,328 [main] INFO  Base.Setup  - -----Appium Service Stoped -----
+2023-06-26 20:51:02,491 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:51:02,545 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:51:02,545 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:51:20,086 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:51:28,094 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:51:31,784 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:57:42,284 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:57:42,376 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:57:42,412 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 20:58:02,199 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 20:58:10,308 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 20:58:10,890 [main] INFO  Base.Setup  - Login button is Clicked
+2023-06-26 20:59:48,578 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 20:59:48,652 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 20:59:48,652 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 21:00:23,164 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-06-26 21:00:23,232 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-06-26 21:00:23,232 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameX_Flutter\src\main\resources\Apps\FrameFlutterTest.apk
+2023-06-26 21:00:40,775 [main] INFO  Base.Setup  - -----Application is started -----
+2023-06-26 21:00:48,943 [main] INFO  Base.Setup  - akamaliakamaliframedemo_d18248606917 is Entered
+2023-06-26 21:00:49,525 [main] INFO  Base.Setup  - Login button is Clicked

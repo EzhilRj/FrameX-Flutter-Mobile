@@ -7,7 +7,7 @@ import static Utilities.DBConfig.GetDataObject;
 public class CallPlan_Objects {
 
 	public static String sync = "Sync";
-	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: 10043')]";
+	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: 10535')]";
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
 	public static String Startworkbutton = "//android.view.View[@content-desc='Start Work']";
 
@@ -35,7 +35,6 @@ public class CallPlan_Objects {
 	public static String DataTypeGetter(String form) throws Exception {
 
 		List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = '"+form+"'");
-
 
 		return fieldnames.toString();
 	}

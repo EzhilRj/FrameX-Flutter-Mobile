@@ -9,16 +9,24 @@ public class Constants {
     public static final String Screenshotpath = System.getProperty("user.dir") + "\\Screenshots\\";
     public static final String Excelpath  = System.getProperty("user.dir") + "\\src\\main\\resources\\Datas\\FrameXMobile_Datas.xlsx";
     public static String LogConfiguration = System.getProperty("user.dir") + "\\Log4j.properties";
-    public static final String Databaseurl = "jdbc:sqlserver://DESKTOP-OET6KL6;DatabaseName=FrameX_Mobile_DB;encrypt=true;trustServerCertificate=true";
+    public static final String Databaseurl = "jdbc:sqlserver://DESKTOP-OET6KL6;DatabaseName=framedemo_d1;encrypt=true;trustServerCertificate=true";
     public static final String Dbusername = "sa";
     public static final String Dbpassword = "sa";
     public static final String classname = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
     public static String Loginquery = "select * from Login";
-    public static String Categorymasterquery = "select * from Categorymaster";
-    public static String FormFieldsquery = "select * from FormFieldsDetail";
+    public static String Categorymasterquery = "select Name  from Categorymaster where status = 1";
+    public static String FormFieldsquery = "select Replace(fm.Name,''_'','' '') as formName, CONCAT(Replace(ffd.FieldName,''_'','' ''),(case when Required = 1 Then '' *'' End)) as FieldName,DataType,ControlType,Required from FormFieldDetail ffd \n" +
+            "join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 0 and  fm.Name  = {0} " +
+            "order by fm.FormSequence,ffd.Sequence";
+    public static String ProductColumnquery = "select FieldName as ProductColumn  from FormFieldDetail ffd \n" +
+            "join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} ";
 
-    public static String FormMasterquery = "select * from FormMaster";
+    public static String FormMasterquery = "select  Replace(Name,'_',' ') as FormName from FormMaster where FormStatus = 1 order by FormSequence";
+    public static String Productquery = "select {3} as ProductName from {0}master sm" +
+            " join {0}Relation sr on sr.{0}ID = sm.{0}ID \n" +
+            "join CategoryMaster cm on cm.CategoryID = sm.CategoryID" +
+            " where TargetID = {1} and name = {2}";
 
 
 }

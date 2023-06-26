@@ -39,12 +39,18 @@ public class Utils {
 
     }
 
-    public static String Datasetter(String type){
+    public static String Datasetter(String type,String facingtype  ){
 
         if(type.equals("Int")){
+        	
+        	if(facingtype.equalsIgnoreCase("Industry Facing *")) {
+        		 return Randomint().get(1).toString();
+        	}else if (facingtype.equalsIgnoreCase("Our Brand Facing *")) {
+        		 return Randomint().get(0).toString();
+			}
+        	 return Randomint().toString();
 
-            return Randomint().toString();
-        } else if (type.equals("Varchar")) {
+        } else if (type.contains("Varchar")) {
 
             return RandomStrings();
         }

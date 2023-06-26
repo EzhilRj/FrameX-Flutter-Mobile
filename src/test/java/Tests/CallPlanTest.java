@@ -17,7 +17,7 @@ public class CallPlanTest extends Setup {
     @Test
     public static void TC_003_VerifyCategoryLists() throws Exception {
 
-        Category_Lists();
+        DataBinder();
     }
 
 
