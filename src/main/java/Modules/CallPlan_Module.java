@@ -1,6 +1,8 @@
 package Modules;
 
 import Base.Setup;
+import org.checkerframework.checker.units.qual.C;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.MessageFormat;
 import java.util.*;
@@ -10,9 +12,13 @@ import static UiObjects.HomePage_Objects.Callplan;
 import static Utilities.Actions.*;
 import static Utilities.Constants.*;
 import static Utilities.DBConfig.*;
-import static Utilities.Utils.Datasetter;
+import static Utilities.Utils.*;
 
 public class CallPlan_Module extends Setup {
+
+    public static  String fieldName;
+    public static  String Ctrltype;
+    public static String Datatype;
 
     public static void CallPlan() throws Exception {
 
@@ -46,9 +52,7 @@ public class CallPlan_Module extends Setup {
                 for (String form : formNames) {
                     if (Source(form)) {
                         String formName = form.replace(" ","_");
-                        WebdriverWait("ACCESSIBILITYID", form,10);
                         //Getting Productnames
-                        //Get  Product Column Header
                         String ProductColumn = GetDatas( MessageFormat.format(ProductColumnquery , "'"+formName+"'"),"ProductColumn").get(0);
                         // Get Product  Column List
                         List<String> Productnames = GetDatas( MessageFormat.format(Productquery , formName,"10535","'"+ category +"'",ProductColumn),"ProductName");
@@ -59,9 +63,9 @@ public class CallPlan_Module extends Setup {
                                 List<Object> fieldnames = GetDataObject( MessageFormat.format(FormFieldsquery , "'"+formName+"'"));
                                 for (Object field : fieldnames) {
                                     if (field instanceof LinkedHashMap<?, ?> fieldData) {
-                                        String fieldName = (String) fieldData.get("FieldName");
-                                        String Ctrltype = (String) fieldData.get("ControlType");
-                                        String Datatype = (String) fieldData.get("DataType");
+                                        fieldName = (String) fieldData.get("FieldName");
+                                        Ctrltype = (String) fieldData.get("ControlType");
+                                        Datatype = (String) fieldData.get("DataType");
                                         if (Source(fieldName)) {
                                             if (Ctrltype.equals("TextBox")) {
                                                 if(Datatype.equalsIgnoreCase("int")){
@@ -70,8 +74,9 @@ public class CallPlan_Module extends Setup {
                                                     Enter("Xpath", SetTextFieldAttribute(fieldName), Datasetter(Datatype,fieldName));
                                                 }
                                             } else if (Ctrltype.equals("DropDownList")) {
-                                                click("ACCESSIBILITYID", fieldName);
-                                                click("ACCESSIBILITYID", Stocknotavailable);
+                                                Dropdownsetter();
+                                            } else if (Ctrltype.contains("FileUpload")) {
+                                                ImageCapture();
                                             }
                                         }
                                     }
@@ -81,7 +86,6 @@ public class CallPlan_Module extends Setup {
                         }
                         click("Xpath",NextButton);
                     }
-
                 }
             }
         }

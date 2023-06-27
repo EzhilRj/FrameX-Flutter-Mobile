@@ -27,6 +27,6 @@ public class Constants {
             " join {0}Relation sr on sr.{0}ID = sm.{0}ID \n" +
             "join CategoryMaster cm on cm.CategoryID = sm.CategoryID" +
             " where TargetID = {1} and name = {2}";
-
-
+    public static String EnumFieldquery="select ffo.FormFieldOption as FieldOption from FormFieldOption ffo " +
+            "join FormFieldDetail ffd on ffd.FormFieldID = ffo.FormFieldID where Replace(FieldName,''_'','' '') ={0}";
 }

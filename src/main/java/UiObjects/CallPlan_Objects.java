@@ -90,7 +90,7 @@ public class CallPlan_Objects {
 	//Form
 	public static String  Form_Picture = "Picture";
 	//Picture fields
-	public static String Camerabutton = "//android.view.View[@content-desc=\"Photo\"]/android.view.View[3]";
+	public static String Camerabutton = "//android.view.View[@content-desc='Photo *']/android.view.View[3]";
 	public static String Shutterbutton = "//android.view.View[3]";
 	public static String PhotoFields = "//android.view.View[@content-desc='Photo']";
 	

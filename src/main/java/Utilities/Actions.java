@@ -1,9 +1,12 @@
 package Utilities;
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -141,6 +144,39 @@ public class Actions {
             e.getMessage();
         }
     }
+
+    public static void FluentWait(String attributeName, String attributeValue, int seconds) {
+        try {
+            String AN = attributeName.toUpperCase();
+            FluentWait<AndroidDriver> wait = new FluentWait<>(driver)
+                    .withTimeout(Duration.ofSeconds(seconds))
+                    .pollingEvery(Duration.ofMillis(500))
+                    .ignoring(Exception.class);
+
+            switch (AN) {
+                case "ID":
+                    element = wait.until(driver -> driver.findElement(By.id(attributeValue)));
+                    break;
+                case "XPATH":
+                    element = wait.until(driver -> driver.findElement(By.xpath(attributeValue)));
+                    break;
+                case "CLASSNAME":
+                    element = wait.until(driver -> driver.findElement(By.className(attributeValue)));
+                    break;
+                case "CSSSELECTOR":
+                    element = wait.until(driver -> driver.findElement(By.cssSelector(attributeValue)));
+                    break;
+                case "ACCESSIBILITYID":
+                    element = wait.until(driver -> driver.findElement(AppiumBy.accessibilityId(attributeValue)));
+                    break;
+                default:
+                    System.out.println("Invalid attribute name specified: " + attributeName + attributeValue);
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
 
     public static boolean Source(String value) {
         return driver.getPageSource().contains(value);
