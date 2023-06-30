@@ -16,8 +16,6 @@ import static Utilities.XLUtils.getJsonData;
 
 public class Login_Module extends Setup {
 
-
-
     public static boolean LoginintoApp(String Username, String Password, String project, String Mobileno) throws Exception {
 
         Enter("XPATH",username,Username);

@@ -9,6 +9,7 @@ import static Utilities.Listeners.test;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -49,7 +50,7 @@ public class Setup {
             options.setCapability("autoGrantPermissions", true);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
             log.info("-----Application is started -----");
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (IOException e) {
             test.log(Status.ERROR,e.getMessage());
             log.error("An error occurred while starting the app:", e);
@@ -58,7 +59,7 @@ public class Setup {
         }
     }
 
-    @AfterSuite(enabled = true)
+    @AfterSuite(enabled = false)
     public static  void TearApp(){
 
         endTime = System.currentTimeMillis();
@@ -68,5 +69,7 @@ public class Setup {
         log.info("-----Application is Closed -----");
         service.stop();
         log.info("-----Appium Service Stoped -----");
+
+
     }
 }

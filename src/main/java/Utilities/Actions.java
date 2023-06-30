@@ -6,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +15,7 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static Base.Setup.driver;
+import static UiObjects.CallPlan_Objects.notification;
 import static Utilities.Constants.Screenshotpath;
 
 public class Actions {
@@ -124,19 +124,19 @@ public class Actions {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             switch (AN) {
                 case "ID" -> {
-                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(attributeValue)));
+                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(attributeValue)));
                 }
                 case "XPATH" -> {
-                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(attributeValue)));
+                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(attributeValue)));
                 }
                 case "CLASSNAME" -> {
-                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(attributeValue)));
+                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.className(attributeValue)));
                 }
                 case "CSSSELECTOR" -> {
-                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(attributeValue)));
+                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(attributeValue)));
                 }
                 case "ACCESSIBILITYID"-> {
-                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId(attributeValue)));
+                    element = wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId(attributeValue)));
                 }
                 default -> System.out.println("Invalid attribute name specified: " + attributeName + attributeValue);
             }
@@ -179,6 +179,7 @@ public class Actions {
 
 
     public static boolean Source(String value) {
+
         return driver.getPageSource().contains(value);
     }
 
@@ -210,5 +211,45 @@ public class Actions {
         }
 
     }
+
+
+    public static boolean isElementDisplayed(String attributeName, String attributeValue) {
+
+        String AN = attributeName.toUpperCase();
+        boolean isDisplayed = false;
+
+        switch (AN) {
+            case "ID":
+                isDisplayed = driver.findElement(By.id(attributeValue)).isDisplayed();
+                break;
+
+            case "NAME":
+                isDisplayed = driver.findElement(By.name(attributeValue)).isDisplayed();
+                break;
+
+            case "XPATH":
+                isDisplayed = driver.findElement(By.xpath(attributeValue)).isDisplayed();
+                break;
+
+            case "CLASSNAME":
+                isDisplayed = driver.findElement(By.className(attributeValue)).isDisplayed();
+                break;
+
+            case "CSSSELECTOR":
+                isDisplayed = driver.findElement(By.cssSelector(attributeValue)).isDisplayed();
+                break;
+
+            case "TAGNAME":
+                isDisplayed = driver.findElement(By.tagName(attributeValue)).isDisplayed();
+                break;
+
+            case "ACCESSIBILITYID":
+                isDisplayed = driver.findElement(AppiumBy.accessibilityId(attributeValue)).isDisplayed();
+                break;
+        }
+
+        return isDisplayed;
+    }
+
 
 }

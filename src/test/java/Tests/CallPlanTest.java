@@ -1,6 +1,7 @@
 package Tests;
 
 import Base.Setup;
+import Utilities.Utils;
 import org.testng.annotations.Test;
 
 import static Modules.CallPlan_Module.*;
@@ -8,7 +9,7 @@ import static Utilities.DBConfig.Db;
 
 public class CallPlanTest extends Setup {
 
-    @Test
+    @Test(retryAnalyzer = Utilities.RetryAnalyser.class)
     public static void TC_002_VerifyCallPlan() throws Exception {
 
         CallPlan();
@@ -18,6 +19,7 @@ public class CallPlanTest extends Setup {
     public static void TC_003_VerifyCategoryLists() throws Exception {
 
         DataBinder();
+
     }
 
 

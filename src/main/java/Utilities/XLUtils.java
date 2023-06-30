@@ -96,8 +96,6 @@ public class XLUtils {
         return gson.toJson(mainJsonObject);
     }
 
-
-
 }
 
 

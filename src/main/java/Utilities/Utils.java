@@ -19,18 +19,6 @@ import static Utilities.DBConfig.GetDatas;
 
 public class Utils {
 
-    public static  List<HashMap<String, String>> getjsondata(String jsonfilepath) throws IOException {
-
-        //String jsoncontent = FileUtils.readFileToString(new File(jsonfilepath));
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<HashMap<String,String>> data = objectMapper.readValue(jsonfilepath, new TypeReference<List<HashMap<String, String>>>() {
-        });
-        return data;
-
-    }
-
-
     public static void scrollto(String txt){
 
         try {
@@ -50,7 +38,7 @@ public class Utils {
             }
             return Randomint().toString();
         } else if (type.contains("Varchar")) {
-            return RandomStrings();
+            return generateRandomString();
         }
         return null;
     }
@@ -69,20 +57,30 @@ public class Utils {
         return integerList;
     }
 
-    public static String RandomStrings() {
+    private static final String[] DICTIONARY = {
+            "Testdata0", "Testdata1", "Testdata2", "Testdata3", "Testdata4",
+            "Testdata5", "Testdata6", "Testdata7", "Testdata8", "Testdata9"
+    };
+    private static final int DEFAULT_LENGTH = 1;
 
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    public static String generateRandomString() {
+        return generateRandomString(DEFAULT_LENGTH);
+    }
+
+    public static String generateRandomString(int length) {
         StringBuilder randomString = new StringBuilder();
-
         Random random = new Random();
-        for (int i = 0; i < 7; i++) {
-            int index = random.nextInt(characters.length());
-            char randomChar = characters.charAt(index);
-            randomString.append(randomChar);
+
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(DICTIONARY.length);
+            String randomWord = DICTIONARY[randomIndex];
+            randomString.append(randomWord).append(" ");
         }
 
-        return randomString.toString();
+        return randomString.toString().trim();
     }
+
 
     public static void Dropdownsetter() throws Exception {
 
@@ -105,7 +103,7 @@ public class Utils {
 
     public static void ImageCapture( ) throws InterruptedException {
         click("Xpath",Camerabutton);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click("Xpath",Shutterbutton);
 
     }
