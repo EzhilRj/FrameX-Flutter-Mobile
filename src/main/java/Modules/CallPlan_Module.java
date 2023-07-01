@@ -54,50 +54,78 @@ public class CallPlan_Module extends Setup {
     public static void DataBinder() throws Exception {
         // Getting Category lists
         List<String> categoryNames = GetDatas(Categorymasterquery, "Name");
-        for (String category : categoryNames) {
-            if (Source(category)) {
-                click("Xpath", SetCategoryAttribute(category));
-                Thread.sleep(2000);
-                if (isElementDisplayed("ACCESSIBILITYID", category)) {
-                    // Getting Formnames
-                    List<String> formNames = GetDatas(FormMasterquery, "FormName");
-                    for (String form : formNames) {
-                        if (Source(form)) {
-                            click("ACCESSIBILITYID", form);
-                            String formName = form.replace(" ", "_");
-                            String productColumn = GetDatas(MessageFormat.format(ProductColumnquery, "'" + formName + "'"), "ProductColumn").get(0);
+        categoryNames.forEach(category -> {
+            try {
+                processCategory(category);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
 
-                            // Get Product Column List
-                            List<String> productNames = GetDatas(MessageFormat.format(Productquery, formName, tid, "'" + category + "'", productColumn), "ProductName");
-
-                            for (String productName : productNames) {
-                                if (Source(productName)) {
-                                    click("Xpath", SetCategoryAttribute(productName));
-                                    enterFieldData(formName);
-                                }
-                            }
-                            if (driver.isKeyboardShown()) {
-                                driver.hideKeyboard();
-                            }
-                            if (Source("Next")) {
-                                click("Xpath", NextButton);
-                            } else if (Source("Done")) {
-                                click("Xpath", Donebutton);
-                            }
-
-                        }
-
+    public static void processCategory(String category) throws Exception {
+        if (Source(category)) {
+            click("Xpath", SetCategoryAttribute(category));
+            Thread.sleep(2000);
+            if (isElementDisplayed("ACCESSIBILITYID", category)) {
+                // Getting Formnames
+                List<String> formNames = GetDatas(FormMasterquery, "FormName");
+                formNames.forEach(form -> {
+                    try {
+                        processForm(category, form);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
                     }
-
+                });
+            }
+        } else {
+            Scroll("up");
+            click("Xpath", SetCategoryAttribute(category));
+            List<String> formNames = GetDatas(FormMasterquery, "FormName");
+            formNames.forEach(form -> {
+                try {
+                    processForm(category, form);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
-            }else{
-                Scroll("up");
-                click("Xpath", SetCategoryAttribute(category));
-                continue;
+            });
+        }
+    }
+
+
+    public static void processForm(String category, String form) throws Exception {
+        if (Source(form)) {
+            click("ACCESSIBILITYID", form);
+            String formName = form.replace(" ", "_");
+            String productColumn = GetDatas(MessageFormat.format(ProductColumnquery, "'" + formName + "'"), "ProductColumn").get(0);
+
+            // Get Product Column List
+            List<String> productNames = GetDatas(MessageFormat.format(Productquery, formName, tid, "'" + category + "'", productColumn), "ProductName");
+            productNames.forEach(productName -> {
+                try {
+                    processProduct(formName, productName);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+            if (driver.isKeyboardShown()) {
+                driver.hideKeyboard();
+            }
+            if (Source("Next")) {
+                click("Xpath", NextButton);
+            } else if (Source("Done")) {
+                click("Xpath", Donebutton);
             }
         }
     }
 
+    public static void processProduct(String formName, String productName) throws Exception {
+        if (Source(productName)) {
+            click("Xpath", SetCategoryAttribute(productName));
+            enterFieldData(formName);
+        }
+    }
 
     private static void enterFieldData(String formName) throws Exception {
         List<Object> fieldNames = GetDataObject(MessageFormat.format(FormFieldsquery, "'" + formName + "'"));
@@ -131,7 +159,4 @@ public class CallPlan_Module extends Setup {
         }
     }
 
-
-
 }
-

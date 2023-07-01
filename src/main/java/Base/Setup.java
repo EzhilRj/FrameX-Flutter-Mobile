@@ -59,7 +59,7 @@ public class Setup {
         }
     }
 
-    @AfterSuite(enabled = false)
+    @AfterSuite(enabled = true)
     public static  void TearApp(){
 
         endTime = System.currentTimeMillis();

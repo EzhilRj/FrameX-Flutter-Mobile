@@ -103,8 +103,9 @@ public class Utils {
 
     public static void ImageCapture( ) throws InterruptedException {
         click("Xpath",Camerabutton);
-        Thread.sleep(1000);
+        Thread.sleep(500);
         click("Xpath",Shutterbutton);
+        Thread.sleep(500);
 
     }
 
