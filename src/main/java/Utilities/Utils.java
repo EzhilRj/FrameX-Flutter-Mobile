@@ -1,16 +1,17 @@
 package Utilities;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.util.*;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.concurrent.TimeUnit;
 
 import io.appium.java_client.AppiumBy;
 
 import static Base.Setup.driver;
+import static Base.Setup.stopWatch;
 import static Modules.CallPlan_Module.fieldName;
 import static UiObjects.CallPlan_Objects.*;
 import static Utilities.Actions.click;
@@ -19,21 +20,21 @@ import static Utilities.DBConfig.GetDatas;
 
 public class Utils {
 
-    public static void scrollto(String txt){
+    public static void scrollto(String txt) {
 
         try {
             driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + txt + "\"));"));
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static String Datasetter(String type,String facingtype  ){
+    public static String Datasetter(String type, String facingtype) {
 
-        if(type.equals("Int")){
-            if(facingtype.equalsIgnoreCase("Industry Facing *")) {
+        if (type.equals("Int")) {
+            if (facingtype.equalsIgnoreCase("Industry Facing *")) {
                 return Randomint().get(1).toString();
-            }else if (facingtype.equalsIgnoreCase("Our Brand Facing *")) {
+            } else if (facingtype.equalsIgnoreCase("Our Brand Facing *")) {
                 return Randomint().get(0).toString();
             }
             return Randomint().toString();
@@ -101,12 +102,47 @@ public class Utils {
         }
     }
 
-    public static void ImageCapture( ) throws InterruptedException {
-        click("Xpath",Camerabutton);
-        Thread.sleep(500);
-        click("Xpath",Shutterbutton);
-        Thread.sleep(500);
+    public static void ImageCapture() throws InterruptedException {
+
+        click("Xpath", Camerabutton);
+        Thread.sleep(1000);
+        click("Xpath", Shutterbutton);
+        Thread.sleep(3000);
 
     }
 
+
+    public static String getDeviceName() {
+        try {
+            Process process = Runtime.getRuntime().exec("adb devices");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.endsWith("device")) {
+                    String[] parts = line.split("\\t");
+                    if (parts.length > 1) {
+                        return parts[0].trim();
+                    }
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static String calculateDuration() {
+
+        stopWatch.stop();
+        String tosec = String.valueOf(stopWatch.getTime(TimeUnit.SECONDS));
+        stopWatch.reset();
+        stopWatch.start();
+
+        return tosec;
+    }
+
 }
+

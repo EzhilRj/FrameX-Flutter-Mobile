@@ -20,12 +20,14 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static Base.Setup.devicemodel;
 import static Base.Setup.driver;
 import static Utilities.Constants.Devicename;
 
 public class Listeners implements ITestListener {
 
     private static ExtentReports extent;
+
     public static ExtentTest test;
     private ExtentHtmlReporter htmlReporter;
     private  String timestamp;
@@ -43,7 +45,7 @@ public class Listeners implements ITestListener {
 
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Device", Devicename);
+        extent.setSystemInfo("Device", devicemodel);
         extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("User", System.getProperty("user.name"));
     }

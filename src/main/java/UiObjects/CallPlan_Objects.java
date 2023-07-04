@@ -10,6 +10,7 @@ public class CallPlan_Objects {
 	public static String tid = "10535";
 	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+tid+"')]";
 	public static String notification = "//*[@text='Target "+tid+" downloaded successfully.']";
+	public static String clear = "//android.widget.TextView[@content-desc='Clear,Button']";
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
 	public static String Startworkbutton = "//android.view.View[@content-desc='Start Work']";
 

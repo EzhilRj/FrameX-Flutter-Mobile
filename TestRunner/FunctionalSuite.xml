@@ -7,7 +7,7 @@
     <test name="FramexFunctional Test">
         <classes>
             <class name="Tests.LoginTest"/>
-            <class name="Tests.CallPlanTest"/>
+           <class name="Tests.CallPlanTest"/>
         </classes>
     </test>
 </suite>

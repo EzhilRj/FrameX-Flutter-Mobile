@@ -12,8 +12,11 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.TouchAction;
+import org.apache.commons.lang3.time.StopWatch;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -30,18 +33,22 @@ public class Setup {
     public static AppiumDriverLocalService service;
     public static Logger log = Logger.getLogger(Setup.class);
 
-    public static long startTime;
-    public static long endTime;
+   public static String devicemodel;
+    public static StopWatch stopWatch = new StopWatch();
+
 
     @BeforeSuite
     public static void StartApp() throws IOException {
 
         try {
             PropertyConfigurator.configure(LogConfiguration);
-            startTime  = System.currentTimeMillis();
-            service = new AppiumServiceBuilder().withAppiumJS(new File(ServerPath)).withIPAddress("127.0.0.1").usingPort(4723).build();
+            service = new AppiumServiceBuilder()
+                    .withAppiumJS(new File(ServerPath))
+                    .withIPAddress("127.0.0.1").usingPort(4723)
+                    .build();
             service.start();
             log.info("-----Appium Service started -----");
+
             UiAutomator2Options options =  new UiAutomator2Options();
             options.setDeviceName(Devicename);
             log.info("Devicename : "+Devicename);
@@ -49,6 +56,8 @@ public class Setup {
             log.info("AppName : "+Apppath);
             options.setCapability("autoGrantPermissions", true);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
+            log.info("DeviceModel : "+devicemodel);
             log.info("-----Application is started -----");
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (IOException e) {
@@ -62,14 +71,16 @@ public class Setup {
     @AfterSuite(enabled = true)
     public static  void TearApp(){
 
-        endTime = System.currentTimeMillis();
-        long totalTime = endTime - startTime;
-        double totalTimeSeconds = totalTime / 1000.0;
         driver.quit();
         log.info("-----Application is Closed -----");
         service.stop();
         log.info("-----Appium Service Stoped -----");
 
 
+    }
+
+
+    public static String getCurrentMethodName() {
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
 }
