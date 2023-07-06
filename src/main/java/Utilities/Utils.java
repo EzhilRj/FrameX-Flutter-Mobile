@@ -8,26 +8,19 @@ import java.text.MessageFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import com.aventstack.extentreports.Status;
 import io.appium.java_client.AppiumBy;
 
-import static Base.Setup.driver;
-import static Base.Setup.stopWatch;
+import static Base.Setup.*;
 import static Modules.CallPlan_Module.fieldName;
 import static UiObjects.CallPlan_Objects.*;
+import static Utilities.Actions.WebdriverWait;
 import static Utilities.Actions.click;
 import static Utilities.Constants.EnumFieldquery;
 import static Utilities.DBConfig.GetDatas;
+import static Utilities.Listeners.test;
 
 public class Utils {
-
-    public static void scrollto(String txt) {
-
-        try {
-            driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + txt + "\"));"));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
     public static String Datasetter(String type, String facingtype) {
 
@@ -37,7 +30,7 @@ public class Utils {
             } else if (facingtype.equalsIgnoreCase("Our Brand Facing *")) {
                 return Randomint().get(0).toString();
             }
-            return Randomint().toString();
+            return Randomint().get(0).toString();
         } else if (type.contains("Varchar")) {
             return generateRandomString();
         }
@@ -77,6 +70,7 @@ public class Utils {
             int randomIndex = random.nextInt(DICTIONARY.length);
             String randomWord = DICTIONARY[randomIndex];
             randomString.append(randomWord).append(" ");
+
         }
 
         return randomString.toString().trim();
@@ -86,6 +80,7 @@ public class Utils {
     public static void Dropdownsetter() throws Exception {
 
         List<String> dropList = GetDatas(MessageFormat.format(EnumFieldquery, "'" + fieldName.replace(" *", "") + "'"), "FieldOption");
+        log.info("Dropdown Query"+EnumFieldquery);
         Collections.shuffle(dropList);
         int size = dropList.size();
         Random random = new Random();
@@ -95,7 +90,10 @@ public class Utils {
                 break;
             }
             click("ACCESSIBILITYID", fieldName);
+            log.info("Dropdown field is Cliked");
             click("ACCESSIBILITYID", drop);
+            log.info("Fieldname is "+fieldName+"Data is  "+ drop);
+            test.info("<span style=\"color: Blue; font-weight: bold;\">FieldName is : </span><span style=\"color: Black;\">" + fieldName + "</span>"+"   |  "+"<span style=\"color: Blue; font-weight: bold;\">Data is  : </span><span style=\"color: Black;\">" + drop + "</span>");
             break;
 
 
@@ -105,8 +103,12 @@ public class Utils {
     public static void ImageCapture() throws InterruptedException {
 
         click("Xpath", Camerabutton);
-        Thread.sleep(1000);
+        log.info("Camera is Cliked");
+        test.log(Status.INFO,"Camera is Clicked");
+       WebdriverWait("Xpath", Shutterbutton,4);
         click("Xpath", Shutterbutton);
+        log.info("Shutterbutton is Cliked");
+        test.info("Shutterbutton is Clicked  | "+" Image is Captured");
         Thread.sleep(3000);
 
     }
@@ -132,16 +134,6 @@ public class Utils {
         }
 
         return null;
-    }
-
-    public static String calculateDuration() {
-
-        stopWatch.stop();
-        String tosec = String.valueOf(stopWatch.getTime(TimeUnit.SECONDS));
-        stopWatch.reset();
-        stopWatch.start();
-
-        return tosec;
     }
 
 }

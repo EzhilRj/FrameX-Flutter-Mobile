@@ -2,6 +2,9 @@ package Modules;
 
 import Base.Setup;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -15,7 +18,6 @@ import static UiObjects.CallPlan_Objects.clear;
 import static UiObjects.Login_PageObjects.*;
 import static Utilities.Actions.*;
 import static Utilities.Listeners.test;
-import static Utilities.Utils.calculateDuration;
 import static Utilities.XLUtils.getJsonData;
 
 public class Login_Module extends Setup {
@@ -33,7 +35,10 @@ public class Login_Module extends Setup {
             driver.hideKeyboard();
             Enter("XPATH", Mobiileno, Mobileno);
             log.info("Mobileno is Entered: " + Mobileno);
-            test.log(Status.INFO, "USERNAME: " + Username + " | PASSWORD: " + Password + " | PROJECT: " + project + " | MOBILE NO: " + Mobileno);
+            test.info( "<span style=\"color: Blue; font-weight: bold;\">USERNAME : </span><span style=\"color: Black;\">" + Username + "</span>"
+                    +"  |  "+"<span style=\"color: Blue; font-weight: bold;\">PASSWORD : </span><span style=\"color: Black;\">" + Password + "</span>"
+                    +"   |  "+"<span style=\"color: Blue; font-weight: bold;\">PROJECT : </span><span style=\"color: Black;\">" + project + "</span>"
+                    +"  |  "+"<span style=\"color: Blue; font-weight: bold;\">MOBILE NO : </span><span style=\"color: Black;\">" + Mobileno + "</span>");
             click("ACCESSIBILITYID", LoginButton);
             log.info("Login button is Clicked");
             driver.openNotifications();
@@ -48,11 +53,13 @@ public class Login_Module extends Setup {
             return loginsts;
         } catch (Exception e) {
             log.error("An exception occurred during login: " + e.getMessage());
+            test.error(MarkupHelper.createLabel(" An exception occurred during login: <b>" +  e.getMessage() + "</b>", ExtentColor.RED));
             throw e;
         } finally {
-            String dur = calculateDuration();
-            log.info("Time taken for Login: " + dur+ " Seconds");
-            test.log(Status.INFO, "Time taken for Login: " + dur + " Seconds");
+            stopWatch.stop();
+            log.info("Time taken for Login: " + String.valueOf(stopWatch.getTime(TimeUnit.SECONDS))+ " Seconds");
+            test.info(MarkupHelper.createLabel("  Time taken for Login :  <b>" +  String.valueOf(stopWatch.getTime(TimeUnit.SECONDS)) + " Seconds"+ "</b>", ExtentColor.ORANGE));
+            stopWatch.reset();
         }
     }
 

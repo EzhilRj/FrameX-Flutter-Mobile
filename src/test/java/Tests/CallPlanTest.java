@@ -9,13 +9,13 @@ import static Utilities.DBConfig.Db;
 
 public class CallPlanTest extends Setup {
 
-    @Test(retryAnalyzer = Utilities.RetryAnalyser.class)
+    @Test(dependsOnMethods = "TC_001_VerifyLogin", retryAnalyzer = Utilities.RetryAnalyser.class)
     public static void TC_002_VerifyCallPlan() throws Exception {
-
         CallPlan();
     }
 
-    @Test
+
+    @Test(dependsOnMethods = "TC_002_VerifyCallPlan", retryAnalyzer = Utilities.RetryAnalyser.class)
     public static void TC_003_VerifyCategoryLists() throws Exception {
 
         DataBinder();

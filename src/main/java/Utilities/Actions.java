@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.time.Duration;
 
 import static Base.Setup.driver;
-import static UiObjects.CallPlan_Objects.notification;
 import static Utilities.Constants.Screenshotpath;
 
 public class Actions {
@@ -183,18 +182,21 @@ public class Actions {
         return driver.getPageSource().contains(value);
     }
 
-    public static void Scroll(String action) throws InterruptedException {
+    public static boolean Scroll(String action) throws InterruptedException {
         Thread.sleep(1000);
         try {
-            if (action == "up") {
+            if (action.equalsIgnoreCase("up") ) {
                 driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(100000)"));
+                return true;
             }else{
                 driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(100000)"));
+                return true;
             }
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+        return false;
     }
 
 

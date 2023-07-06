@@ -45,8 +45,7 @@ public class Listeners implements ITestListener {
 
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Device", devicemodel);
-        extent.setSystemInfo("Environment", "QA");
+        extent.setSystemInfo("Device", devicemodel);        extent.setSystemInfo("Environment", "QA");
         extent.setSystemInfo("User", System.getProperty("user.name"));
     }
 
