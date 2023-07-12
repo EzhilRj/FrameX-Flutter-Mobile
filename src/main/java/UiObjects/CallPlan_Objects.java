@@ -7,7 +7,7 @@ import static Utilities.DBConfig.GetDataObject;
 public class CallPlan_Objects {
 
 	public static String sync = "Sync";
-	public static String tid = "10536";
+	public static String tid = "10539";
 	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+tid+"')]";
 	public static String notification = "//*[@text='Target "+tid+" downloaded successfully.']";
 	public static String clear = "//android.widget.TextView[@content-desc='Clear,Button']";

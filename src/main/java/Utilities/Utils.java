@@ -1,15 +1,15 @@
 package Utilities;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.sql.Timestamp;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 import com.aventstack.extentreports.Status;
-import io.appium.java_client.AppiumBy;
+import io.appium.java_client.screenrecording.CanRecordScreen;
+import org.apache.commons.codec.binary.Base64;
 
 import static Base.Setup.*;
 import static Modules.CallPlan_Module.fieldName;
@@ -17,8 +17,10 @@ import static UiObjects.CallPlan_Objects.*;
 import static Utilities.Actions.WebdriverWait;
 import static Utilities.Actions.click;
 import static Utilities.Constants.EnumFieldquery;
+import static Utilities.Constants.ScreenRecpath;
 import static Utilities.DBConfig.GetDatas;
 import static Utilities.Listeners.test;
+import static Utilities.Listeners.timestamp;
 
 public class Utils {
 
@@ -105,7 +107,7 @@ public class Utils {
         click("Xpath", Camerabutton);
         log.info("Camera is Cliked");
         test.log(Status.INFO,"Camera is Clicked");
-       WebdriverWait("Xpath", Shutterbutton,4);
+        WebdriverWait("Xpath", Shutterbutton,4);
         click("Xpath", Shutterbutton);
         log.info("Shutterbutton is Cliked");
         test.info("Shutterbutton is Clicked  | "+" Image is Captured");
@@ -136,5 +138,41 @@ public class Utils {
         return null;
     }
 
+
+    public static String getCurrentMethodName() {
+        return Thread.currentThread().getStackTrace()[2].getMethodName();
+    }
+
+
+
+    public static void startRecording()
+    {
+        ((CanRecordScreen)driver).startRecordingScreen();
+    }
+
+
+    public static void stopRecording() throws IOException {
+
+        String media = ((CanRecordScreen) driver).stopRecordingScreen();
+        File videoDir = new File(ScreenRecpath);
+
+        FileOutputStream stream = null;
+        try {
+            stream = new FileOutputStream(videoDir + File.separator + timestamp+ ".mp4");
+            stream.write(Base64.decodeBase64(media));
+            stream.close();
+
+        } catch (Exception e) {
+
+        } finally {
+            if(stream != null) {
+                stream.close();
+            }
+        }
+    }
 }
+
+
+
+
 

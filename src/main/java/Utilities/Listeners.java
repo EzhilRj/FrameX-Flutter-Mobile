@@ -22,7 +22,7 @@ import java.util.Date;
 
 import static Base.Setup.devicemodel;
 import static Base.Setup.driver;
-import static Utilities.Constants.Devicename;
+
 
 public class Listeners implements ITestListener {
 
@@ -30,13 +30,13 @@ public class Listeners implements ITestListener {
 
     public static ExtentTest test;
     private ExtentHtmlReporter htmlReporter;
-    private  String timestamp;
+   public static  String timestamp;
     private String reportName;
 
     @Override
     public void onStart(ITestContext context) {
         timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-        reportName = "FrameX Mobile Automation Report" + timestamp + ".html";
+        reportName = "FrameX Mobile Automation Report " + timestamp + ".html";
 
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/src/main/resources/Reports/" + reportName);
         htmlReporter.config().setDocumentTitle("FrameX Mobile Test Report");
@@ -74,7 +74,6 @@ public class Listeners implements ITestListener {
         } catch (Exception e) {
             test.fail("Failed to capture screenshot: " + e.getMessage());
         }
-
     }
 
     @Override
@@ -85,6 +84,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+
         extent.flush();
         String pathOfExtentReport = System.getProperty("user.dir")+"\\src\\main\\resources\\Reports\\"+reportName;
         File extentReport = new File(pathOfExtentReport);

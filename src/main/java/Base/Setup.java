@@ -1,23 +1,29 @@
 package Base;
 
-import static Utilities.Constants.Apppath;
-import static Utilities.Constants.Devicename;
-import static Utilities.Constants.LogConfiguration;
-import static Utilities.Constants.ServerPath;
+import static Utilities.Constants.*;
 import static Utilities.Listeners.test;
+import static Utilities.Listeners.timestamp;
+import static Utilities.Utils.startRecording;
+import static Utilities.Utils.stopRecording;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.screenrecording.CanRecordScreen;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.Status;
@@ -26,6 +32,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.testng.annotations.BeforeTest;
 
 public class Setup {
 
@@ -59,6 +66,7 @@ public class Setup {
              devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             log.info("DeviceModel : "+devicemodel);
             log.info("-----Application is started -----");
+            startRecording();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (IOException e) {
             test.log(Status.ERROR,e.getMessage());
@@ -69,8 +77,9 @@ public class Setup {
     }
 
     @AfterSuite(enabled = true)
-    public static  void TearApp(){
+    public static  void TearApp() throws IOException {
 
+        stopRecording();
         driver.quit();
         log.info("-----Application is Closed -----");
         service.stop();
@@ -79,8 +88,4 @@ public class Setup {
 
     }
 
-
-    public static String getCurrentMethodName() {
-        return Thread.currentThread().getStackTrace()[2].getMethodName();
-    }
 }

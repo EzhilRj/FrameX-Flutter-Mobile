@@ -7,7 +7,11 @@
     <test name="FramexFunctional Test">
         <classes>
             <class name="Tests.LoginTest"/>
-           <class name="Tests.CallPlanTest"/>
+           <class name="Tests.CallPlanTest">
+          <!--  <methods>
+                <include name="TC_002_VerifyCallPlan" />
+            </methods>-->
+        </class>
         </classes>
     </test>
 </suite>

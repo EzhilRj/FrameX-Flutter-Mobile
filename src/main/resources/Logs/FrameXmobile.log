@@ -1,0 +1,124 @@
+2023-07-12 13:31:58,305 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-07-12 13:31:58,389 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-07-12 13:31:58,389 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameXMobile_V1.0\src\main\resources\Apps\FrameFlutterTest.apk
+2023-07-12 13:32:19,220 [main] INFO  Base.Setup  - DeviceModel : SM-M336BU
+2023-07-12 13:32:19,220 [main] INFO  Base.Setup  - -----Application is started -----
+2023-07-12 13:32:23,276 [main] INFO  Base.Setup  - Username is Entered: akamali
+2023-07-12 13:32:25,138 [main] INFO  Base.Setup  - Password is Entered: akamali
+2023-07-12 13:32:26,764 [main] INFO  Base.Setup  - Project is Entered: framedemo_d1
+2023-07-12 13:32:29,855 [main] INFO  Base.Setup  - Mobileno is Entered: 8248606917
+2023-07-12 13:32:32,237 [main] INFO  Base.Setup  - Login button is Clicked
+2023-07-12 13:32:34,915 [main] INFO  Base.Setup  - Time taken for Login: 14 Seconds
+2023-07-12 13:32:34,953 [main] INFO  Base.Setup  - --------------------------CallPlan is started--------------------------------------
+2023-07-12 13:32:35,698 [main] INFO  Base.Setup  - Notification is Open
+2023-07-12 13:32:38,288 [main] INFO  Base.Setup  - 10539 Downloaded successfully
+2023-07-12 13:32:38,293 [main] INFO  Base.Setup  - Time taken for Download call: 3 Seconds
+2023-07-12 13:32:41,805 [main] INFO  Base.Setup  - Callplan is clicked
+2023-07-12 13:32:44,704 [main] INFO  Base.Setup  - Targetid is clicked
+2023-07-12 13:32:50,410 [main] INFO  Base.Setup  - Startworkbutton is clicked
+2023-07-12 13:32:50,490 [main] INFO  Base.Setup  - Data is Not downloaded Please wait
+2023-07-12 13:32:53,700 [main] INFO  Base.Setup  - Callplan is clicked
+2023-07-12 13:32:57,618 [main] INFO  Base.Setup  - Targetid is clicked
+2023-07-12 13:32:59,379 [main] INFO  Base.Setup  - Startworkbutton is clicked
+2023-07-12 13:33:02,545 [main] INFO  Base.Setup  - Time required to download the Target data : 12 Seconds
+2023-07-12 13:33:02,546 [main] INFO  Base.Setup  - Categorylist Page is showing
+2023-07-12 13:33:02,549 [main] INFO  Base.Setup  - --------------------------DataBinder is started--------------------------------------
+2023-07-12 13:33:03,614 [main] INFO  Base.Setup  - Category Query -------->select Name  from Categorymaster where status = 1 
+2023-07-12 13:33:03,732 [main] INFO  Base.Setup  - Category Name : 100 JUICE 1 LTR
+2023-07-12 13:33:18,274 [main] INFO  Base.Setup  - Time taken to display the form page after selecting a category : 13 Seconds
+2023-07-12 13:33:18,529 [main] INFO  Base.Setup  - FormMasterQuery------>select  Replace(Name,'_',' ') as FormName,IsQuestionForm from FormMaster where FormStatus = 1 order by FormSequence
+2023-07-12 13:33:18,684 [main] INFO  Base.Setup  - Form Name is : Stk Availability
+2023-07-12 13:33:18,818 [main] INFO  Base.Setup  - Stk Availability is Clicked
+2023-07-12 13:33:19,019 [main] INFO  Base.Setup  - Product Column query : select FieldName as ProductColumn  from FormFieldDetail ffd 
+join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} 
+2023-07-12 13:33:19,192 [main] INFO  Base.Setup  - Product Query : select {3} as ProductName from {0}master sm join {0}Relation sr on sr.{0}ID = sm.{0}ID 
+join CategoryMaster cm on cm.CategoryID = sm.CategoryID where TargetID = {1} and name = {2}
+2023-07-12 13:33:20,282 [main] INFO  Base.Setup  - Product Name is : Real Activ Mixed Fruit 1 Ltr
+2023-07-12 13:33:21,229 [main] INFO  Base.Setup  - Fieldname is Quantity *    |   Data is  0
+2023-07-12 13:33:41,370 [main] INFO  Base.Setup  - Test Data is Entered
+2023-07-12 13:33:41,819 [main] INFO  Base.Setup  - Dropdown Queryselect ffo.FormFieldOption as FieldOption from FormFieldOption ffo join FormFieldDetail ffd on ffd.FormFieldID = ffo.FormFieldID where Replace(FieldName,''_'','' '') ={0}
+2023-07-12 13:33:42,682 [main] INFO  Base.Setup  - Dropdown field is Cliked
+2023-07-12 13:33:42,782 [main] INFO  Base.Setup  - Fieldname is Reason OSA Less than MBQ *Data is  Store Planogram
+2023-07-12 13:33:43,934 [main] INFO  Base.Setup  - Fieldname is Receipt *    |   Data is  7
+2023-07-12 14:28:32,726 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-07-12 14:28:32,765 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-07-12 14:28:32,766 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameXMobile_V1.0\src\main\resources\Apps\FrameFlutterTest.apk
+2023-07-12 14:28:49,562 [main] INFO  Base.Setup  - DeviceModel : SM-M336BU
+2023-07-12 14:28:49,562 [main] INFO  Base.Setup  - -----Application is started -----
+2023-07-12 14:28:52,757 [main] INFO  Base.Setup  - Username is Entered: akamali
+2023-07-12 14:28:54,623 [main] INFO  Base.Setup  - Password is Entered: akamali
+2023-07-12 14:28:56,268 [main] INFO  Base.Setup  - Project is Entered: framedemo_d1
+2023-07-12 14:28:59,630 [main] INFO  Base.Setup  - Mobileno is Entered: 8248606917
+2023-07-12 14:29:00,347 [main] INFO  Base.Setup  - Login button is Clicked
+2023-07-12 14:29:05,154 [main] INFO  Base.Setup  - Time taken for Login: 14 Seconds
+2023-07-12 14:29:05,212 [main] INFO  Base.Setup  - --------------------------CallPlan is started--------------------------------------
+2023-07-12 14:29:05,232 [main] INFO  Base.Setup  - Notification is Open
+2023-07-12 14:29:08,956 [main] INFO  Base.Setup  - 10539 Downloaded successfully
+2023-07-12 14:29:08,957 [main] INFO  Base.Setup  - Time taken for Download call: 3 Seconds
+2023-07-12 14:29:10,837 [main] INFO  Base.Setup  - Callplan is clicked
+2023-07-12 14:29:10,973 [main] INFO  Base.Setup  - Targetid is clicked
+2023-07-12 14:29:14,033 [main] INFO  Base.Setup  - Startworkbutton is clicked
+2023-07-12 14:29:14,079 [main] INFO  Base.Setup  - Data is Not downloaded Please wait
+2023-07-12 14:29:17,489 [main] INFO  Base.Setup  - Callplan is clicked
+2023-07-12 14:29:19,774 [main] INFO  Base.Setup  - Targetid is clicked
+2023-07-12 14:29:21,947 [main] INFO  Base.Setup  - Startworkbutton is clicked
+2023-07-12 14:29:23,398 [main] INFO  Base.Setup  - Time required to download the Target data : 9 Seconds
+2023-07-12 14:29:23,399 [main] INFO  Base.Setup  - Categorylist Page is showing
+2023-07-12 14:29:23,401 [main] INFO  Base.Setup  - --------------------------DataBinder is started--------------------------------------
+2023-07-12 14:29:23,889 [main] INFO  Base.Setup  - Category Query -------->select Name  from Categorymaster where status = 1 
+2023-07-12 14:29:23,962 [main] INFO  Base.Setup  - Category Name : 100 JUICE 1 LTR
+2023-07-12 14:29:30,614 [main] INFO  Base.Setup  - Time taken to display the form page after selecting a category : 4 Seconds
+2023-07-12 14:29:30,766 [main] INFO  Base.Setup  - FormMasterQuery------>select  Replace(Name,'_',' ') as FormName,IsQuestionForm from FormMaster where FormStatus = 1 order by FormSequence
+2023-07-12 14:29:30,881 [main] INFO  Base.Setup  - Form Name is : Stk Availability
+2023-07-12 14:29:30,976 [main] INFO  Base.Setup  - Stk Availability is Clicked
+2023-07-12 14:29:31,116 [main] INFO  Base.Setup  - Product Column query : select FieldName as ProductColumn  from FormFieldDetail ffd 
+join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} 
+2023-07-12 14:29:31,282 [main] INFO  Base.Setup  - Product Query : select {3} as ProductName from {0}master sm join {0}Relation sr on sr.{0}ID = sm.{0}ID 
+join CategoryMaster cm on cm.CategoryID = sm.CategoryID where TargetID = {1} and name = {2}
+2023-07-12 14:29:35,853 [main] INFO  Base.Setup  - Next Button is cliked
+2023-07-12 14:29:35,961 [main] INFO  Base.Setup  - Form Name is : SOS
+2023-07-12 14:29:36,049 [main] INFO  Base.Setup  - SOS is Clicked
+2023-07-12 14:29:36,228 [main] INFO  Base.Setup  - Product Column query : select FieldName as ProductColumn  from FormFieldDetail ffd 
+join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} 
+2023-07-12 14:29:36,411 [main] INFO  Base.Setup  - Product Query : select {3} as ProductName from {0}master sm join {0}Relation sr on sr.{0}ID = sm.{0}ID 
+join CategoryMaster cm on cm.CategoryID = sm.CategoryID where TargetID = {1} and name = {2}
+2023-07-12 14:29:39,773 [main] INFO  Base.Setup  - Next Button is cliked
+2023-07-12 14:29:40,442 [main] INFO  Base.Setup  - Form Name is : Picture
+2023-07-12 14:29:40,548 [main] INFO  Base.Setup  - Picture is Clicked
+2023-07-12 14:29:40,710 [main] INFO  Base.Setup  - Product Column query : select FieldName as ProductColumn  from FormFieldDetail ffd 
+join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} 
+2023-07-12 14:29:40,910 [main] INFO  Base.Setup  - Product Query : select {3} as ProductName from {0}master sm join {0}Relation sr on sr.{0}ID = sm.{0}ID 
+join CategoryMaster cm on cm.CategoryID = sm.CategoryID where TargetID = {1} and name = {2}
+2023-07-12 14:29:44,443 [main] INFO  Base.Setup  - Next Button is cliked
+2023-07-12 14:29:44,603 [main] INFO  Base.Setup  - Form Name is : Brand Facings
+2023-07-12 14:29:44,675 [main] INFO  Base.Setup  - Brand Facings is Clicked
+2023-07-12 14:29:44,923 [main] INFO  Base.Setup  - Product Column query : select FieldName as ProductColumn  from FormFieldDetail ffd 
+join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = 1 and  fm.Name  = {0} 
+2023-07-12 14:29:45,077 [main] INFO  Base.Setup  - Product Query : select {3} as ProductName from {0}master sm join {0}Relation sr on sr.{0}ID = sm.{0}ID 
+join CategoryMaster cm on cm.CategoryID = sm.CategoryID where TargetID = {1} and name = {2}
+2023-07-12 14:29:47,343 [main] INFO  Base.Setup  - Next Button is cliked
+2023-07-12 14:30:34,033 [main] INFO  Base.Setup  - -----Appium Service started -----
+2023-07-12 14:30:34,119 [main] INFO  Base.Setup  - Devicename : RZCW11LRAZN
+2023-07-12 14:30:34,120 [main] INFO  Base.Setup  - AppName : E:\Automation Workspace\FrameXMobile_V1.0\src\main\resources\Apps\FrameFlutterTest.apk
+2023-07-12 14:30:57,453 [main] INFO  Base.Setup  - DeviceModel : SM-M336BU
+2023-07-12 14:30:57,453 [main] INFO  Base.Setup  - -----Application is started -----
+2023-07-12 14:31:01,240 [main] INFO  Base.Setup  - Username is Entered: akamali
+2023-07-12 14:31:03,052 [main] INFO  Base.Setup  - Password is Entered: akamali
+2023-07-12 14:31:04,700 [main] INFO  Base.Setup  - Project is Entered: framedemo_d1
+2023-07-12 14:31:07,532 [main] INFO  Base.Setup  - Mobileno is Entered: 8248606917
+2023-07-12 14:31:08,122 [main] INFO  Base.Setup  - Login button is Clicked
+2023-07-12 14:31:16,316 [main] INFO  Base.Setup  - Time taken for Login: 17 Seconds
+2023-07-12 14:31:16,349 [main] INFO  Base.Setup  - --------------------------CallPlan is started--------------------------------------
+2023-07-12 14:31:16,379 [main] INFO  Base.Setup  - Notification is Open
+2023-07-12 14:31:56,678 [main] ERROR Base.Setup  - An exception occurred: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [05fa65c7-8fb6-469a-bb62-44b6a59ef1c3, findElement {using=xpath, value=//*[@text='Target 10539 downloaded successfully.']}]
+Capabilities {appium:app: E:\Automation Workspace\Fra..., appium:appPackage: com.fieldlytics.framex, appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: E:\Automation Workspace\Fra..., autoGrantPermissions: true, automationName: UIAutomator2, deviceName: RZCW11LRAZN, platformName: android}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M336BU, appium:deviceName: RZCW11LRAZN, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: RZCW11LRAZN, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 63, appium:takesScreenshot: true, appium:viewportRect: {height: 2240, left: 0, top: 63, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 05fa65c7-8fb6-469a-bb62-44b6a59ef1c3
+2023-07-12 14:31:56,969 [main] INFO  Base.Setup  - --------------------------DataBinder is started--------------------------------------
+2023-07-12 14:31:57,907 [main] INFO  Base.Setup  - Category Query -------->select Name  from Categorymaster where status = 1 
+2023-07-12 14:32:10,858 [main] INFO  Base.Setup  - Page is Scroll
+2023-07-12 14:32:12,917 [main] INFO  Base.Setup  - Page is Scroll

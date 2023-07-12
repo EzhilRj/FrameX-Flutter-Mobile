@@ -53,12 +53,12 @@ public class Login_Module extends Setup {
             return loginsts;
         } catch (Exception e) {
             log.error("An exception occurred during login: " + e.getMessage());
-            test.error(MarkupHelper.createLabel(" An exception occurred during login: <b>" +  e.getMessage() + "</b>", ExtentColor.RED));
+            test.error( "<span style=\"color: Black; font-weight: bold;\">An exception occurred during login : </span><span style=\"color: Red;\">" +  e.getMessage() + "</span>");
             throw e;
         } finally {
             stopWatch.stop();
             log.info("Time taken for Login: " + String.valueOf(stopWatch.getTime(TimeUnit.SECONDS))+ " Seconds");
-            test.info(MarkupHelper.createLabel("  Time taken for Login :  <b>" +  String.valueOf(stopWatch.getTime(TimeUnit.SECONDS)) + " Seconds"+ "</b>", ExtentColor.ORANGE));
+            test.info( "<span style=\"color: Blue; font-weight: bold;\"> Time taken for Login : </span><span style=\"color: DodgerBlue;\">"+String.valueOf(stopWatch.getTime(TimeUnit.SECONDS)) + " Seconds"+ "</span>");
             stopWatch.reset();
         }
     }
