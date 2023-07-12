@@ -3,8 +3,6 @@ package Base;
 import static Utilities.Constants.*;
 import static Utilities.Listeners.test;
 import static Utilities.Listeners.timestamp;
-import static Utilities.Utils.startRecording;
-import static Utilities.Utils.stopRecording;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -66,7 +64,6 @@ public class Setup {
              devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             log.info("DeviceModel : "+devicemodel);
             log.info("-----Application is started -----");
-            startRecording();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (IOException e) {
             test.log(Status.ERROR,e.getMessage());
@@ -78,8 +75,6 @@ public class Setup {
 
     @AfterSuite(enabled = true)
     public static  void TearApp() throws IOException {
-
-        stopRecording();
         driver.quit();
         log.info("-----Application is Closed -----");
         service.stop();

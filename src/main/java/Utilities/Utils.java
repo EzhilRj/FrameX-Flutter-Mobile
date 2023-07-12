@@ -143,33 +143,6 @@ public class Utils {
         return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
 
-
-
-    public static void startRecording()
-    {
-        ((CanRecordScreen)driver).startRecordingScreen();
-    }
-
-
-    public static void stopRecording() throws IOException {
-
-        String media = ((CanRecordScreen) driver).stopRecordingScreen();
-        File videoDir = new File(ScreenRecpath);
-
-        FileOutputStream stream = null;
-        try {
-            stream = new FileOutputStream(videoDir + File.separator + timestamp+ ".mp4");
-            stream.write(Base64.decodeBase64(media));
-            stream.close();
-
-        } catch (Exception e) {
-
-        } finally {
-            if(stream != null) {
-                stream.close();
-            }
-        }
-    }
 }
 
 

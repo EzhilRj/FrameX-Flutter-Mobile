@@ -19,7 +19,6 @@ public class Constants {
     public static final String Dbpassword = "Fieldlytics@#@2020";
     public static final String classname = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
-    public static String Loginquery = "select * from Login";
     public static String Categorymasterquery = "select Name  from Categorymaster where status = 1 ";
     public static String FormFieldsquery = "select Replace(fm.Name,''_'','' '') as formName, Replace(ffd.FieldName,''_'','' '') as FieldName,DataType,ControlType,Required from FormFieldDetail ffd \n" +
             "join FormMaster fm on fm.FormID = ffd.FormID where fm.FormStatus = 1 and ffd.ForDEO = 1 and ffd.ForPM = {1} and  fm.Name  = {0} " +

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static UiObjects.CallPlan_Objects.*;
+import static UiObjects.HomePage_Objects.ActivityLog;
 import static UiObjects.HomePage_Objects.Callplan;
 import static Utilities.Actions.*;
 import static Utilities.Constants.*;
@@ -33,8 +34,8 @@ public class CallPlan_Module extends Setup {
             stopWatch.start();
             driver.openNotifications();
             log.info("Notification is Open");
-            WebdriverWait("xpath", notification,15);
-            if (isElementDisplayed("xpath", notification)) {
+            WebdriverWait("xpath", targetdownloadnotification,15);
+            if (isElementDisplayed("xpath", targetdownloadnotification)) {
                 driver.navigate().back();
                 stopWatch.stop();
                 log.info(tid + " Downloaded successfully");
@@ -292,16 +293,22 @@ public class CallPlan_Module extends Setup {
             click("ACCESSIBILITYID", Uploadcallsbutton);
             log.info("Uploadcalls button is clicked");
         }
-        click("ACCESSIBILITYID", Callplan);
-        log.info("Callplan button is clicked");
-        click("Xpath", TargetID);
-        log.info("Targetid id"+tid+" is clicked");
-        if(Source("You have already uploaded"+tid+"target")){
-            log.info("You have already uploaded"+tid+"target is Showing");
-            test.pass(MarkupHelper.createLabel("You have already uploaded"+tid+"target is Showing",ExtentColor.GREEN));
-            return true;
-
+        driver.openNotifications();
+        WebdriverWait("xpath", targetUploadnotification,10);
+        if (isElementDisplayed("xpath", targetUploadnotification)) {
+            driver.navigate().back();
+            click("ACCESSIBILITYID", Callplan);
+            log.info("Callplan button is clicked");
+            click("Xpath", TargetID);
+            log.info("Targetid id"+tid+" is clicked");
+            if(Source("You have already uploaded "+tid+" target")){
+                click("ACCESSIBILITYID", "Ok");
+                log.info("You have already uploaded "+tid+" target is Showing");
+                test.pass(MarkupHelper.createLabel("You have already uploaded"+tid+"target is Showing",ExtentColor.GREEN));
+                return true;
+            }
         }
+
         return false;
     }
 }
