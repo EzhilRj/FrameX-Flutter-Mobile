@@ -13,11 +13,14 @@ public class Constants {
     public static final String Excelpath  = System.getProperty("user.dir") + "\\src\\main\\resources\\Datas\\FrameXMobile_Datas.xlsx";
     public static String LogConfiguration = System.getProperty("user.dir") + "\\Log4j.properties";
 
-    public static final String Databaseurl = "jdbc:sqlserver://65.1.119.118;DatabaseName=framedemo_d1;encrypt=true;trustServerCertificate=true";
+    public static final String LiveDatabaseurl = "jdbc:sqlserver://65.1.119.118;DatabaseName=framedemo_d1;encrypt=true;trustServerCertificate=true";
+    public static final String LiveDbusername = "Field2020";
+    public static final String LiveDbpassword = "Fieldlytics@#@2020";
 
-    public static final String Dbusername = "Field2020";
-    public static final String Dbpassword = "Fieldlytics@#@2020";
-    public static final String classname = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    public static final String LocalDatabaseurl = "jdbc:sqlserver://DESKTOP-OET6KL6\\SQLEXPRESS:1433;DatabaseName=FrameX_Mobile_DB;encrypt=true;trustServerCertificate=true";
+    public static final String LocalDbusername = "sa";
+    public static final String LocalDbpassword = "sa";
+
 
     public static String Categorymasterquery = "select Name  from Categorymaster where status = 1 ";
     public static String FormFieldsquery = "select Replace(fm.Name,''_'','' '') as formName, Replace(ffd.FieldName,''_'','' '') as FieldName,DataType,ControlType,Required from FormFieldDetail ffd \n" +

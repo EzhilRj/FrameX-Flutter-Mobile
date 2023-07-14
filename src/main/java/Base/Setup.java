@@ -1,5 +1,7 @@
 package Base;
 
+import static UiObjects.CallPlan_Objects.clear;
+import static Utilities.Actions.click;
 import static Utilities.Constants.*;
 import static Utilities.Listeners.test;
 import static Utilities.Listeners.timestamp;
@@ -18,6 +20,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
@@ -38,9 +41,11 @@ public class Setup {
     public static AppiumDriverLocalService service;
     public static Logger log = Logger.getLogger(Setup.class);
 
-   public static String devicemodel;
+    public static String devicemodel;
     public static StopWatch stopWatch = new StopWatch();
-
+    public static String nameofCurrMethod = new Throwable()
+            .getStackTrace()[0]
+            .getMethodName();
 
     @BeforeSuite
     public static void StartApp() throws IOException {
@@ -61,9 +66,16 @@ public class Setup {
             log.info("AppName : "+Apppath);
             options.setCapability("autoGrantPermissions", true);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
-             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
+            devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             log.info("DeviceModel : "+devicemodel);
             log.info("-----Application is started -----");
+            driver.openNotifications();
+            boolean clr = driver.findElement(By.xpath(clear)).isEnabled();
+            if(clr){
+                click("xpath", clear);
+            }else{
+                driver.navigate().back();
+            }
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         } catch (IOException e) {
             test.log(Status.ERROR,e.getMessage());

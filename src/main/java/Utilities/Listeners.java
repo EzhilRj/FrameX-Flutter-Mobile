@@ -30,7 +30,7 @@ public class Listeners implements ITestListener {
 
     public static ExtentTest test;
     private ExtentHtmlReporter htmlReporter;
-   public static  String timestamp;
+    public static  String timestamp;
     private String reportName;
 
     @Override

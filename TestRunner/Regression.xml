@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FrameXFlutter V28.0" verbose="3">
+<suite name="Regression" verbose="3">
     <listeners>
         <listener class-name="Utilities.Listeners"></listener>
     </listeners>
-    <test name="FramexFunctional Test">
+    <test name="LOGIN">
         <classes>
             <class name="Tests.LoginTest"/>
-           <class name="Tests.CallPlanTest">
-          <!--  <methods>
-                <include name="TC_002_VerifyCallPlan" />
-            </methods>-->
-        </class>
         </classes>
     </test>
 </suite>

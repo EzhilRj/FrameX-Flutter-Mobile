@@ -7,7 +7,7 @@ import static Utilities.DBConfig.GetDataObject;
 public class CallPlan_Objects {
 
 	public static String sync = "Sync";
-	public static String tid = "13018";
+	public static String tid = "13990";
 	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+tid+"')]";
 	public static String targetdownloadnotification = "//*[@text='Target "+tid+" downloaded successfully.']";
 	public static String targetUploadnotification =  "//*[@text='Uploading process for "+tid+" is Completed']";  ////android.view.View[@content-desc="You have already uploaded 14906 target"]
