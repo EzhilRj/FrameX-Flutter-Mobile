@@ -4,9 +4,7 @@ import Base.Setup;
 import Utilities.Utils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import static Modules.CallPlan_Module.*;
-import static Utilities.DBConfig.Db;
 
 public class CallPlanTest extends Setup {
 

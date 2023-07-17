@@ -22,6 +22,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -40,7 +41,7 @@ public class Setup {
     public static AndroidDriver driver;
     public static AppiumDriverLocalService service;
     public static Logger log = Logger.getLogger(Setup.class);
-
+    public static String testSuiteName;
     public static String devicemodel;
     public static StopWatch stopWatch = new StopWatch();
     public static String nameofCurrMethod = new Throwable()
@@ -48,7 +49,7 @@ public class Setup {
             .getMethodName();
 
     @BeforeSuite
-    public static void StartApp() throws IOException {
+    public static void StartApp(ITestContext context ) throws IOException {
 
         try {
             PropertyConfigurator.configure(LogConfiguration);
@@ -67,6 +68,7 @@ public class Setup {
             options.setCapability("autoGrantPermissions", true);
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
+            testSuiteName = context.getSuite().getName();
             log.info("DeviceModel : "+devicemodel);
             log.info("-----Application is started -----");
             driver.openNotifications();

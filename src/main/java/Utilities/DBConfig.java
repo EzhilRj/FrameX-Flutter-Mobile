@@ -3,8 +3,7 @@ package Utilities;
 import java.sql.*;
 import java.util.*;
 
-import static Base.Setup.log;
-import static Base.Setup.nameofCurrMethod;
+import static Base.Setup.*;
 import static Utilities.Constants.*;
 
 
@@ -68,7 +67,7 @@ public class DBConfig {
     }
 
 
-    public static List<Map<String, String>> Logindata(String Query) throws Exception {
+    public static List<Map<String, String>> TestDatas(String Query) throws Exception {
         Connection con;
 
             con = DriverManager.getConnection(LocalDatabaseurl, LocalDbusername, LocalDbpassword);
@@ -91,6 +90,7 @@ public class DBConfig {
                     String columnValue = result.getString(i);
                     rowData.put(columnName, columnValue);
                 }
+
 
                 dataList.add(rowData);
             }

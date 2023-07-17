@@ -123,19 +123,19 @@ public class Actions {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             switch (AN) {
                 case "ID" -> {
-                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(attributeValue)));
+                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(attributeValue)));
                 }
                 case "XPATH" -> {
-                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(attributeValue)));
+                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(attributeValue)));
                 }
                 case "CLASSNAME" -> {
-                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.className(attributeValue)));
+                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(attributeValue)));
                 }
                 case "CSSSELECTOR" -> {
-                    element = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(attributeValue)));
+                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(attributeValue)));
                 }
                 case "ACCESSIBILITYID"-> {
-                    element = wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId(attributeValue)));
+                    element = wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId(attributeValue)));
                 }
                 default -> System.out.println("Invalid attribute name specified: " + attributeName + attributeValue);
             }
