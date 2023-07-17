@@ -18,7 +18,7 @@ import static Utilities.Actions.WebdriverWait;
 import static Utilities.Actions.click;
 import static Utilities.Constants.EnumFieldquery;
 import static Utilities.Constants.ScreenRecpath;
-import static Utilities.DBConfig.GetDatas;
+import static Utilities.DBConfig.getColumnValues;
 import static Utilities.Listeners.test;
 import static Utilities.Listeners.timestamp;
 
@@ -81,7 +81,7 @@ public class Utils {
 
     public static void Dropdownsetter() throws Exception {
 
-        List<String> dropList = GetDatas(MessageFormat.format(EnumFieldquery, "'" + fieldName.replace(" *", "") + "'"), "FieldOption");
+        List<String> dropList = getColumnValues(MessageFormat.format(EnumFieldquery, "'" + fieldName.replace(" *", "") + "'"), "FieldOption");
         log.info("Dropdown Query"+EnumFieldquery);
         Collections.shuffle(dropList);
         int size = dropList.size();

@@ -2,7 +2,7 @@ package UiObjects;
 
 import java.util.List;
 
-import static Utilities.DBConfig.GetDataObject;
+import static Utilities.DBConfig.getDataObject;
 
 public class CallPlan_Objects {
 
@@ -35,7 +35,7 @@ public class CallPlan_Objects {
 	}
 	public static String DataTypeGetter(String form) throws Exception {
 
-		List<Object> fieldnames = GetDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = '"+form+"'");
+		List<Object> fieldnames = getDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = '"+form+"'");
 
 		return fieldnames.toString();
 	}

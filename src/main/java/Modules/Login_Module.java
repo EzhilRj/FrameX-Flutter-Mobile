@@ -24,7 +24,6 @@ import static UiObjects.Login_PageObjects.*;
 import static Utilities.Actions.*;
 import static Utilities.DBConfig.*;
 import static Utilities.Listeners.test;
-import static Utilities.XLUtils.getJsonData;
 
 public class Login_Module extends Setup {
 

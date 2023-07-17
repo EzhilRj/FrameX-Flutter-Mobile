@@ -16,8 +16,7 @@ import static UiObjects.HomePage_Objects.ActivityLog;
 import static UiObjects.HomePage_Objects.Callplan;
 import static Utilities.Actions.*;
 import static Utilities.Constants.*;
-import static Utilities.DBConfig.GetDataObject;
-import static Utilities.DBConfig.GetDatas;
+import static Utilities.DBConfig.*;
 import static Utilities.Listeners.test;
 import static Utilities.Utils.*;
 
@@ -90,7 +89,7 @@ public class CallPlan_Module extends Setup {
 
         boolean isExecutionSuccessful = true;
 
-        List<String> categoryNames = GetDatas(Categorymasterquery, "Name");
+        List<String> categoryNames = getColumnValues(Categorymasterquery, "Name");
         log.info("Category Query -------->" + Categorymasterquery);
 
         for (String category : categoryNames) {
@@ -119,7 +118,7 @@ public class CallPlan_Module extends Setup {
                 test.info( "<span style=\"color: Blue; font-weight: bold;\"> Time taken to display the form page after selecting a category : </span><span style=\"color: DodgerBlue;\">"+String.valueOf(stopWatch.getTime(TimeUnit.SECONDS)) + " Seconds"+ "</span>");
                 stopWatch.reset();
                 // Getting Formnames
-                List<Object> formDatas = GetDataObject(FormMasterquery);
+                List<Object> formDatas = getDataObject(FormMasterquery);
                 log.info("FormMasterQuery------>"+FormMasterquery);
                 formDatas.stream().filter(formData -> formData instanceof LinkedHashMap<?, ?>).map(formData -> (LinkedHashMap<?, ?>) formData).forEach(formData -> {
                     String formName = (String) formData.get("FormName");
@@ -138,7 +137,7 @@ public class CallPlan_Module extends Setup {
             if (Source(category)) {
                 click("Xpath", SetCategoryAttribute(category));
                 log.info("Category is clicked");
-                List<Object> formDatas = GetDataObject(FormMasterquery);
+                List<Object> formDatas = getDataObject(FormMasterquery);
                 formDatas.stream().filter(formData -> formData instanceof LinkedHashMap<?, ?>).map(formData -> (LinkedHashMap<?, ?>) formData).forEach(formData -> {
                     String formName = (String) formData.get("FormName");
                     String isQuestionForm = (String) formData.get("IsQuestionForm");
@@ -164,11 +163,11 @@ public class CallPlan_Module extends Setup {
             click("ACCESSIBILITYID", form);
             log.info(form+" is Clicked");
             String formName = form.replace(" ", "_");
-            String productColumn = GetDatas(MessageFormat.format(ProductColumnquery, "'" + formName + "'"), "ProductColumn").get(0);
+            String productColumn = getColumnValues(MessageFormat.format(ProductColumnquery, "'" + formName + "'"), "ProductColumn").get(0);
             log.info("Product Column query : " + ProductColumnquery);
 
             // Get Product Column List
-            List<String> productNames = GetDatas(MessageFormat.format(Productquery, formName, tid, "'" + category + "'", productColumn), "ProductName");
+            List<String> productNames = getColumnValues(MessageFormat.format(Productquery, formName, tid, "'" + category + "'", productColumn), "ProductName");
             log.info("Product Query : "+Productquery);
             productNames.forEach(productName -> {
                 try {
@@ -209,7 +208,7 @@ public class CallPlan_Module extends Setup {
 
     private static boolean enterFieldData(String formName, String IsQuestionForm) throws Exception {
         boolean isfielddataExecutionSuccessful = true;
-        List<Object> fieldNames = GetDataObject(MessageFormat.format(FormFieldsquery, "'" + formName + "'", IsQuestionForm));
+        List<Object> fieldNames = getDataObject(MessageFormat.format(FormFieldsquery, "'" + formName + "'", IsQuestionForm));
 
         for (Object field : fieldNames) {
             if (field instanceof LinkedHashMap<?, ?> fieldData) {

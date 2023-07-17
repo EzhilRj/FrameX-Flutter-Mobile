@@ -20,8 +20,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static Base.Setup.devicemodel;
-import static Base.Setup.driver;
+import static Base.Setup.*;
 
 
 public class Listeners implements ITestListener {
@@ -40,7 +39,7 @@ public class Listeners implements ITestListener {
 
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/src/main/resources/Reports/" + reportName);
         htmlReporter.config().setDocumentTitle("FrameX Mobile Test Report");
-        htmlReporter.config().setReportName("FrameX Mobile Automation");
+        htmlReporter.config().setReportName(testSuiteName+" Test Results ");
         htmlReporter.config().setTheme(com.aventstack.extentreports.reporter.configuration.Theme.STANDARD);
 
         extent = new ExtentReports();
