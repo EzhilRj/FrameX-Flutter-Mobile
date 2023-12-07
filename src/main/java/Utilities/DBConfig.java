@@ -1,13 +1,15 @@
 package Utilities;
 
+import Base.AppiumTestSetup;
+
 import java.sql.*;
 import java.util.*;
 
-import static Base.Setup.*;
+
 import static Utilities.Constants.*;
 
 
-public class DBConfig {
+public class DBConfig extends AppiumTestSetup {
 
     public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (
@@ -74,8 +76,6 @@ public class DBConfig {
     public static List<Map<String, String>> testDatas(String query) throws Exception {
         return executeQuery(query);
     }
-
-
 
 
     private static boolean shouldIncludeData(String category) {

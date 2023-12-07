@@ -1,5 +1,6 @@
 package Utilities;
 
+import Base.AppiumTestSetup;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
@@ -14,10 +15,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-import static Base.Setup.driver;
 import static Utilities.Constants.Screenshotpath;
 
-public class Actions {
+public class Actions extends AppiumTestSetup {
 
     public static WebDriver wait;
 
@@ -198,8 +198,6 @@ public class Actions {
 
         return false;
     }
-
-
 
     @AfterMethod
     public void captureScreen(ITestResult result) throws IOException {
