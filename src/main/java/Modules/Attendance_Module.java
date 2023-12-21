@@ -37,6 +37,7 @@ public class Attendance_Module extends AppiumTestSetup {
                     return false;
                 }
             }
+            Thread.sleep(3000);
             // Verifying attendance submission success/failure
             if(Source(attendancesavedmsg)){
                 Thread.sleep(1000);

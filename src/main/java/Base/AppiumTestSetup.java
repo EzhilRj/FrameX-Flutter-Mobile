@@ -33,7 +33,6 @@ public class AppiumTestSetup {
     public static String devicemodel;
     public static ExcelReader excel = new ExcelReader(Excelpath);
     public static DesiredCapabilities capabilities ;
-
     @BeforeSuite
     public static void StartApp(ITestContext context) throws IOException {
         try {
@@ -49,12 +48,13 @@ public class AppiumTestSetup {
             capabilities.setCapability("platformName", "Android");
             capabilities.setCapability("deviceName", Devicename);
             capabilities.setCapability("app", Apppath);
+            capabilities.setCapability("appPackage", "com.fieldlytics.framex");
+            capabilities.setCapability("appActivity", "com.fieldlytics.frame.MainActivity");
             capabilities.setCapability("autoGrantPermissions", false);
             capabilities.setCapability("automationName", "UIAutomator2");
             capabilities.setCapability("skipDeviceInitialization", true);
-            capabilities.setCapability("skipServerInstallation", true);
             capabilities.setCapability("ignoreUnimportantViews", true);
-            capabilities.setCapability("newCommandTimeout", 120); // Set a longer command timeout if required
+            capabilities.setCapability("newCommandTimeout", 120);
 
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
