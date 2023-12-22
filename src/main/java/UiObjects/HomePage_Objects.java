@@ -10,6 +10,7 @@ public class HomePage_Objects {
     public static String Inbox = "Inbox";
     public static String ActivityLog = "Activity Log";
     public static String TravelReport = "Travel Report";
+    public static String visitorlogin = "Visitor Login";
 
     //---------Accessibillityids----------------------------------------------------------------
 

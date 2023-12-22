@@ -8,7 +8,7 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
-          <include name="TC_001_VerifyLogin"/>
+          <include name="TC_001_VerifyLogin" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
           <include name="StartApp"/>
           <include name="tearDownApp"/>
         </methods>
@@ -19,7 +19,7 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
-          <include name="TC_002_Verify_AppVersion"/>
+          <include name="TC_002_Verify_AppVersion" invocation-numbers="0"/>
           <include name="StartApp"/>
           <include name="tearDownApp"/>
         </methods>
@@ -30,8 +30,8 @@
     <classes>
       <class name="Tests.AttendanceTest">
         <methods>
-          <include name="TC_001_VerifyAttendance"/>
-          <include name="TC_002_VerifyImagerequired"/>
+          <include name="TC_001_VerifyAttendance" invocation-numbers="0"/>
+          <include name="TC_002_VerifyImagerequired" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
         </methods>
       </class> <!-- Tests.AttendanceTest -->
     </classes>
@@ -40,24 +40,9 @@
     <classes>
       <class name="Tests.DownloadcallsTest">
         <methods>
-          <include name="TC_001_VerifyDownloadcalls"/>
+          <include name="TC_001_VerifyDownloadcalls" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- Tests.DownloadcallsTest -->
     </classes>
   </test> <!-- DownloadcallsTest(failed) -->
-  <test thread-count="5" name="ResourceCentre Test(failed)" verbose="3">
-    <classes>
-      <class name="Tests.ResourceCentreTest">
-        <methods>
-          <include name="TC001_VerifyResourcecentrefiles"/>
-        </methods>
-      </class> <!-- Tests.ResourceCentreTest -->
-      <class name="Tests.LoginTest">
-        <methods>
-          <include name="StartApp"/>
-          <include name="tearDownApp"/>
-        </methods>
-      </class> <!-- Tests.LoginTest -->
-    </classes>
-  </test> <!-- ResourceCentre Test(failed) -->
 </suite> <!-- Failed suite [Smoke] -->

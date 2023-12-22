@@ -18,15 +18,6 @@ public class DownloadcallsTest {
         Utils.checkexecution(m.getName(),data);
         Assert.assertTrue(validatedownloadcalls(data.get("TargetId")));
 
-
-
     }
-
-
-
-
-
-
-
 
 }

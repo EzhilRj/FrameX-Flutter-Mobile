@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>LoginTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/10</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/9</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Dec 21 15:54:04 IST 2023</td>
+<td>Started on:</td><td>Fri Dec 22 10:45:52 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (107 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14189 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,20 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=E1M4, Password=E1M4, Runmode=Y, Project=framedemo_d1, TC ID=TC_010}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td></td>
+<td>14</td>
+<td>Tests.LoginTest@c9413d8</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,39 +90,28 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishaldel, Password=, Runmode=N, Project=jj_test, TC ID=TC_006}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=, Username=, Password=, Runmode=N, Project=, TC ID=TC_009}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -119,39 +122,28 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace627519623", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace627519623'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace418731780", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace418731780'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -164,311 +156,30 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
-<tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=E1M4, Password=E1M4, Runmode=Y, Project=framedemo_d1, TC ID=TC_010}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace747152360", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace747152360'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
-<tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishalde, Password=vishalde, Runmode=N, Project=jj_tes, TC ID=TC_004}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1578026015", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1578026015'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
-<tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishalde, Password=vishaldel, Runmode=N, Project=jj_test, TC ID=TC_002}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1461322233", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1461322233'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
+<td>Tests.LoginTest@c9413d8</td></tr>
 <tr>
 <td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishaldel, Password=vishaldel, Runmode=N, Project=, TC ID=TC_007}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -479,39 +190,28 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2066213108", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2066213108'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace185674515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace185674515'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -524,41 +224,98 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
+<td>Tests.LoginTest@c9413d8</td></tr>
+<tr>
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishalde, Password=vishaldel, Runmode=N, Project=jj_test, TC ID=TC_002}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1014565006", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1014565006'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Tests.LoginTest@c9413d8</td></tr>
 <tr>
 <td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=, Password=vishaldel, Runmode=N, Project=jj_test, TC ID=TC_005}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -569,39 +326,28 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace256522893", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace256522893'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace223696575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace223696575'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -614,41 +360,30 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
+<td>Tests.LoginTest@c9413d8</td></tr>
 <tr>
 <td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishaldel, Password=vishalde, Runmode=N, Project=jj_test, TC ID=TC_001}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -659,39 +394,28 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1141783782", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1141783782'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2050907347", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2050907347'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -704,221 +428,30 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
-<tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=, Username=vishaldel, Password=vishaldel, Runmode=N, Project=jj_test, TC ID=TC_008}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace881513107", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace881513107'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
-<tr>
-<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=, Username=, Password=, Runmode=N, Project=, TC ID=TC_009}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace821513849", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace821513849'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-	at org.testng.TestNG.runSuites(TestNG.java:1099)
-	at org.testng.TestNG.run(TestNG.java:1067)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
+<td>Tests.LoginTest@c9413d8</td></tr>
 <tr>
 <td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishaldel, Password=vishaldel, Runmode=N, Project=jj_tes, TC ID=TC_003}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
-<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -929,39 +462,28 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace225511870", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace225511870'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output. 
-Host info: host: &apos;DESKTOP-OET6KL6&apos;, ip: &apos;192.168.168.1&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.6&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, newSession {capabilities=[{appium:app=E:\Automation Workspace\FrameXMobile_V1.0\src\test\resources\Apps\FrameFlutterTest.apk, appium:autoGrantPermissions=false, appium:automationName=UIAutomator2, appium:deviceName=13870818260003I, appium:ignoreUnimportantViews=true, appium:newCommandTimeout=120, platformName=ANDROID, appium:skipDeviceInitialization=true, appium:skipServerInstallation=true}], desiredCapabilities=Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}}]
-Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 13870818260003I, ignoreUnimportantViews: true, newCommandTimeout: 120, platformName: ANDROID, skipDeviceInitialization: true, skipServerInstallation: true}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
-	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
-	at Base.AppiumTestSetup.StartApp(AppiumTestSetup.java:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1245124890", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1245124890'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:376)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -974,7 +496,211 @@ Capabilities {app: E:\Automation Workspace\Fra..., autoGrantPermissions: false, 
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>Tests.LoginTest@54709809</td></tr>
+<td>Tests.LoginTest@c9413d8</td></tr>
+<tr>
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishalde, Password=vishalde, Runmode=N, Project=jj_tes, TC ID=TC_004}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace92621336", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace92621336'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Tests.LoginTest@c9413d8</td></tr>
+<tr>
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=, Username=vishaldel, Password=vishaldel, Runmode=N, Project=jj_test, TC ID=TC_008}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace448708339", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace448708339'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Tests.LoginTest@c9413d8</td></tr>
+<tr>
+<td title='Tests.LoginTest.TC_001_VerifyLogin()'><b>TC_001_VerifyLogin</b><br>Test class: Tests.LoginTest<br>Test method: This  test case verifies the login functionality of the application using the provided test data.<br>Parameters: {Mobilenumber=8248606917, Username=vishaldel, Password=, Runmode=N, Project=jj_test, TC ID=TC_006}, public static void Tests.LoginTest.TC_001_VerifyLogin(java.util.Hashtable,java.lang.reflect.Method) throws java.lang.Exception</td>
+<td><div><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2031882979", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2031882979'><pre>org.testng.SkipException: Skipping the test case as the Run mode for data set is NO
+	at Utilities.Utils.checkexecution(Utils.java:225)
+	at Tests.LoginTest.TC_001_VerifyLogin(LoginTest.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>Tests.LoginTest@c9413d8</td></tr>
 </table><p>
 </body>
 </html>

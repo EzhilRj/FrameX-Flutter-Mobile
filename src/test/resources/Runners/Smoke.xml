@@ -50,5 +50,14 @@
             </class>
         </classes>
     </test>
+    <test name="VisitorLogin Test">
+        <classes>
+            <class name="Tests.VisitorLoginTest">
+                <methods>
+                    <include name="TC001_VerifyVistorlogin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 
 </suite>
