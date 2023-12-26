@@ -3,19 +3,14 @@ package Utilities;
 
 import java.io.*;
 import java.lang.reflect.Method;
-import java.sql.Timestamp;
-import java.text.MessageFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import Base.AppiumTestSetup;
-import com.aventstack.extentreports.Status;
+import Pages.Login_Page;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.screenrecording.CanRecordScreen;
-import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,12 +19,8 @@ import org.testng.annotations.DataProvider;
 
 import static Base.AppiumTestSetup.driver;
 import static Base.AppiumTestSetup.excel;
-import static UiObjects.CallPlan_Objects.*;
-import static Utilities.Actions.WebdriverWait;
-import static Utilities.Actions.click;
-import static Utilities.Constants.EnumFieldquery;
-
-import static Utilities.DBConfig.getColumnValues;
+import static Pages.CallPlan_page.*;
+import static Utilities.Actions.*;
 
 public class Utils {
 
@@ -287,6 +278,14 @@ public class Utils {
         String formattedDateTime = now.format(formatter);
 
         return formattedDateTime;
+    }
+
+    public static void gohomepage(String module){
+
+        if(!Source(module)){
+            click("xpath", Login_Page.menubutton);
+            //click("ACCESSIBILITYID",HomePage_Objects.home );
+        }
     }
 
 }

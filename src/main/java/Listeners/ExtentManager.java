@@ -19,7 +19,7 @@ public class ExtentManager {
         
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
-        extent.setSystemInfo("Automation Engineer", "Ezhilraj");
+        extent.setSystemInfo("Automation Test Engineer", "Ezhilraj");
         extent.setSystemInfo("Organization", "Fieldlytics Pvt Ltd");
         extent.setSystemInfo("User", System.getProperty("user.name"));
         extent.setSystemInfo("Environment", "QA");
@@ -27,5 +27,6 @@ public class ExtentManager {
 
         return extent;
     }
+
 
 }

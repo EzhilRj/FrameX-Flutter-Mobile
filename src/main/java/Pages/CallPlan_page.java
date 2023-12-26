@@ -1,10 +1,10 @@
-package UiObjects;
+package Pages;
 
 import java.util.List;
 
 import static Utilities.DBConfig.getDataObject;
 
-public class CallPlan_Objects {
+public class CallPlan_page {
 
 	public static String sync = "Sync";
 	public static String tid = "13990";

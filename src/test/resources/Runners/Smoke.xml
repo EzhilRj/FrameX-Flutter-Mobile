@@ -8,16 +8,8 @@
         <classes>
             <class name="Tests.LoginTest">
                 <methods>
-                    <include name="TC_001_VerifyLogin" />
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="VersionTest">
-        <classes>
-            <class name="Tests.LoginTest">
-                <methods>
-                    <include name="TC_002_Verify_AppVersion" />
+                    <include name="TC001_VerifyAppVersion" />
+                    <include name="TC002_VerifyLogin" />
                 </methods>
             </class>
         </classes>
@@ -26,8 +18,8 @@
         <classes>
             <class name="Tests.AttendanceTest">
                 <methods>
-                    <include name="TC_002_VerifyImagerequired" />
-                    <include name="TC_001_VerifyAttendance" />
+                    <include name="TC001_VerifyImagerequired" />
+                    <include name="TC002_VerifyAttendance" />
                 </methods>
             </class>
         </classes>
@@ -36,7 +28,7 @@
         <classes>
             <class name="Tests.DownloadcallsTest">
                 <methods>
-                    <include name="TC_001_VerifyDownloadcalls" />
+                    <include name="TC001_VerifyDownloadcalls" />
                 </methods>
             </class>
         </classes>

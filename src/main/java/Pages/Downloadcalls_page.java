@@ -1,6 +1,6 @@
-package UiObjects;
+package Pages;
 
-public class Downloadcalls_objects {
+public class Downloadcalls_page {
 
 
     public static String addtarget = "   Add Target   ";

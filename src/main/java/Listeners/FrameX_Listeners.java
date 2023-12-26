@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 
+import static Base.AppiumTestSetup.log;
 import static Utilities.Constants.ReportPath;
 
 public class FrameX_Listeners implements ITestListener, ISuiteListener {
@@ -52,7 +53,7 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
                     MediaEntityBuilder.createScreenCaptureFromPath(Utils.screenshotName)
                             .build());
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
 
         String failureLogg="TEST CASE FAILED";
@@ -76,9 +77,23 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
     }
 
     public static String formatData(String message, String... values) {
-        String formattedData = "<span style=\"color: Blue; font-weight: bold;\">" + message + " </span><span style=\"color: Black;\">";
+        String formattedData = "<span style=\"color: Black; font-weight: bold;\">" + message + " </span><span style=\"color: Black;\">";
         formattedData += String.join(" | ", values);
         formattedData += "</span>";
         return formattedData;
     }
+
+
+    public static void logAndReportSuccess(String message) {
+        testReport.get().pass(formatData(message));
+        log.info(message);
+    }
+
+
+    public static void logAndReportFailure(String message) {
+        testReport.get().fail(formatData(message));
+        log.error(message);
+    }
+
+
 }

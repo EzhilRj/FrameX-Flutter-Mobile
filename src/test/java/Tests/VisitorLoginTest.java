@@ -13,14 +13,11 @@ import static Modules.Resourcentre_Module.validateFiles;
 
 public class VisitorLoginTest {
 
-
-    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 5,description = "This  test case verifies the all type of extension files is downloaded or not .")
+    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 7)
     public static void TC001_VerifyVistorlogin(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(VisitorLogin_Module.validatevisitorsubmission(data.get("Visitor"),data.get("Visitor type"),data.get("VisitorEmpid"),data.get("VisitorName"),
-        		data.get("Designation"),data.get("Remarks"),data.get("Storeinfo"),data.get("Promotergroomed"),data.get("Maintainedcategories"),data.get("Aware about all the targets"),data.get("Selfie")));
-
+        Assert.assertTrue(VisitorLogin_Module.validatevisitorsubmission(data.get("Visitor"),data.get("Visitor type"),data.get("VisitorEmpid"),data.get("VisitorName"), data.get("Designation"),data.get("Remarks"),data.get("Storeinfo"),data.get("Promotergroomed"),data.get("Maintainedcategories"),data.get("Aware about all the targets"),data.get("Selfie")));
 
     }
 

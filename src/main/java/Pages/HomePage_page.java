@@ -1,6 +1,6 @@
-package UiObjects;
+package Pages;
 
-public class HomePage_Objects {
+public class HomePage_page {
 
 //---------Accessibillityids----------------------------------------------------------------
     public static String Attendance = "Attendance";
@@ -11,6 +11,9 @@ public class HomePage_Objects {
     public static String ActivityLog = "Activity Log";
     public static String TravelReport = "Travel Report";
     public static String visitorlogin = "Visitor Login";
+    public static String home = "Home    ";
+    public static String logout = "Logout";
+
 
     //---------Accessibillityids----------------------------------------------------------------
 

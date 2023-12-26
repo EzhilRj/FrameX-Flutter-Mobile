@@ -1,11 +1,8 @@
-package UiObjects;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+package Pages;
 
 import static Utilities.Utils.generatedateandtime;
 
-public class Attendance_Objects {
+public class Attendance_page {
 
     public static final String attendance_dropdown = "Present";
     public static final String Present = "Present";

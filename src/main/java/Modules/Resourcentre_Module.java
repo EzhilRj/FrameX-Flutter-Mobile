@@ -1,21 +1,22 @@
 package Modules;
 
 import Base.AppiumTestSetup;
-import UiObjects.HomePage_Objects;
 
 import java.util.Set;
 
 import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
-import static UiObjects.Downloadcalls_objects.targetdownloadsucessmsg;
+import static Pages.HomePage_page.ResourceCentre;
 import static Utilities.Actions.*;
+import static Utilities.Utils.gohomepage;
 
 public class Resourcentre_Module extends AppiumTestSetup {
 	
     public static boolean validateFiles(String filename) throws InterruptedException {
         try {
+            gohomepage(ResourceCentre);
             if(!Source( filename)){
-                click("ACCESSIBILITYID", HomePage_Objects.ResourceCentre);
+                click("ACCESSIBILITYID", ResourceCentre);
             }
             if (isElementDisplayed("ACCESSIBILITYID", filename)) {
                 click("ACCESSIBILITYID", filename);

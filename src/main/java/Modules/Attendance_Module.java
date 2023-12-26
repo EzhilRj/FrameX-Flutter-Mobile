@@ -1,25 +1,24 @@
 package Modules;
 
 import Base.AppiumTestSetup;
-import UiObjects.Attendance_Objects;
-import UiObjects.HomePage_Objects;
-import Utilities.Actions;
-
-import java.util.LinkedHashMap;
+import Pages.Attendance_page;
+import Pages.HomePage_page;
 
 import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
-import static UiObjects.Attendance_Objects.*;
-import static UiObjects.HomePage_Objects.Attendance;
+import static Pages.Attendance_page.*;
+import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
+import static Utilities.Utils.gohomepage;
 
 public class Attendance_Module extends AppiumTestSetup {
 
     public static boolean attendancesubmission(String attendancetype,String image) throws InterruptedException {
         try {
+            gohomepage(Attendance);
             click("ACCESSIBILITYID", Attendance);
-            click("ACCESSIBILITYID", Attendance_Objects.Present);
-            click("ACCESSIBILITYID", Attendance_Objects.Present);
+            click("ACCESSIBILITYID", Attendance_page.Present);
+            click("ACCESSIBILITYID", Attendance_page.Present);
 
             // Check if image is required and interact accordingly
             if(image.equalsIgnoreCase("True")){
@@ -37,8 +36,9 @@ public class Attendance_Module extends AppiumTestSetup {
                     return false;
                 }
             }
-            Thread.sleep(3000);
+            Thread.sleep(1000);
             // Verifying attendance submission success/failure
+            WebdriverWait("ACCESSIBILITYID",attendancesavedmsg,10);
             if(Source(attendancesavedmsg)){
                 Thread.sleep(1000);
                 click("ACCESSIBILITYID", Attendance);
@@ -51,7 +51,7 @@ public class Attendance_Module extends AppiumTestSetup {
                     }
                 }else{
                     driver.navigate().back();
-                    click("ACCESSIBILITYID", HomePage_Objects.Callplan);
+                    click("ACCESSIBILITYID", HomePage_page.Callplan);
                     driver.navigate().back();
                     click("ACCESSIBILITYID", Attendance);
                     if(Source(Attendacemarkedmessage)) {
@@ -59,6 +59,7 @@ public class Attendance_Module extends AppiumTestSetup {
                         if (!Source(Leave)) {
                             testReport.get().pass(formatData("Attendance Submitted successfully"));
                             log.info("Attendance Submitted successfully");
+                            driver.navigate().back();
                             return true;
                         } else {
                             testReport.get().fail(formatData("Attendance Submission Failed"));
@@ -204,6 +205,7 @@ public class Attendance_Module extends AppiumTestSetup {
                 if(isElementDisplayed("xpath",Attendancecamera)){
                     testReport.get().pass(formatData("Image is  Required for Monthly Meeting"));
                     click("ACCESSIBILITYID","Monthly Meeting");
+                    click("ACCESSIBILITYID", Attendance_page.Present);
                     return true;
                 }else{
                     testReport.get().fail(formatData("Image is Required for Training but camera option is not displayed "));
@@ -217,5 +219,6 @@ public class Attendance_Module extends AppiumTestSetup {
             return false;
         }
         return false;
+
     }
 }

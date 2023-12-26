@@ -1,34 +1,35 @@
 package Modules;
 
 import Base.AppiumTestSetup;
-import UiObjects.Downloadcalls_objects;
-import UiObjects.HomePage_Objects;
-import Utilities.Actions;
+import Pages.Downloadcalls_page;
+import Pages.HomePage_page;
 
 import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
-import static UiObjects.Attendance_Objects.imgmandatorymsg;
-import static UiObjects.CallPlan_Objects.TargetID;
-import static UiObjects.Downloadcalls_objects.*;
+import static Pages.Downloadcalls_page.*;
 import static Utilities.Actions.*;
+import static Utilities.Utils.gohomepage;
 
 public class Downloadcalls_Module extends AppiumTestSetup {
+
 
 	public static boolean validatedownloadcalls(String trgtid) throws InterruptedException {
 
 		String invalididmsg = "Info&#10;Target ID " + trgtid
 				+ " is invalid. Please enter a valid Target Id and try again.";
 		String alreadydownloadedmsg = "Info&#10;Store " + trgtid + " already downloaded.";
+
 		try {
-			click("ACCESSIBILITYID", HomePage_Objects.DownloadCalls);
-			click("ACCESSIBILITYID", Downloadcalls_objects.addtarget);
+			gohomepage(HomePage_page.DownloadCalls);
+			click("ACCESSIBILITYID", HomePage_page.DownloadCalls);
+			click("ACCESSIBILITYID", Downloadcalls_page.addtarget);
 			Enter("classname", targetidtxtbox, trgtid);
 			click("ACCESSIBILITYID", addbtn);
 			if (Source(trgtid)) {
 				click("ACCESSIBILITYID", submit);
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				if (Source("Downloaded Successfully for target " + trgtid)) {
-					click("ACCESSIBILITYID", HomePage_Objects.Callplan);
+					click("ACCESSIBILITYID", HomePage_page.Callplan);
 					Scroll("up");
 					if (Source("&#10;Unplanned Calls")) {
 						if (isElementDisplayed("xpath",
@@ -47,8 +48,7 @@ public class Downloadcalls_Module extends AppiumTestSetup {
 					log.error("Negative data is given : " + invalididmsg);
 					return false;
 				} else if (Source(alreadydownloadedmsg)) {
-					testReport.get().fail(
-							formatData("Negative data is given :  Info Store " + trgtid + " already downloaded."));
+					testReport.get().fail(formatData("Negative data is given :  Info Store " + trgtid + " already downloaded."));
 					log.error("Negative data is given : " + alreadydownloadedmsg);
 					return false;
 				} else {

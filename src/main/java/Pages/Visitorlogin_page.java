@@ -1,6 +1,6 @@
-package UiObjects;
+package Pages;
 
-public class Visitorlogin_Objects {
+public class Visitorlogin_page {
 	
 	
 	public static final String selectvisitordd = "Select";
