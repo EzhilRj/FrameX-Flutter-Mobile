@@ -1,50 +1,73 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import Pages.Login_Page;
+import Utilities.ValidationManager;
 
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Pages.Login_Page.*;
 import static Utilities.Actions.*;
+import static Utilities.ValidationManager.Source;
 
 public class Login_Module extends AppiumTestSetup {
 
-	public static boolean Login_in_App(String Username, String Password, String project, String Mobileno) throws Exception {
+
+	/**
+	 * Attempts to log in to the application with provided credentials.
+	 *
+	 * @param username The username for login.
+	 * @param password The password for login.
+	 * @param project  The project information.
+	 * @param mobileNo The mobile number for login.
+	 * @return True if login is successful, false otherwise.
+	 */
+	public static boolean loginToApp(String username, String password, String project, String mobileNo) {
 
 		try {
-			Enter("Xpath", username, Username);
-			Enter("Xpath", password, Password);
-			Enter("Xpath", Project, project);
-			driver.hideKeyboard();
-			Enter("Xpath", Mobiileno, Mobileno);
-			click("ACCESSIBILITYID", LoginButton);
+			String[] requiredFieldErrors = {usernameRequiredErrMsg, passwordRequiredErrMsg, projectRequiredErrMsg, mobileNoRequiredErrMsg};
 
-			if (Source(usernamepassword_errmsg) || Source(invalidproject_errmsg)) {
-				click("ACCESSIBILITYID", "Ok");
-				logAndReportFailure("Negative data is given : Login was not successful. ");
-				return false;
-			} else if (Source("Call Plan")) {
+            // Perform login actions
+			performLoginActivity(username, password, project, mobileNo);
+			click("ACCESSIBILITYID",LoginButton);
+
+			// Check login status and handle accordingly
+			if (ValidationManager.isLoggedIn("Call Plan")) {
 				logAndReportSuccess("Login Successful.");
 				return true;
-			} else if (Source(usernamerequired_errmsg) || Source(passwordrequired_errmsg)||
-					Source(projectrequired_errmsg) || Source(mobilenorequired_errmsg)) {
-				logAndReportFailure("Negative data is given : Please Fill all the credentials" );
-				return false;
+			} else {
+				// Handle login failure scenarios
+				if (ValidationManager.hasErrorMessage(usernamePasswordErrMsg) || ValidationManager.hasErrorMessage(invalidProjectErrMsg)) {
+					click("ACCESSIBILITYID","Ok");
+					logAndReportFailure("Negative data is given: Login was not successful.");
+					return false;
+				} else if (ValidationManager.areFieldsRequired(requiredFieldErrors)) {
+					logAndReportFailure("Negative data is given: Please Fill all the credentials.");
+					return false;
+				}
 			}
 		} catch (Exception e) {
-			logAndReportFailure("Exception occurred during login: " + e.getMessage());
+			logAndReportFailure("Error during login validation: " + e.getMessage());
+			return false;
 		}
 		return false;
 	}
 
+	/**
+	 * Validates if the specified application version is displayed.
+	 *
+	 * @param versionToCheck The version of the application to verify.
+	 * @return True if the specified version is displayed, false otherwise.
+	 */
 	public static boolean checkVersion(String versionToCheck) {
 
 		try {
-			if (Source(versionToCheck)) {
-				logAndReportSuccess("App Version is Displayed: " + versionToCheck);
+			boolean isVersionDisplayed = Source(versionToCheck);
+			if (isVersionDisplayed) {
+				logAndReportSuccess("App Version is matched: " + versionToCheck);
 				return true;
 			} else {
-				logAndReportFailure("App Version is not Displayed: " + versionToCheck);
+				logAndReportFailure("App Version is not matched: " + versionToCheck);
 				return false;
 			}
 		} catch (Exception e) {

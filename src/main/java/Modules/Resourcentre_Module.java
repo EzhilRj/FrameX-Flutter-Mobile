@@ -9,6 +9,7 @@ import static Listeners.FrameX_Listeners.testReport;
 import static Pages.HomePage_page.ResourceCentre;
 import static Utilities.Actions.*;
 import static Utilities.Utils.gohomepage;
+import static Utilities.ValidationManager.Source;
 
 public class Resourcentre_Module extends AppiumTestSetup {
 	

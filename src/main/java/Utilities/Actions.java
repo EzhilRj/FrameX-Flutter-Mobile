@@ -178,10 +178,7 @@ public class Actions extends AppiumTestSetup {
     }
 
 
-    public static boolean Source(String value) {
 
-        return driver.getPageSource().contains(value);
-    }
 
     public static boolean Scroll(String action) throws InterruptedException {
         Thread.sleep(1000);

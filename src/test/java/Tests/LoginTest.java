@@ -29,7 +29,7 @@ public class LoginTest extends AppiumTestSetup {
     public static void TC002_VerifyLogin(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(Login_in_App(data.get("Username"), data.get("Password"),data.get("Project"),data.get("Mobilenumber")));
+        Assert.assertTrue(loginToApp(data.get("Username"), data.get("Password"),data.get("Project"),data.get("Mobilenumber")));
 
     }
 

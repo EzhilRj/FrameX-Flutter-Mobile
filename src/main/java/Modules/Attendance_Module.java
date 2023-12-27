@@ -4,12 +4,12 @@ import Base.AppiumTestSetup;
 import Pages.Attendance_page;
 import Pages.HomePage_page;
 
-import static Listeners.FrameX_Listeners.formatData;
-import static Listeners.FrameX_Listeners.testReport;
+import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
 import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
 import static Utilities.Utils.gohomepage;
+import static Utilities.ValidationManager.Source;
 
 public class Attendance_Module extends AppiumTestSetup {
 
@@ -17,22 +17,12 @@ public class Attendance_Module extends AppiumTestSetup {
         try {
             gohomepage(Attendance);
             click("ACCESSIBILITYID", Attendance);
-            click("ACCESSIBILITYID", Attendance_page.Present);
-            click("ACCESSIBILITYID", Attendance_page.Present);
-
-            // Check if image is required and interact accordingly
-            if(image.equalsIgnoreCase("True")){
-                click("xpath", Attendancecamera);
-                Thread.sleep(1000);
-                click("xpath", shutterbutton);
-            }
-            click("ACCESSIBILITYID", Submit);
+            performAttendanceActivity(attendancetype,image);
 
             // Handling negative scenario when image is not required but provided
             if(!image.equalsIgnoreCase("True")){
                 if(Source(imgmandatorymsg)){
-                    testReport.get().fail(formatData("Negative data given : "+imgmandatorymsg));
-                    log.error("Negative data given : "+imgmandatorymsg);
+                    logAndReportFailure("Negative data given : "+imgmandatorymsg);
                     return false;
                 }
             }
