@@ -4,65 +4,57 @@ import Base.AppiumTestSetup;
 import Pages.Attendance_page;
 import Pages.HomePage_page;
 
+import java.util.HashMap;
+
 import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
 import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
+import static Utilities.Utils.generatedateandtime;
 import static Utilities.Utils.gohomepage;
 import static Utilities.ValidationManager.Source;
 
 public class Attendance_Module extends AppiumTestSetup {
 
     public static boolean attendancesubmission(String attendancetype,String image) throws InterruptedException {
+
+        String Attendacemarkedmessage = "Your attendance Marked for today as "+attendancetype;
+        String savedmsg = "";
+
         try {
             gohomepage(Attendance);
             click("ACCESSIBILITYID", Attendance);
             performAttendanceActivity(attendancetype,image);
-
-            // Handling negative scenario when image is not required but provided
-            if(!image.equalsIgnoreCase("True")){
-                if(Source(imgmandatorymsg)){
-                    logAndReportFailure("Negative data given : "+imgmandatorymsg);
-                    return false;
+            for (String key : attendancemessages().keySet()) {
+                if(key.equalsIgnoreCase(attendancetype)){
+                    savedmsg =  attendancemessages().get(key);
                 }
             }
-            Thread.sleep(1000);
             // Verifying attendance submission success/failure
-            WebdriverWait("ACCESSIBILITYID",attendancesavedmsg,10);
-            if(Source(attendancesavedmsg)){
+            WebdriverWait("ACCESSIBILITYID",savedmsg,10);
+            if(Source(savedmsg)){
                 Thread.sleep(1000);
                 click("ACCESSIBILITYID", Attendance);
                 if(Source(Attendacemarkedmessage)){
-                    click("ACCESSIBILITYID",Present);
-                    if(!Source(Leave)){
-                        testReport.get().pass(formatData("Attendance Submitted successfully"));
-                        log.info("Attendance Submitted successfully");
-                        return true;
-                    }
+                    logAndReportSuccess("Attendance Submitted successfully");
+                    return true;
                 }else{
                     driver.navigate().back();
                     click("ACCESSIBILITYID", HomePage_page.Callplan);
                     driver.navigate().back();
                     click("ACCESSIBILITYID", Attendance);
                     if(Source(Attendacemarkedmessage)) {
-                        click("ACCESSIBILITYID", Present);
-                        if (!Source(Leave)) {
-                            testReport.get().pass(formatData("Attendance Submitted successfully"));
-                            log.info("Attendance Submitted successfully");
-                            driver.navigate().back();
-                            return true;
-                        } else {
-                            testReport.get().fail(formatData("Attendance Submission Failed"));
-                            log.error("Attendance Submission Failed");
-                            return false;
-                        }
+                        logAndReportSuccess("Attendance Submitted successfully");
+                        return true;
+                    } else {
+                        logAndReportFailure("Attendance Submission Failed");
+                        return false;
                     }
                 }
             }
-
         } catch (Exception e) {
-            log.error("Exception occurred: " + e.getMessage());
-            testReport.get().fail(formatData("Exception occurred: " + e.getMessage()));
+            logAndReportFailure("Exception occurred: " + e.getMessage());
+            System.out.println(e.getStackTrace());
             return false;
         }
         return false;

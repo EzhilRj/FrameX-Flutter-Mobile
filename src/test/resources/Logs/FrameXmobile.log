@@ -1,94 +1,15 @@
-2023-12-27 12:49:15,334 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:49:15,335 [main] INFO  Base.AppiumTestSetup  - Password : vishalde
-2023-12-27 12:49:15,335 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:49:15,335 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:49:18,192 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:49:29,075 [main] INFO  Base.AppiumTestSetup  - Username : vishalde
-2023-12-27 12:49:29,075 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:49:29,075 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:49:29,075 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:49:31,894 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:49:43,606 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:49:43,606 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:49:43,606 [main] INFO  Base.AppiumTestSetup  - Project : jj_tes
-2023-12-27 12:49:43,606 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:49:47,188 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:49:58,559 [main] INFO  Base.AppiumTestSetup  - Username : vishalde
-2023-12-27 12:49:58,559 [main] INFO  Base.AppiumTestSetup  - Password : vishalde
-2023-12-27 12:49:58,559 [main] INFO  Base.AppiumTestSetup  - Project : jj_tes
-2023-12-27 12:49:58,559 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:50:00,599 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:51:11,779 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:51:11,779 [main] INFO  Base.AppiumTestSetup  - Password : vishalde
-2023-12-27 12:51:11,779 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:51:11,780 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:51:13,431 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:51:25,003 [main] INFO  Base.AppiumTestSetup  - Username : vishalde
-2023-12-27 12:51:25,003 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:51:25,003 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:51:25,003 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:51:28,051 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:51:39,134 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:51:39,134 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:51:39,134 [main] INFO  Base.AppiumTestSetup  - Project : jj_tes
-2023-12-27 12:51:39,134 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:51:41,280 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:51:53,015 [main] INFO  Base.AppiumTestSetup  - Username : vishalde
-2023-12-27 12:51:53,015 [main] INFO  Base.AppiumTestSetup  - Password : vishalde
-2023-12-27 12:51:53,015 [main] INFO  Base.AppiumTestSetup  - Project : jj_tes
-2023-12-27 12:51:53,015 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:51:56,309 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Login was not successful.
-2023-12-27 12:52:07,372 [main] INFO  Base.AppiumTestSetup  - Username : 
-2023-12-27 12:52:07,372 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:52:07,372 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:52:07,372 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:52:09,173 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Please Fill all the credentials.
-2023-12-27 12:52:19,419 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:52:19,419 [main] INFO  Base.AppiumTestSetup  - Password : 
-2023-12-27 12:52:19,419 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:52:19,419 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:52:21,004 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Please Fill all the credentials.
-2023-12-27 12:52:30,679 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:52:30,679 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:52:30,679 [main] INFO  Base.AppiumTestSetup  - Project : 
-2023-12-27 12:52:30,679 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:52:32,775 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Please Fill all the credentials.
-2023-12-27 12:52:43,962 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:52:43,962 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:52:43,963 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:52:43,963 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 
-2023-12-27 12:52:45,228 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Please Fill all the credentials.
-2023-12-27 12:52:53,995 [main] INFO  Base.AppiumTestSetup  - Username : 
-2023-12-27 12:52:53,995 [main] INFO  Base.AppiumTestSetup  - Password : 
-2023-12-27 12:52:53,995 [main] INFO  Base.AppiumTestSetup  - Project : 
-2023-12-27 12:52:53,995 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 
-2023-12-27 12:52:55,055 [main] ERROR Base.AppiumTestSetup  - Negative data is given: Please Fill all the credentials.
-2023-12-27 12:53:03,872 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 12:53:03,872 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 12:53:03,872 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 12:53:03,872 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 12:53:05,681 [main] INFO  Base.AppiumTestSetup  - Login Successful.
-2023-12-27 12:53:06,092 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 12:53:06,663 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 12:57:09,967 [main] INFO  Base.AppiumTestSetup  - App Version is Displayed: V 3.1.4
-2023-12-27 12:57:11,208 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 12:57:11,685 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 13:06:54,159 [main] INFO  Base.AppiumTestSetup  - App Version is Displayed: V 3.1.4
-2023-12-27 13:06:54,671 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 13:06:55,222 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 13:14:04,777 [main] ERROR Base.AppiumTestSetup  - App Version is not matched: V 3.1.4
-2023-12-27 13:14:05,937 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 13:14:06,381 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 13:14:28,881 [main] INFO  Base.AppiumTestSetup  - App Version is matched: V 3.1.4
-2023-12-27 13:14:29,321 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 13:14:29,779 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 13:16:59,031 [main] ERROR Base.AppiumTestSetup  - App Version is not matched: V 3.1.4
-2023-12-27 13:17:00,377 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 13:17:00,976 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
-2023-12-27 13:17:39,378 [main] INFO  Base.AppiumTestSetup  - Username : vishaldel
-2023-12-27 13:17:39,379 [main] INFO  Base.AppiumTestSetup  - Password : vishaldel
-2023-12-27 13:17:39,379 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
-2023-12-27 13:17:39,379 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
-2023-12-27 13:17:41,170 [main] INFO  Base.AppiumTestSetup  - Login Successful.
-2023-12-27 13:17:41,602 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
-2023-12-27 13:17:42,162 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2023-12-29 18:38:52,272 [main] INFO  Base.AppiumTestSetup  - Username : akhildel
+2023-12-29 18:38:52,280 [main] INFO  Base.AppiumTestSetup  - Password : akhildel
+2023-12-29 18:38:52,280 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
+2023-12-29 18:38:52,280 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
+2023-12-29 18:38:54,141 [main] INFO  Base.AppiumTestSetup  - Login Successful.
+2023-12-29 18:41:37,351 [main] INFO  Base.AppiumTestSetup  - Username : akhiledel
+2023-12-29 18:41:37,353 [main] INFO  Base.AppiumTestSetup  - Password : akhiledel
+2023-12-29 18:41:37,353 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
+2023-12-29 18:41:37,353 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
+2023-12-29 18:41:39,404 [main] INFO  Base.AppiumTestSetup  - Login Successful.
+2023-12-29 18:43:25,939 [main] INFO  Base.AppiumTestSetup  - Username : arjundel
+2023-12-29 18:43:25,941 [main] INFO  Base.AppiumTestSetup  - Password : arjundel
+2023-12-29 18:43:25,941 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
+2023-12-29 18:43:25,941 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
+2023-12-29 18:43:27,782 [main] INFO  Base.AppiumTestSetup  - Login Successful.

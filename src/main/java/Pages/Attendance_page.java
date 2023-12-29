@@ -1,5 +1,8 @@
 package Pages;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 import static Utilities.Actions.click;
 import static Utilities.Utils.generatedateandtime;
 
@@ -20,7 +23,7 @@ public class Attendance_page {
     public static String Submit = "Submit";
     public static String imgnonmandatorymsg = "No Image Required";
     public static String imgmandatorymsg = "Please, Take Photo for submit attandance.";
-    public static final String presentsavedmsg = "Your Attendance is Marked for Today  Present "+generatedateandtime();
+    public static final String presentsavedmsg = "Your Attendance is Marked for Today Present "+generatedateandtime();
     public static final String leavesavedmsg = "Your Attendance is Marked for Today  Leave";
     public static final String absentsavedmsg = "Your Attendance is Marked for Today  Absent";
     public static final String atofficesavedmsg = "Your Attendance is Marked for Today  At office";
@@ -31,18 +34,36 @@ public class Attendance_page {
     public static final String monthlymeetingsavedmsg = "Your Attendance is Marked for Today  Monthly Meeting";
     public static final String resignsavedmsg = "Your Attendance is Marked for Today  Resign";
     public static String Attendacealreadysaved = "Attendance data is already saved";
-    public static String Attendacemarkedmessage = "Your attendance Marked for today as Present";
+
+    public static HashMap<String,String>attendancemessages(){
+
+        LinkedHashMap<String,String> attendancesuccessmesssages = new LinkedHashMap<String,String>();
+        attendancesuccessmesssages.put("Present",presentsavedmsg);
+        attendancesuccessmesssages.put("Absent",absentsavedmsg);
+        attendancesuccessmesssages.put("Leave",leavesavedmsg);
+        attendancesuccessmesssages.put("At office",atofficesavedmsg);
+        attendancesuccessmesssages.put("Week off",weekoffsavedmsg);
+        attendancesuccessmesssages.put("Holiday",holidaysavedmsg);
+        attendancesuccessmesssages.put("Tour",toursavedmsg);
+        attendancesuccessmesssages.put("Training",trainingsavedmsg);
+        attendancesuccessmesssages.put("Monthly Meeting",monthlymeetingsavedmsg);
+        attendancesuccessmesssages.put("Resign",resignsavedmsg);
+
+        return attendancesuccessmesssages;
+    }
 
     public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
         click("ACCESSIBILITYID", Attendance_page.Present);
         click("ACCESSIBILITYID", type);
 
-        // Check if image is required and interact accordingly
-        if(img.equalsIgnoreCase("True")){
-            click("xpath", Attendancecamera);
-            Thread.sleep(1000);
-            click("xpath", shutterbutton);
+        if(type.equalsIgnoreCase("Present")||type.equalsIgnoreCase("At Office")||type.equalsIgnoreCase("Training")||type.equalsIgnoreCase("Monthly Meeting")){
+            // Check if image is required and interact accordingly
+            if(img.equalsIgnoreCase("True")){
+                click("xpath", Attendancecamera);
+                Thread.sleep(1000);
+                click("xpath", shutterbutton);
+            }
         }
         click("ACCESSIBILITYID", Submit);
 
