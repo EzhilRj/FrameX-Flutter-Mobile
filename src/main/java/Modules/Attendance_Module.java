@@ -5,6 +5,7 @@ import Pages.Attendance_page;
 import Pages.HomePage_page;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
@@ -12,11 +13,14 @@ import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
 import static Utilities.Utils.generatedateandtime;
 import static Utilities.Utils.gohomepage;
-import static Utilities.ValidationManager.Source;
+import static Utilities.ValidationManager.*;
 
 public class Attendance_Module extends AppiumTestSetup {
 
-    public static boolean attendancesubmission(String attendancetype,String image) throws InterruptedException {
+    public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
+    public static HashMap<String,String>attendancesuccessmessages =  attendancemessages();
+
+    public static boolean validateattendancesubmission(String attendancetype,String image) throws InterruptedException {
 
         String Attendacemarkedmessage = "Your attendance Marked for today as "+attendancetype;
         String savedmsg = "";
@@ -25,182 +29,43 @@ public class Attendance_Module extends AppiumTestSetup {
             gohomepage(Attendance);
             click("ACCESSIBILITYID", Attendance);
             performAttendanceActivity(attendancetype,image);
-            for (String key : attendancemessages().keySet()) {
+            for (String key : attendancesuccessmessages.keySet()) {
                 if(key.equalsIgnoreCase(attendancetype)){
-                    savedmsg =  attendancemessages().get(key);
+                    savedmsg =  attendancesuccessmessages.get(key);
                 }
             }
             // Verifying attendance submission success/failure
             WebdriverWait("ACCESSIBILITYID",savedmsg,10);
-            if(Source(savedmsg)){
-                Thread.sleep(1000);
-                click("ACCESSIBILITYID", Attendance);
-                if(Source(Attendacemarkedmessage)){
-                    logAndReportSuccess("Attendance Submitted successfully");
-                    return true;
-                }else{
-                    driver.navigate().back();
-                    click("ACCESSIBILITYID", HomePage_page.Callplan);
-                    driver.navigate().back();
-                    click("ACCESSIBILITYID", Attendance);
-                    if(Source(Attendacemarkedmessage)) {
-                        logAndReportSuccess("Attendance Submitted successfully");
-                        return true;
-                    } else {
-                        logAndReportFailure("Attendance Submission Failed");
-                        return false;
-                    }
-                }
+            if(attendancesubmittedvalidation(attendancetype,savedmsg,Attendacemarkedmessage)){
+                return true;
+            }else{
+                return false;
             }
         } catch (Exception e) {
             logAndReportFailure("Exception occurred: " + e.getMessage());
-            System.out.println(e.getStackTrace());
+            e.getMessage();
             return false;
         }
-        return false;
     }
 
 
-    // Method to validate image requirement for different attendance types
-    public static boolean validateattendanceimagerequired(String attendancetype) throws InterruptedException {
 
-        try{
-            // Checking image requirement based on attendance type
-            if(attendancetype.equalsIgnoreCase("present")){
-                if(!Source(Present)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",Present);
-                click("ACCESSIBILITYID",Present);
-                if(isElementDisplayed("xpath",Attendancecamera)){
-                    testReport.get().pass(formatData("Image is Required for Present"));
-                    click("ACCESSIBILITYID",Present);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is Required for Present but camera option is not displayed "));
-                    log.error("Image is Required for Present but camera option is not displayed");
-                    return false;
-                }
-            } else if (attendancetype.equalsIgnoreCase("Leave")) {
-                if(!Source(Leave)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",Leave);
-                if(Source(imgnonmandatorymsg)){
-                    testReport.get().pass(formatData("Image is not Required for leave"));
-                    click("ACCESSIBILITYID",Leave);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is not Required for Leave but camera option is displayed "));
-                    log.error("Image is not Required for Leave but camera option is displayed");
-                    return false;
-                }
-            } else if (attendancetype.equalsIgnoreCase("absent")) {
-                if(!Source(Absent)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",Absent);
-                if(Source(imgnonmandatorymsg)){
-                    testReport.get().pass(formatData("Image is not Required for absent"));
-                    click("ACCESSIBILITYID",Absent);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is not Required for absent but camera option is displayed "));
-                    log.error("Image is not Required for absent but camera option is displayed");
-                    return false;
-                }
-            } else if (attendancetype.equalsIgnoreCase("At office")) {
-                if(!Source(atoffice)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",atoffice);
-                if(isElementDisplayed("xpath",Attendancecamera)){
-                    testReport.get().pass(formatData("Image is Required for At office"));
-                    click("ACCESSIBILITYID",atoffice);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is Required for At office but camera option is not displayed "));
-                    log.error("Image is Required for At office but camera option is not displayed ");
-                    return false;
-                }
-            }else if (attendancetype.equalsIgnoreCase("Week off")){
-                if(!Source(weekoff)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",weekoff);
-                if(Source(imgnonmandatorymsg)){
-                    testReport.get().pass(formatData("Image is not Required for Week off"));
-                    click("ACCESSIBILITYID",weekoff);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is not Required for Week off but camera option is displayed "));
-                    log.error("Image is not Required for Week off but camera option is displayed");
-                    return false;
-                }
-            }else if (attendancetype.equalsIgnoreCase("Holiday")){
-                if(!Source(holiday)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",holiday);
-                if(Source(imgnonmandatorymsg)){
-                    testReport.get().pass(formatData("Image is not Required for Holiday"));
-                    click("ACCESSIBILITYID",holiday);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is not Required for Holiday but camera option is displayed "));
-                    log.error("Image is not Required for Holiday but camera option is displayed");
-                    return false;
-                }
-            }else if (attendancetype.equalsIgnoreCase("Tour")){
-                if(!Source(tour)){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID",tour);
-                if(Source(imgnonmandatorymsg)){
-                    testReport.get().pass(formatData("Image is not Required for Tour"));
-                    click("ACCESSIBILITYID",tour);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is not Required for Tour but camera option is displayed "));
-                    log.error("Image is not Required for Tour but camera option is displayed");
-                    return false;
-                }
-            }else if (attendancetype.equalsIgnoreCase("Training")){
-                if(!Source("Training")){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID","Training");
-                if(isElementDisplayed("xpath",Attendancecamera)){
-                    testReport.get().pass(formatData("Image is  Required for Training"));
-                    click("ACCESSIBILITYID","Training");
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is Required for Training but camera option is not displayed "));
-                    log.error("Image is Required for Training but camera option is not displayed ");
-                    return false;
-                }
-            }else if (attendancetype.equalsIgnoreCase("Monthly Meeting")){
-                if(!Source("Monthly Meeting")){
-                    click("ACCESSIBILITYID", Attendance);
-                }
-                click("ACCESSIBILITYID","Monthly Meeting");
-                if(isElementDisplayed("xpath",Attendancecamera)){
-                    testReport.get().pass(formatData("Image is  Required for Monthly Meeting"));
-                    click("ACCESSIBILITYID","Monthly Meeting");
-                    click("ACCESSIBILITYID", Attendance_page.Present);
-                    return true;
-                }else{
-                    testReport.get().fail(formatData("Image is Required for Training but camera option is not displayed "));
-                    log.error("Image is Required for Training but camera option is not displayed ");
-                    return false;
-                }
+    // Method to validate image requirement for different attendance types
+    public static boolean validateAttendanceImageRequired(String attendancetype) throws InterruptedException {
+        try {
+            if (!Source(attendancetype)) {
+                click("ACCESSIBILITYID", Attendance);
+                click("ACCESSIBILITYID", attendancetype);
+            }
+            if(attendanceimagerequiredvalidation(attendancetype)){
+                return true;
+            }else{
+                return false;
             }
         }catch (Exception e) {
-            log.error("Exception occurred: " + e.getMessage());
-            testReport.get().fail(formatData("Exception occurred: " + e.getMessage()));
+            logAndReportFailure("Exception occurred: " + e.getMessage());
+            e.getMessage();
             return false;
         }
-        return false;
-
     }
 }

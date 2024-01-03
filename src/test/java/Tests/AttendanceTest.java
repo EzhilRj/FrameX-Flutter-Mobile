@@ -18,7 +18,7 @@ public class AttendanceTest {
     public static void TC001_VerifyImagerequired(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(validateattendanceimagerequired(data.get("Attendancetype")));
+        Assert.assertTrue(validateAttendanceImageRequired(data.get("Attendancetype")));
 
     }
 
@@ -26,7 +26,7 @@ public class AttendanceTest {
     public static void TC002_VerifyAttendance(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(attendancesubmission(data.get("Attendancetype"),data.get("Image Required")));
+        Assert.assertTrue(validateattendancesubmission(data.get("Attendancetype"),data.get("Image Required")));
 
     }
 
