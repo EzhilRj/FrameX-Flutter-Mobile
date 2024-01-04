@@ -8,8 +8,7 @@
         <classes>
             <class name="Tests.LoginTest">
                 <methods>
-                    <include name="TC001_VerifyAppVersion" />
-                    <include name="TC002_VerifyLogin" />
+                    <include name="TC001_VerifyLogin" />
                 </methods>
             </class>
         </classes>

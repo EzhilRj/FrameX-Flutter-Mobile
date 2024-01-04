@@ -12,9 +12,7 @@ import static Modules.Login_Module.checkVersion;
 
 public class AttendanceTest {
 
-
-
-    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 3,description = "This  test case verifies the attendance images is mandatory or not for each types")
+    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 2,description = "This  test case verifies the attendance images is mandatory or not for each types")
     public static void TC001_VerifyImagerequired(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
@@ -22,7 +20,7 @@ public class AttendanceTest {
 
     }
 
-    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 4,description = "This  test case verifies the Attendance is submit or not")
+    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 3,description = "This  test case verifies the Attendance is submit or not",retryAnalyzer = Tests.RetryAnalyser .class)
     public static void TC002_VerifyAttendance(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);

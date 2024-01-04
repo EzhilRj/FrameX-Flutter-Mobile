@@ -121,7 +121,7 @@ public class Actions extends AppiumTestSetup {
     public static void WebdriverWait(String attributeName, String attributeValue, int seconds) {
         try {
             String AN = attributeName.toUpperCase();
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
             switch (AN) {
                 case "ID" -> {
                     element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(attributeValue)));

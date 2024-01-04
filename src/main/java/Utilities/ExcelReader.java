@@ -354,7 +354,6 @@ public class ExcelReader {
 	// returns true if column is created successfully
 	public boolean addColumn(String sheetName,String colName){
 
-
 		try{
 			fis = new FileInputStream(path);
 			workbook = new XSSFWorkbook(fis);
@@ -410,8 +409,6 @@ public class ExcelReader {
 			XSSFCreationHelper createHelper = workbook.getCreationHelper();
 			style.setFillPattern(FillPatternType.NO_FILL);
 
-
-
 			for(int i =0;i<getRowCount(sheetName);i++){
 				row=sheet.getRow(i);
 				if(row!=null){
@@ -463,8 +460,6 @@ public class ExcelReader {
 			return -1;
 
 		return row.getLastCellNum();
-
-
 
 	}
 

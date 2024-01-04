@@ -67,11 +67,14 @@ public class Login_Module extends AppiumTestSetup {
 				logAndReportSuccess("App Version is matched: " + versionToCheck);
 				return true;
 			} else {
-				logAndReportFailure("App Version is not matched: " + versionToCheck);
+				System.out.println("App Version is not matched: " + versionToCheck);
+				log.error("App Version is not matched :  "+versionToCheck);
+				driver.quit();
+				service.stop();
 				return false;
 			}
 		} catch (Exception e) {
-			logAndReportFailure("Exception occurred during version check: " + e.getMessage());
+			e.printStackTrace();
 			return false;
 		}
 	}

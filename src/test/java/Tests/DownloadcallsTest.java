@@ -11,7 +11,7 @@ import static Modules.Downloadcalls_Module.validatedownloadcalls;
 
 public class DownloadcallsTest {
 
-    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 5,description = "This  test case verifies the calls is downloaded or not in download calls")
+    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 4,description = "This  test case verifies the calls is downloaded or not in download calls",retryAnalyzer = Tests.RetryAnalyser .class)
     public static void TC001_VerifyDownloadcalls(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);

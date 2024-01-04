@@ -1,9 +1,6 @@
 package Tests;
 
 import Base.AppiumTestSetup;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 
 public class CallPlanTest extends AppiumTestSetup {
 

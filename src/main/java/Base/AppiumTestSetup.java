@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import static Modules.Login_Module.checkVersion;
 import static Utilities.Constants.*;
 import static Utilities.Mailconfig.sendMailReport;
 
@@ -33,10 +34,14 @@ public class AppiumTestSetup {
     public static String devicemodel;
     public static ExcelReader excel = new ExcelReader(Excelpath);
     public static DesiredCapabilities capabilities ;
+
+    // Method to start the app and set up the test environment
     @BeforeSuite
     public static void StartApp(ITestContext context) throws IOException {
         try {
             PropertyConfigurator.configure(LogConfiguration);
+
+            // Start the Appium service
             service = new AppiumServiceBuilder()
                     .withAppiumJS(new File(ServerPath))
                     .withIPAddress("127.0.0.1").usingPort(4723)
@@ -60,6 +65,7 @@ public class AppiumTestSetup {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            checkVersion("3.1.6");
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);
             e.printStackTrace();
@@ -67,18 +73,23 @@ public class AppiumTestSetup {
     }
 
 
+
+    // Method to tear down the test environment after test execution
     @AfterSuite
     public static void tearDownApp() throws InterruptedException, MessagingException {
 
+        // Close the AndroidDriver instance if it exists
         if (driver != null) {
             log.info("AndroidDriver is Quited");
             driver.quit();
         }
+        // Stop the Appium service if running
         if (service != null && service.isRunning()) {
             log.info("Appium service is Stopped");
             service.stop();
         }
 
+        // Send mail report and open the generated report file in the default web browser
         //sendMailReport();
 
         // Open the generated report file in the default web browser
@@ -90,8 +101,7 @@ public class AppiumTestSetup {
         }
 
         // Log completion message
-        log.debug("Test Execution Completed");
-
+        log.info("Test Execution Completed");
 
     }
 

@@ -1,9 +1,13 @@
 package Pages;
 
+import Utilities.ValidationManager;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import static Modules.Attendance_Module.attendancesuccessmessages;
 import static Utilities.Actions.click;
+import static Utilities.Actions.isElementDisplayed;
 import static Utilities.Utils.generatedateandtime;
 
 public class Attendance_page {
@@ -70,7 +74,13 @@ public class Attendance_page {
 
     public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
-        click("ACCESSIBILITYID", Attendance_page.Present);
+        for (String key : attendancesuccessmessages.keySet()) {
+            if(ValidationManager.Source(key)) {
+                click("ACCESSIBILITYID", key);
+                break;
+            }
+        }
+
         click("ACCESSIBILITYID", type);
 
         if(type.equalsIgnoreCase("Present")||type.equalsIgnoreCase("At Office")||type.equalsIgnoreCase("Training")||type.equalsIgnoreCase("Monthly Meeting")){

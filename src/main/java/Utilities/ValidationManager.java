@@ -56,30 +56,29 @@ public class ValidationManager {
 
     public static boolean attendancesubmittedvalidation(String type , String response,String confirmresponse) throws InterruptedException {
 
-            if(Source(response)){
-                Thread.sleep(1000);
+        if(Source(imgmandatorymsg)){
+            logAndReportFailure("Negative data is given : Attendance submission failed , Image is mandatory for "+type);
+            return false;
+        } else if (Source(response)){
+            Thread.sleep(1000);
+            click("ACCESSIBILITYID", Attendance);
+            if(Source(confirmresponse)){
+                logAndReportSuccess("Attendance Submitted successfully");
+                return true;
+            }else{
+                driver.navigate().back();
+                click("ACCESSIBILITYID", HomePage_page.Callplan);
+                driver.navigate().back();
                 click("ACCESSIBILITYID", Attendance);
-                if(Source(confirmresponse)){
+                if(Source(confirmresponse)) {
                     logAndReportSuccess("Attendance Submitted successfully");
                     return true;
-                }else{
-                    driver.navigate().back();
-                    click("ACCESSIBILITYID", HomePage_page.Callplan);
-                    driver.navigate().back();
-                    click("ACCESSIBILITYID", Attendance);
-                    if(Source(confirmresponse)) {
-                        logAndReportSuccess("Attendance Submitted successfully");
-                        return true;
-                    } else {
-                        logAndReportFailure("Attendance Submission Failed");
-                        return false;
-                    }
+                } else {
+                    logAndReportFailure("Attendance Submission Failed");
+                    return false;
                 }
-            } else if (Source(imgmandatorymsg)) {
-                logAndReportFailure("Negative data is given : Attendance submission failed , Image is mandatory for "+type);
-                return false;
             }
-
+        }
         return false;
     }
 

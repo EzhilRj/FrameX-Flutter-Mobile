@@ -48,8 +48,6 @@ public class Attendance_Module extends AppiumTestSetup {
         }
     }
 
-
-
     // Method to validate image requirement for different attendance types
     public static boolean validateAttendanceImageRequired(String attendancetype) throws InterruptedException {
         try {
