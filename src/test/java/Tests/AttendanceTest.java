@@ -28,20 +28,4 @@ public class AttendanceTest {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

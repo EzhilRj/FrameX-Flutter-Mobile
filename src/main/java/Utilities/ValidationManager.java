@@ -60,7 +60,6 @@ public class ValidationManager {
             logAndReportFailure("Negative data is given : Attendance submission failed , Image is mandatory for "+type);
             return false;
         } else if (Source(response)){
-            Thread.sleep(1000);
             click("ACCESSIBILITYID", Attendance);
             if(Source(confirmresponse)){
                 logAndReportSuccess("Attendance Submitted successfully");
@@ -68,6 +67,7 @@ public class ValidationManager {
             }else{
                 driver.navigate().back();
                 click("ACCESSIBILITYID", HomePage_page.Callplan);
+                Thread.sleep(1500);
                 driver.navigate().back();
                 click("ACCESSIBILITYID", Attendance);
                 if(Source(confirmresponse)) {

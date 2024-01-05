@@ -5,6 +5,7 @@ import java.io.*;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -255,31 +256,28 @@ public class Utils {
     }
 
 
-    public static String generateDate() {
-        // Define the desired date format
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
+    public static String generateFormattedDate() {
         // Get the current date
         LocalDate currentDate = LocalDate.now();
 
-        // Format the date in the desired format
-        String formattedDate = currentDate.format(formatter);
+        // Extract the last two digits of the year
+        int lastTwoDigitsOfYear = currentDate.getYear() % 100;
+
+        // Format the date in the required format "dd-MM-yy"
+        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
 
         return formattedDate;
     }
 
-    public static String generatedateandtime() {
-        // Get the current date and time
-        LocalDateTime now = LocalDateTime.now();
+    public static String getdevicetime() {
+        String time  =  driver.getDeviceTime();
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse(time);
+        String devicetime = offsetDateTime.format(DateTimeFormatter.ofPattern("HH:mm"));
 
-        // Define the desired date and time format
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yy HH:mm");
-
-        // Format the current date and time using the defined formatter
-        String formattedDateTime = now.format(formatter);
-
-        return formattedDateTime;
+        return devicetime;
     }
+
+
 
 
     public static void gohomepage(String module){

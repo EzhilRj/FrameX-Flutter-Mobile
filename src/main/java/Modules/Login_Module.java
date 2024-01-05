@@ -62,9 +62,10 @@ public class Login_Module extends AppiumTestSetup {
 	public static boolean checkVersion(String versionToCheck) {
 
 		try {
+			WebdriverWait("Xpath", username,15);
 			boolean isVersionDisplayed = Source(versionToCheck);
 			if (isVersionDisplayed) {
-				logAndReportSuccess("App Version is matched: " + versionToCheck);
+				log.info("App version is Matched");
 				return true;
 			} else {
 				System.out.println("App Version is not matched: " + versionToCheck);

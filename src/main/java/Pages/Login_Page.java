@@ -6,7 +6,7 @@ import static Utilities.Actions.Enter;
 
 public class Login_Page {
 
-    private static String username = "//*[@hint='Username']";
+    public static String username = "//*[@hint='Username']";
     private static String password = "//*[@hint='Password']";
     private static String project = "//*[@hint='Project']";
     private static String Mobiileno = "//*[@hint='Mobile no.']";

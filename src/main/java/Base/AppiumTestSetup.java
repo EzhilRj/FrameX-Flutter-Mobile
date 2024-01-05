@@ -18,9 +18,12 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
 import static Modules.Login_Module.checkVersion;
+import static Pages.Attendance_page.presentsavedmsg;
 import static Utilities.Constants.*;
 import static Utilities.Mailconfig.sendMailReport;
 
@@ -59,10 +62,12 @@ public class AppiumTestSetup {
             capabilities.setCapability("automationName", "UIAutomator2");
             capabilities.setCapability("skipDeviceInitialization", true);
             capabilities.setCapability("ignoreUnimportantViews", true);
+            capabilities.setCapability("skipUnlock",true);
             capabilities.setCapability("newCommandTimeout", 120);
-
+            capabilities.setCapability("networkSpeed","gprs");
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
+
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
             checkVersion("3.1.6");

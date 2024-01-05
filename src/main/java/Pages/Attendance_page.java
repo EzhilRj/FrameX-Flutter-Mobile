@@ -5,10 +5,10 @@ import Utilities.ValidationManager;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-import static Modules.Attendance_Module.attendancesuccessmessages;
 import static Utilities.Actions.click;
 import static Utilities.Actions.isElementDisplayed;
-import static Utilities.Utils.generatedateandtime;
+import static Utilities.Utils.generateFormattedDate;
+import static Utilities.Utils.getdevicetime;
 
 public class Attendance_page {
 
@@ -27,7 +27,7 @@ public class Attendance_page {
     public static String Submit = "Submit";
     public static String imgnonmandatorymsg = "No Image Required";
     public static String imgmandatorymsg = "Please, Take Photo for submit attandance.";
-    public static final String presentsavedmsg = "Your Attendance is Marked for Today  Present "+generatedateandtime();
+    public static final String presentsavedmsg = "Your Attendance is Marked for Today  Present "+generateFormattedDate()+" "+getdevicetime();
     public static final String leavesavedmsg = "Your Attendance is Marked for Today  Leave";
     public static final String absentsavedmsg = "Your Attendance is Marked for Today  Absent";
     public static final String atofficesavedmsg = "Your Attendance is Marked for Today  At Office";
@@ -74,7 +74,7 @@ public class Attendance_page {
 
     public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
-        for (String key : attendancesuccessmessages.keySet()) {
+        for (String key : attendancemessages().keySet()) {
             if(ValidationManager.Source(key)) {
                 click("ACCESSIBILITYID", key);
                 break;

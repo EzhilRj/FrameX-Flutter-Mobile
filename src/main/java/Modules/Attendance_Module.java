@@ -11,16 +11,18 @@ import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
 import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
-import static Utilities.Utils.generatedateandtime;
+import static Utilities.Utils.getdevicetime;
 import static Utilities.Utils.gohomepage;
 import static Utilities.ValidationManager.*;
 
 public class Attendance_Module extends AppiumTestSetup {
 
     public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
-    public static HashMap<String,String>attendancesuccessmessages =  attendancemessages();
+
 
     public static boolean validateattendancesubmission(String attendancetype,String image) throws InterruptedException {
+
+        HashMap<String,String>attendancesuccessmessages =  attendancemessages();
 
         String Attendacemarkedmessage = "Your attendance Marked for today as "+attendancetype;
         String savedmsg = "";
@@ -34,8 +36,8 @@ public class Attendance_Module extends AppiumTestSetup {
                     savedmsg =  attendancesuccessmessages.get(key);
                 }
             }
-            // Verifying attendance submission success/failure
             WebdriverWait("ACCESSIBILITYID",savedmsg,10);
+            // Verifying attendance submission success/failure
             if(attendancesubmittedvalidation(attendancetype,savedmsg,Attendacemarkedmessage)){
                 return true;
             }else{
