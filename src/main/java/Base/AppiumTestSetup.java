@@ -67,19 +67,19 @@ public class AppiumTestSetup {
                     .build();
             service.start();
 
+            String[]  capabs = {"platformName","appPackage","appActivity","autoGrantPermissions","automationName","skipDeviceInitialization","ignoreUnimportantViews","skipUnlock"};
             // Set desired capabilities for Android driver
             capabilities = new DesiredCapabilities();
-            capabilities.setCapability("platformName", props.get("PlatformName"));
-            capabilities.setCapability("deviceName", Devicename);
+            for(String capkey : capabs){
+                if(capkey.equalsIgnoreCase("autoGrantPermissions")||capkey.equalsIgnoreCase("skipDeviceInitialization")|| capkey.equalsIgnoreCase("ignoreUnimportantViews")||capkey.equalsIgnoreCase("skipUnlock")){
+                    capabilities.setCapability(capkey,Boolean.parseBoolean(props.get(capkey)));
+                }else{
+                    capabilities.setCapability(capkey,props.get(capkey));
+                }
+
+            }
             capabilities.setCapability("app", props.get("Apppath"));
-            capabilities.setCapability("appPackage", props.get("AppPackage"));
-            capabilities.setCapability("appActivity", props.get("AppActivity"));
-            capabilities.setCapability("autoGrantPermissions", Boolean.parseBoolean(props.get("AutoGrantPermissions")));
-            capabilities.setCapability("automationName", props.get("AutomationName"));
-            capabilities.setCapability("skipDeviceInitialization",Boolean.parseBoolean(props.get("SkipDeviceInitialization")));
-            capabilities.setCapability("ignoreUnimportantViews", Boolean.parseBoolean(props.get("IgnoreUnimportantViews")));
-            capabilities.setCapability("skipUnlock", Boolean.parseBoolean(props.get("SkipUnlock")));
-            capabilities.setCapability("newCommandTimeout",Integer.parseInt(props.get("NewCommandTimeout")) );
+            capabilities.setCapability("deviceName", Devicename);
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
