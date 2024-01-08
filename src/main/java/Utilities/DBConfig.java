@@ -11,7 +11,7 @@ import static Utilities.Constants.*;
 
 public class DBConfig extends AppiumTestSetup {
 
-    public static List<Map<String, String>> executeQuery(String query) throws Exception {
+   /* public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (
                 Connection connection = DriverManager.getConnection(LocalDatabaseurl, LocalDbusername, LocalDbpassword);
                 Statement statement = connection.createStatement();
@@ -43,10 +43,11 @@ public class DBConfig extends AppiumTestSetup {
         }
 
         return null;
-    }
+    }*/
 
 
     //GetDatas
+/*
     public static List<String> getColumnValues(String query, String columnname) throws Exception {
 
         List<String> columnValues = new ArrayList<>();
@@ -58,10 +59,11 @@ public class DBConfig extends AppiumTestSetup {
 
         return columnValues;
     }
+*/
 
 
     //GetDataObject
-    public static List<Object> getDataObject(String query) throws Exception {
+/*    public static List<Object> getDataObject(String query) throws Exception {
 
         List<Object> dataObjects = new ArrayList<>();
         List<Map<String, String>> queryResult = executeQuery(query);
@@ -75,7 +77,7 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<Map<String, String>> testDatas(String query) throws Exception {
         return executeQuery(query);
-    }
+    }*/
 
 
     private static boolean shouldIncludeData(String category) {

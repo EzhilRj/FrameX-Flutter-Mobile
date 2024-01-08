@@ -2,6 +2,7 @@ package Base;
 
 import Utilities.Constants;
 import Utilities.ExcelReader;
+import Utilities.Utils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -16,12 +17,15 @@ import org.testng.annotations.BeforeSuite;
 import javax.mail.MessagingException;
 import java.awt.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import static Listeners.FrameX_Listeners.fileName;
 import static Modules.Login_Module.checkVersion;
 import static Pages.Attendance_page.presentsavedmsg;
 import static Utilities.Constants.*;
@@ -35,42 +39,52 @@ public class AppiumTestSetup {
     public static Logger log = Logger.getLogger(AppiumTestSetup.class);
     public static String testSuiteName;
     public static String devicemodel;
-    public static ExcelReader excel = new ExcelReader(Excelpath);
+    public static ExcelReader excel;
+
+    public static HashMap<String,String>props;
+
+    static {
+        try {
+            props = Utils.propertyloader();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        excel = new ExcelReader(props.get("Datafilepath"));
+    }
+
     public static DesiredCapabilities capabilities ;
 
     // Method to start the app and set up the test environment
     @BeforeSuite
     public static void StartApp(ITestContext context) throws IOException {
         try {
-            PropertyConfigurator.configure(LogConfiguration);
+            PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
 
             // Start the Appium service
             service = new AppiumServiceBuilder()
-                    .withAppiumJS(new File(ServerPath))
+                    .withAppiumJS(new File(props.get("Server")))
                     .withIPAddress("127.0.0.1").usingPort(4723)
                     .build();
             service.start();
 
             // Set desired capabilities for Android driver
             capabilities = new DesiredCapabilities();
-            capabilities.setCapability("platformName", "Android");
+            capabilities.setCapability("platformName", props.get("PlatformName"));
             capabilities.setCapability("deviceName", Devicename);
-            capabilities.setCapability("app", Apppath);
-            capabilities.setCapability("appPackage", "com.fieldlytics.framex");
-            capabilities.setCapability("appActivity", "com.fieldlytics.frame.MainActivity");
-            capabilities.setCapability("autoGrantPermissions", false);
-            capabilities.setCapability("automationName", "UIAutomator2");
-            capabilities.setCapability("skipDeviceInitialization", true);
-            capabilities.setCapability("ignoreUnimportantViews", true);
-            capabilities.setCapability("skipUnlock",true);
-            capabilities.setCapability("newCommandTimeout", 120);
-            capabilities.setCapability("networkSpeed","gprs");
+            capabilities.setCapability("app", props.get("Apppath"));
+            capabilities.setCapability("appPackage", props.get("AppPackage"));
+            capabilities.setCapability("appActivity", props.get("AppActivity"));
+            capabilities.setCapability("autoGrantPermissions", Boolean.parseBoolean(props.get("AutoGrantPermissions")));
+            capabilities.setCapability("automationName", props.get("AutomationName"));
+            capabilities.setCapability("skipDeviceInitialization",Boolean.parseBoolean(props.get("SkipDeviceInitialization")));
+            capabilities.setCapability("ignoreUnimportantViews", Boolean.parseBoolean(props.get("IgnoreUnimportantViews")));
+            capabilities.setCapability("skipUnlock", Boolean.parseBoolean(props.get("SkipUnlock")));
+            capabilities.setCapability("newCommandTimeout",Integer.parseInt(props.get("NewCommandTimeout")) );
             // Specify the URL with the correct IP address and port for the Appium server
-            driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), capabilities);
-
+            driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
-            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            checkVersion("3.1.6");
+            driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
+            checkVersion(props.get("Appversion"));
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);
             e.printStackTrace();
@@ -78,10 +92,9 @@ public class AppiumTestSetup {
     }
 
 
-
     // Method to tear down the test environment after test execution
     @AfterSuite
-    public static void tearDownApp() throws InterruptedException, MessagingException {
+    public static void tearDownApp() throws InterruptedException, MessagingException, FileNotFoundException {
 
         // Close the AndroidDriver instance if it exists
         if (driver != null) {
@@ -95,10 +108,10 @@ public class AppiumTestSetup {
         }
 
         // Send mail report and open the generated report file in the default web browser
-        //sendMailReport();
+       // sendMailReport();
 
         // Open the generated report file in the default web browser
-        File extentReport = new File(ReportPath);
+        File extentReport = new File(props.get("TestReportspath")+fileName);
         try {
             Desktop.getDesktop().browse(extentReport.toURI());
         } catch (IOException e) {

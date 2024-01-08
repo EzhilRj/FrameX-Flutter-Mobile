@@ -82,7 +82,6 @@ public class Attendance_page {
         }
 
         click("ACCESSIBILITYID", type);
-
         if(type.equalsIgnoreCase("Present")||type.equalsIgnoreCase("At Office")||type.equalsIgnoreCase("Training")||type.equalsIgnoreCase("Monthly Meeting")){
             // Check if image is required and interact accordingly
             if(img.equalsIgnoreCase("True")){

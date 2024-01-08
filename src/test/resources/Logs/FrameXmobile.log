@@ -1,0 +1,19 @@
+2024-01-08 15:55:08,133 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-01-08 15:55:18,495 [main] INFO  Base.AppiumTestSetup  - Username : harikdel
+2024-01-08 15:55:18,495 [main] INFO  Base.AppiumTestSetup  - Password : harikdel
+2024-01-08 15:55:18,495 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
+2024-01-08 15:55:18,495 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8248606917
+2024-01-08 15:55:20,349 [main] INFO  Base.AppiumTestSetup  - Login Successful.
+2024-01-08 15:55:20,749 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-01-08 15:55:21,335 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-01-08 15:55:25,357 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-01-08 15:55:25,877 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-01-08 16:22:27,862 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-01-08 16:22:36,201 [main] INFO  Base.AppiumTestSetup  - Username : harikdel
+2024-01-08 16:22:36,201 [main] INFO  Base.AppiumTestSetup  - Password : harikdel
+2024-01-08 16:22:36,201 [main] INFO  Base.AppiumTestSetup  - Project : jj_test
+2024-01-08 16:22:36,201 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 824860691
+2024-01-08 16:22:40,005 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-01-08 16:22:40,585 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-01-08 16:22:46,328 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-01-08 16:22:46,844 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed

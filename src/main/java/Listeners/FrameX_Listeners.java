@@ -13,18 +13,30 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 
 import static Base.AppiumTestSetup.log;
-import static Utilities.Constants.ReportPath;
+
+import static Base.AppiumTestSetup.props;
+import static Utilities.Utils.screenshotName;
 
 public class FrameX_Listeners implements ITestListener, ISuiteListener {
     static Date d = new Date();
-    public static final String fileName = "FrameX_Mobile_Automation_Report_" + d.toString().replace(":", "_").replace(" ", "_")
-            + ".html";
-    private static ExtentReports extent = ExtentManager.createInstance(ReportPath);
+    public static final String fileName = props.get("Reportfilename") + d.toString().replace(":", "_").replace(" ", "_") + ".html";
+
+    private static ExtentReports extent;
+
+    static {
+        try {
+            extent = ExtentManager.createInstance(props.get("TestReportspath")+fileName);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static ThreadLocal<ExtentTest> testReport = new ThreadLocal<ExtentTest>();
 
     public void onTestStart(ITestResult result) {
@@ -50,7 +62,7 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
         try {
             Utils.captureScreenshot();
             testReport.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
-                    MediaEntityBuilder.createScreenCaptureFromPath(Utils.screenshotName)
+                    MediaEntityBuilder.createScreenCaptureFromPath(props.get("Screenshotpath") + screenshotName)
                             .build());
         } catch (IOException e) {
             e.printStackTrace();

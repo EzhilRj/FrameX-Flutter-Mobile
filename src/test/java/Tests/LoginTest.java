@@ -11,7 +11,6 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import static Modules.Login_Module.*;
-import static Utilities.DBConfig.testDatas;
 
 
 public class LoginTest extends AppiumTestSetup {

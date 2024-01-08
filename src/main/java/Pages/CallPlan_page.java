@@ -2,7 +2,7 @@ package Pages;
 
 import java.util.List;
 
-import static Utilities.DBConfig.getDataObject;
+
 
 public class CallPlan_page {
 
@@ -33,12 +33,12 @@ public class CallPlan_page {
 
 		return FormslistsLocator;
 	}
-	public static String DataTypeGetter(String form) throws Exception {
+/*	public static String DataTypeGetter(String form) throws Exception {
 
 		List<Object> fieldnames = getDataObject("select FieldName,DataType,ControlType from FormFieldsDetail where [Form Name] = '"+form+"'");
 
 		return fieldnames.toString();
-	}
+	}*/
 
 	public static String NextButton = "//android.view.View[@content-desc='Next']";
 	public static String Donebutton = "//android.view.View[@content-desc='Done']";

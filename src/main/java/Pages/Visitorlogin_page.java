@@ -51,19 +51,5 @@ public class Visitorlogin_page {
 	
 	public static final String selfie_errmsg = "Please, Take a image";
 	
-	
 
-
-
-
-
-	
-
-	
-	
-		
-	
-	
-	
-	
 }

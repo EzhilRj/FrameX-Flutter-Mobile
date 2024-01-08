@@ -157,12 +157,8 @@ public class Utils {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         Date d = new Date();
-        screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
-
-        FileUtils.copyFile(scrFile,
-                new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Reports\\" + screenshotName));
-        FileUtils.copyFile(scrFile, new File("\\src\\test\\resources\\Reports\\" + screenshotName));
-
+        screenshotName ="Screenshot_"+ d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+        FileUtils.copyFile(scrFile, new File(props.get("Screenshotpath") + screenshotName));
     }
 
     /**
@@ -269,6 +265,14 @@ public class Utils {
         return formattedDate;
     }
 
+    public static String generatedateandtime() {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_hh:mm:ss_a");
+        String formattedDateTime = currentDateTime.format(formatter);
+
+        return formattedDateTime;
+    }
+
     public static String getdevicetime() {
         String time  =  driver.getDeviceTime();
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(time);
@@ -276,8 +280,6 @@ public class Utils {
 
         return devicetime;
     }
-
-
 
 
     public static void gohomepage(String module){
@@ -288,6 +290,42 @@ public class Utils {
         }
     }
 
+    public static HashMap<String,String> propertyloader() throws FileNotFoundException {
+
+        String configfilepath  =System.getProperty("user.dir") + "\\src\\test\\resources\\Properties\\Config.properties";
+        Properties properties = new Properties();
+        FileInputStream fileInputStream = null;
+
+        Map<String, String> propertiesMap = null;
+        try {
+            fileInputStream = new FileInputStream(configfilepath);
+            properties.load(fileInputStream);
+
+            String value  = "";
+
+            // Convert properties to HashMap
+            propertiesMap = new HashMap<>();
+            for (String key : properties.stringPropertyNames()) {
+                value = properties.getProperty(key);
+                if(key.contains("path")){
+                    value = System.getProperty("user.dir") +properties.getProperty(key);
+                }
+                propertiesMap.put(key, value);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return (HashMap<String, String>) propertiesMap;
+    }
 }
 
 

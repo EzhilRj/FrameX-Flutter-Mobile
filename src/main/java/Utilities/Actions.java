@@ -15,7 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-import static Utilities.Constants.Screenshotpath;
 import static io.appium.java_client.AppiumBy.accessibilityId;
 
 public class Actions extends AppiumTestSetup {
@@ -178,8 +177,6 @@ public class Actions extends AppiumTestSetup {
     }
 
 
-
-
     public static boolean Scroll(String action) throws InterruptedException {
         Thread.sleep(1000);
         try {
@@ -203,7 +200,7 @@ public class Actions extends AppiumTestSetup {
         if (result.getStatus() == ITestResult.FAILURE) {
             TakesScreenshot ts = driver;
             File source = ts.getScreenshotAs(OutputType.FILE); // capture screenshot file
-            File target = new File(Screenshotpath + result.getName() + ".png");
+            File target = new File(props.get("Screenshotpath") + result.getName() + ".png");
 
             FileUtils.copyFile(source, target);
         }
