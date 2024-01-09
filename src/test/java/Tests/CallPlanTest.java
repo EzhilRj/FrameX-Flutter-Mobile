@@ -1,27 +1,27 @@
 package Tests;
 
 import Base.AppiumTestSetup;
+import Utilities.Utils;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.lang.reflect.Method;
+import java.util.Hashtable;
+
+import static Modules.Attendance_Module.validateAttendanceImageRequired;
+import static Modules.Callplan_Module.Validateuploadcall;
 
 public class CallPlanTest extends AppiumTestSetup {
 
-/*    @Test(dependsOnMethods = "TC_001_VerifyLogin")
-    public static void TC_002_VerifyCallPlan() throws Exception {
-        CallPlan();
-    }*/
+    @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 7,description = "This  test case verifies the Call Upload")
+    public static void TC001_VerifyUploadcall(Hashtable<String, String> data, Method m) throws Exception {
+
+        Utils.checkexecution(m.getName(),data);
+        Assert.assertTrue(Validateuploadcall(data.get("TargetID")));
 
 
-/*    @Test(dependsOnMethods = "TC_002_VerifyCallPlan")
-    public static void TC_003_VerifyCategoryLists() throws Exception {
+    }
 
-        Assert.assertTrue( DataBinder());
 
-    }*/
-
-/*    @Test(dependsOnMethods = "TC_003_VerifyCategoryLists")
-    public static void TC_004_Verify_UploadCalls() throws Exception {
-
-        Assert.assertTrue(Uploadfunction());
-
-    }*/
 
 }

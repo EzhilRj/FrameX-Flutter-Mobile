@@ -3,13 +3,14 @@ package Utilities;
 import Pages.HomePage_page;
 
 import static Base.AppiumTestSetup.driver;
-import static Listeners.FrameX_Listeners.logAndReportFailure;
-import static Listeners.FrameX_Listeners.logAndReportSuccess;
+import static Listeners.FrameX_Listeners.*;
+import static Listeners.FrameX_Listeners.logAndinfo;
 import static Modules.Attendance_Module.attendanceimagerule;
 import static Pages.Attendance_page.imgmandatorymsg;
 import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.click;
 import static Utilities.Actions.isElementDisplayed;
+import static Utilities.Utils.datevisitedtime;
 
 
 public class ValidationManager {
@@ -110,6 +111,18 @@ public class ValidationManager {
         }
     }
 
+    //CallPlan Validations and Verifications================================================================
+
+
+
+    public static void datevisitedvalidation() throws InterruptedException {
+        String devicetime = datevisitedtime();
+        if(Source(devicetime)){
+            logAndinfo("Visited date and time is Showing");
+        }else{
+            logAndReportFailure("Visited date and time is not Showing");
+        }
+    }
 
 
 

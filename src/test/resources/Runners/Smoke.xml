@@ -23,6 +23,19 @@
             </class>
         </classes>
     </test>
+
+    <test name="CallplanTest">
+        <classes>
+            <class name="Tests.CallPlanTest">
+                <methods>
+                    <include name="TC001_VerifyUploadcall" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
     <test name="DownloadcallsTest">
         <classes>
             <class name="Tests.DownloadcallsTest">

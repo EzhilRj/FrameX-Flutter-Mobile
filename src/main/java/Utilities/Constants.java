@@ -5,6 +5,7 @@ import static Utilities.Utils.*;
 
 public class Constants {
     public static final String Devicename  = getDeviceName();
+    public static final String queryfilepath = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\queries.sql";
 
     public static String body = "Dear Team,\n" +
             "\n" +

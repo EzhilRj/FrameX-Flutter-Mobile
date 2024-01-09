@@ -30,6 +30,7 @@ import static Modules.Login_Module.checkVersion;
 import static Pages.Attendance_page.presentsavedmsg;
 import static Utilities.Constants.*;
 import static Utilities.Mailconfig.sendMailReport;
+import static Utilities.Utils.*;
 
 
 public class AppiumTestSetup {
@@ -52,6 +53,15 @@ public class AppiumTestSetup {
         excel = new ExcelReader(props.get("Datafilepath"));
     }
 
+    public static HashMap<String,String>queries;
+    static {
+        try {
+            queries = (HashMap<String, String>) queryloader();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static DesiredCapabilities capabilities ;
 
     // Method to start the app and set up the test environment
@@ -59,6 +69,7 @@ public class AppiumTestSetup {
     public static void StartApp(ITestContext context) throws IOException {
         try {
             PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
+
 
             // Start the Appium service
             service = new AppiumServiceBuilder()

@@ -100,6 +100,11 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
         log.info(message);
     }
 
+    public static void logAndinfo(String message) {
+        testReport.get().info(formatData(message));
+        log.info(message);
+    }
+
 
     public static void logAndReportFailure(String message) {
         testReport.get().fail(formatData(message));

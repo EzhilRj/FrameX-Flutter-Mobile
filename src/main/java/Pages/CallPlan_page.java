@@ -6,8 +6,8 @@ public class CallPlan_page {
 
 	public static String sync = "Sync";
 	public static String tid = "13990";
-	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+tid+"')]";
-	public static String targetdownloadnotification = "//*[@text='Target "+tid+" downloaded successfully.']";
+	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+38356+"')]";
+	public static String targetdownloadnotification = "//*[@text='Downloaded Successfully for target " + 38356+"']";
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
 	public static String syncbuttonvalidation = "You can click after 5 minutes, since it is in Downloading or Uploading Call process.";
 	public static String startworkvalidation = "You cannot view this target because another target  38353 is already in process. Please complete it first";
@@ -25,6 +25,9 @@ public class CallPlan_page {
 	public static String CloseCallButton = "//android.view.View[@content-desc='Close Call']";
 	public static String uploadsuccessActivitylog_msg = "Target 38353 successfully uploaded 08/01/24 19:34:24";
 	public static String stattinguploadprocessActivitylog_msg = "Starting the Upload process for Target . 38353 08/01/24 19:34:23";
+	public static String sospopup_msg = "Industry Facing should be greater than Our Brand Facing";
+	public static String enterourbrandfacing_msg = "Enter Our Brand Facing";
+	public static String enterIndustryfacing_msg = "Enter Industry Facing";
 	public static String NextButton = "//android.view.View[@content-desc='Next']";
 	public static String Donebutton = "//android.view.View[@content-desc='Done']";
 	public static String Camerabutton = "//android.view.View[@content-desc='Photo']/android.view.View[3]";

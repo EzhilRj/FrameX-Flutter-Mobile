@@ -22,6 +22,7 @@ import static Base.AppiumTestSetup.driver;
 import static Base.AppiumTestSetup.excel;
 import static Pages.CallPlan_page.*;
 import static Utilities.Actions.*;
+import static Utilities.Constants.queryfilepath;
 import static Utilities.ValidationManager.Source;
 
 public class Utils {
@@ -273,10 +274,20 @@ public class Utils {
         return formattedDateTime;
     }
 
+
+
     public static String getdevicetime() {
         String time  =  driver.getDeviceTime();
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(time);
         String devicetime = offsetDateTime.format(DateTimeFormatter.ofPattern("HH:mm"));
+
+        return devicetime;
+    }
+
+    public static String datevisitedtime() {
+        String time  =  driver.getDeviceTime();
+        OffsetDateTime offsetDateTime = OffsetDateTime.parse(time);
+        String devicetime = offsetDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
         return devicetime;
     }
@@ -326,6 +337,27 @@ public class Utils {
 
         return (HashMap<String, String>) propertiesMap;
     }
+
+    public static Map<String, String> queryloader() throws IOException {
+
+        Properties properties = new Properties();
+        FileInputStream fileInputStream = new FileInputStream(queryfilepath);
+        properties.load(fileInputStream);
+        String[] querykeys= {"Categorymasterquery","FormFieldsquery",
+                "ProductColumnquery","FormMasterquery","Productquery","EnumFieldquery"};
+
+        Map<String,String>Queries = new HashMap<String,String>();
+
+        for(String key : querykeys  ){
+            Queries.put(key, properties.getProperty(key));
+        }
+
+        fileInputStream.close();
+        return Queries;
+
+    }
+
+
 }
 
 
