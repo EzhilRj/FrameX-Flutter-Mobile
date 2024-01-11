@@ -23,6 +23,7 @@ import java.net.URL;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static Listeners.FrameX_Listeners.fileName;
@@ -41,7 +42,6 @@ public class AppiumTestSetup {
     public static String testSuiteName;
     public static String devicemodel;
     public static ExcelReader excel;
-
     public static HashMap<String,String>props;
 
     static {
@@ -61,6 +61,7 @@ public class AppiumTestSetup {
             throw new RuntimeException(e);
         }
     }
+
 
     public static DesiredCapabilities capabilities ;
 
@@ -99,6 +100,8 @@ public class AppiumTestSetup {
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);
             e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -119,7 +122,7 @@ public class AppiumTestSetup {
         }
 
         // Send mail report and open the generated report file in the default web browser
-       // sendMailReport();
+        // sendMailReport();
 
         // Open the generated report file in the default web browser
         File extentReport = new File(props.get("TestReportspath")+fileName);

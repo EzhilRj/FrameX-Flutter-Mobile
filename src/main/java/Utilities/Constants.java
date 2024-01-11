@@ -1,12 +1,19 @@
 package Utilities;
 
+import Modules.Login_Module;
+
 import static Listeners.FrameX_Listeners.fileName;
+import static Modules.Login_Module.dburlproject;
 import static Utilities.Utils.*;
 
 public class Constants {
     public static final String Devicename  = getDeviceName();
     public static final String queryfilepath = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\queries.sql";
-
+    public static String getProdUrl() {
+        return "jdbc:sqlserver://65.1.119.118:1433;DatabaseName=" + Login_Module.dburlproject + ";encrypt=true;trustServerCertificate=true";
+    }
+    public static final String LiveDbusername = "Field2020";
+    public static final String LiveDbpassword = "Fieldlytics@#@2020";
     public static String body = "Dear Team,\n" +
             "\n" +
             "Please find the attached test automation report for FrameX Mobile executed on "+generateFormattedDate()+" . The test suite covered various scenarios validating the functionalities of FrameX mobile.\n" +

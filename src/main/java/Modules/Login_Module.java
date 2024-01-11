@@ -12,6 +12,7 @@ import static Utilities.ValidationManager.Source;
 
 public class Login_Module extends AppiumTestSetup {
 
+	public static String dburlproject = "";
 
 	/**
 	 * Attempts to log in to the application with provided credentials.
@@ -24,6 +25,7 @@ public class Login_Module extends AppiumTestSetup {
 	 */
 	public static boolean loginToApp(String username, String password, String project, String mobileNo) {
 
+		 dburlproject = project;
 		try {
 			String[] requiredFieldErrors = {usernameRequiredErrMsg, passwordRequiredErrMsg, projectRequiredErrMsg, mobileNoRequiredErrMsg};
 

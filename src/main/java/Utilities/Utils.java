@@ -3,11 +3,13 @@ package Utilities;
 
 import java.io.*;
 import java.lang.reflect.Method;
+import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.regex.Pattern;
 
 import Base.AppiumTestSetup;
 import Pages.Login_Page;
@@ -20,9 +22,11 @@ import org.testng.annotations.DataProvider;
 
 import static Base.AppiumTestSetup.driver;
 import static Base.AppiumTestSetup.excel;
+import static Modules.Callplan_Module.fieldName;
 import static Pages.CallPlan_page.*;
 import static Utilities.Actions.*;
 import static Utilities.Constants.queryfilepath;
+import static Utilities.DBConfig.getColumnNamesFromDatabase;
 import static Utilities.ValidationManager.Source;
 
 public class Utils {
@@ -40,6 +44,8 @@ public class Utils {
             }
             return Randomint().get(0).toString();
         } else if (type.contains("Varchar")) {
+            return generateRandomString();
+        }else if (type.contains("string")) {
             return generateRandomString();
         }
         return null;
@@ -85,10 +91,9 @@ public class Utils {
     }
 
 
-   /* public static void Dropdownsetter() throws Exception {
+    public static void Dropdownsetter(String formName, String productName) throws Exception {
 
-        List<String> dropList = getColumnValues(MessageFormat.format(EnumFieldquery, "'" + fieldName.replace(" *", "") + "'"), "FieldOption");
-        log.info("Dropdown Query"+EnumFieldquery);
+        List<String> dropList = getColumnNamesFromDatabase(MessageFormat.format(queries.get("EnumFieldquery"),formName ,"'" + productName + "'","'" + formName + "'"), "FieldOption");
         Collections.shuffle(dropList);
         int size = dropList.size();
         Random random = new Random();
@@ -97,24 +102,37 @@ public class Utils {
             if (count >= size) {
                 break;
             }
-            click("ACCESSIBILITYID", fieldName);
-            log.info("Dropdown field is Cliked");
-            click("ACCESSIBILITYID", drop);
-            log.info("Fieldname is "+fieldName+"Data is  "+ drop);
-            test.info("<span style=\"color: Blue; font-weight: bold;\">FieldName is : </span><span style=\"color: Black;\">" + fieldName + "</span>"+"   |  "+"<span style=\"color: Blue; font-weight: bold;\">Data is  : </span><span style=\"color: Black;\">" + drop + "</span>");
-            break;
-
+            /*String attribute = SetTextFieldAttribute(fieldName);*/
+            if (Source(fieldName)) {
+                click("ACCESSIBILITYID", fieldName);
+                click("ACCESSIBILITYID", drop);
+                break;
+            } else {
+                Scroll("up");
+                click("ACCESSIBILITYID", fieldName);
+                click("ACCESSIBILITYID", drop);
+                break;
+            }
 
         }
-    }*/
+
+    }
 
     public static void ImageCapture() throws InterruptedException {
 
-        click("Xpath", Camerabutton);
-        AppiumTestSetup.log.info("Camera is Cliked");
-        WebdriverWait("Xpath", Shutterbutton,4);
+        /*String attribute = SetTextFieldAttribute(fieldName);
+        if (isElementDisplayed("xpath", attribute)) {*/
+        if(fieldName.contains("Photo *")){
+            click("Xpath", Camerabutton_M);
+        }else{
+            click("Xpath", Camerabutton_NM);
+        }
+        WebdriverWait("Xpath", Shutterbutton, 4);
         click("Xpath", Shutterbutton);
-        AppiumTestSetup.log.info("Shutterbutton is Cliked");
+        Thread.sleep(1000);
+        click("ACCESSIBILITYID", "Done");
+        /*}*/
+
         Thread.sleep(3000);
 
     }
@@ -343,7 +361,7 @@ public class Utils {
         Properties properties = new Properties();
         FileInputStream fileInputStream = new FileInputStream(queryfilepath);
         properties.load(fileInputStream);
-        String[] querykeys= {"Categorymasterquery","FormFieldsquery",
+        String[] querykeys= {"Categorymasterquery","FormFieldsquery","QuestionFormFieldsquery",
                 "ProductColumnquery","FormMasterquery","Productquery","EnumFieldquery"};
 
         Map<String,String>Queries = new HashMap<String,String>();
@@ -356,6 +374,49 @@ public class Utils {
         return Queries;
 
     }
+
+    public static String SetSpecialCharacter(String value) {
+
+        // Map of special characters and their HTML entities
+        Map<String, String> specialCharacters = new HashMap<>();
+        specialCharacters.put("&", "&amp;");
+        specialCharacters.put("<", "&lt;");
+        specialCharacters.put(">", "&gt;");
+        specialCharacters.put("\"", "&quot;");
+        specialCharacters.put("'", "&apos;");
+        specialCharacters.put("©", "&copy;");
+        specialCharacters.put("®", "&reg;");
+        specialCharacters.put("™", "&trade;");
+
+        // Check if the input value contains any special characters
+        boolean containsSpecialCharacter = false;
+        for (String specialChar : specialCharacters.keySet()) {
+            if (value.contains(specialChar)) {
+                containsSpecialCharacter = true;
+                break;
+            }
+        }
+        // If the input value contains special characters, search and replace them with their HTML entities
+        if (containsSpecialCharacter) {
+            for (Map.Entry<String, String> entry : specialCharacters.entrySet()) {
+                value = value.replaceAll(Pattern.quote(entry.getKey()), entry.getValue());
+            }
+        }
+        // Return the modified value with HTML entities
+        return value;
+    }
+
+    public static List<String> initializeCategoryNames() throws Exception {
+        List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
+        return categories;
+    }
+
+
+    /*public static List<String> initializeCategoryNames() throws Exception {
+        List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
+        return categories;
+    }*/
+
 
 
 }
