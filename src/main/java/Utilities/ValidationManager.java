@@ -3,13 +3,14 @@ package Utilities;
 import Pages.HomePage_page;
 
 import static Base.AppiumTestSetup.driver;
+import static Base.AppiumTestSetup.log;
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndinfo;
 import static Modules.Attendance_Module.attendanceimagerule;
 import static Pages.Attendance_page.imgmandatorymsg;
-import static Pages.HomePage_page.Attendance;
-import static Utilities.Actions.click;
-import static Utilities.Actions.isElementDisplayed;
+import static Pages.CallPlan_page.uploadcallerr_msg;
+import static Pages.HomePage_page.*;
+import static Utilities.Actions.*;
 import static Utilities.Utils.datevisitedtime;
 
 
@@ -67,7 +68,7 @@ public class ValidationManager {
                 return true;
             }else{
                 driver.navigate().back();
-                click("ACCESSIBILITYID", HomePage_page.Callplan);
+                click("ACCESSIBILITYID", Callplan);
                 Thread.sleep(1500);
                 driver.navigate().back();
                 click("ACCESSIBILITYID", Attendance);
@@ -115,15 +116,39 @@ public class ValidationManager {
 
 
 
-    public static void datevisitedvalidation() throws InterruptedException {
+    public static String datevisitedvalidation() throws InterruptedException {
         String devicetime = datevisitedtime();
         if(Source(devicetime)){
-            logAndinfo("Visited date and time is Showing");
+            log.info("Visited date and time is Showing");
         }else{
             logAndReportFailure("Visited date and time is not Showing");
         }
+        return devicetime;
     }
 
+    public static boolean calluploadvalidation(String trgid) throws InterruptedException {
 
-
+        String targetXPath = "//android.widget.ImageView[contains(@content-desc, 'Target ID: " + trgid + "')]";
+        WebdriverWait("ACCESSIBILITYID", ActivityLog,15);
+        click("ACCESSIBILITYID",ActivityLog);
+        if(!Source("Target "+trgid+" successfully uploaded")){
+            driver.navigate().back();
+            Thread.sleep(5000);
+            click("ACCESSIBILITYID",ActivityLog);
+        }
+        if(Source("Target "+trgid+" successfully uploaded")){
+            driver.navigate().back();
+            click("ACCESSIBILITYID", Callplan);
+            click("xpath", targetXPath);
+            if (Source("You have already uploaded " + trgid + " target")) {
+                click("ACCESSIBILITYID", "Ok");
+                logAndReportSuccess(trgid+" Call Uploaded Successfully ");
+                driver.navigate().back();
+            }
+        }else{
+            logAndReportFailure(trgid+" Call is not Uploaded Successfully ");
+            return false;
+        }
+        return true;
+    }
 }

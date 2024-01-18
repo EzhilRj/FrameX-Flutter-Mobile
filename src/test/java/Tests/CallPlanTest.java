@@ -17,7 +17,7 @@ public class CallPlanTest extends AppiumTestSetup {
     public static void TC001_VerifyUploadcall(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(Validateuploadcall(data.get("TargetID")));
+        Assert.assertTrue(Validateuploadcall(data.get("TargetID"),data.get("UploadType")));
 
 
     }

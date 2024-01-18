@@ -23,7 +23,7 @@ public class CallPlan_page {
 	public static String Uploadcallconfirmpopup = "Are you sure you want to upload Call ?";
 	public static String Viewimagesbutton = "View Images";
 	public static String Uploadcallsbutton = "Upload Calls";
-	public static String uploadsuccessActivitylog_msg = "Target 38353 successfully uploaded 08/01/24 19:34:24";
+	public static String uploadsuccessActivitylog_msg = "Target 38353 successfully uploaded";
 	public static String stattinguploadprocessActivitylog_msg = "Starting the Upload process for Target . 38353 08/01/24 19:34:23";
 	public static String sospopup_msg = "Industry Facing should be greater than Our Brand Facing";
 	public static String enterourbrandfacing_msg = "Enter Our Brand Facing";
@@ -41,6 +41,8 @@ public class CallPlan_page {
 	public static String Underprocesspopup = "Attendance is under process  please Proceed to next step ?";
 	public static String Camerabutton_M = "//android.view.View[@content-desc='Photo *']/android.view.View[2]";
 	public static String Camerabutton_NM= "//android.view.View[@content-desc='Photo']/android.view.View[2]";
+
+	public static String uploadcallerr_msg= "Internal server error, upload could not completed. Contact support 500";
 
 
 	public static String generatecategorylocator(String cate){

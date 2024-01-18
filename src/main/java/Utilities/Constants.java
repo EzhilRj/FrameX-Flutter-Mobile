@@ -14,6 +14,7 @@ public class Constants {
     }
     public static final String LiveDbusername = "Field2020";
     public static final String LiveDbpassword = "Fieldlytics@#@2020";
+
     public static String body = "Dear Team,\n" +
             "\n" +
             "Please find the attached test automation report for FrameX Mobile executed on "+generateFormattedDate()+" . The test suite covered various scenarios validating the functionalities of FrameX mobile.\n" +

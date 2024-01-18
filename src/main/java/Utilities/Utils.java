@@ -406,19 +406,6 @@ public class Utils {
         return value;
     }
 
-    public static List<String> initializeCategoryNames() throws Exception {
-        List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
-        return categories;
-    }
-
-
-    /*public static List<String> initializeCategoryNames() throws Exception {
-        List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
-        return categories;
-    }*/
-
-
-
 }
 
 

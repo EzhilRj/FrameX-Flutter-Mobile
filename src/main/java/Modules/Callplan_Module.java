@@ -1,6 +1,7 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import Utilities.ValidationManager;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Callplan_Module extends AppiumTestSetup {
     public static String Ctrltype;
     public static String Datatype;
     public static String enumfieldName;
-    public static boolean Validateuploadcall(String targetid) throws Exception {
+    public static boolean Validateuploadcall(String targetid , String uploadtype) throws Exception {
 
         List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
         String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+targetid+"')]";
@@ -36,10 +37,20 @@ public class Callplan_Module extends AppiumTestSetup {
         }
         if(isElementDisplayed("Xpath",TargetID)){
             click("Xpath",TargetID);
-            datevisitedvalidation();
+            String starttime = datevisitedvalidation();
             click("Xpath",Startworkbutton);
             WebdriverWait("ACCESSIBILITYID", UploadcallButton,30);
-            DataBinder(categories,targetid);
+            if( DataBinder(categories,targetid)){
+                if(uploadtype.equalsIgnoreCase("Upload")){
+                    if(Uploadcallfunction(starttime,targetid)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    closecallfunction();
+                }
+            }
         }else {
             logAndReportFailure(targetid+" is not showing");
             return false;
@@ -225,5 +236,33 @@ public class Callplan_Module extends AppiumTestSetup {
             }
         }
         return isfielddataExecutionSuccessful;
+    }
+
+
+    private static boolean Uploadcallfunction(String starttime, String tid) throws InterruptedException {
+
+
+        click("ACCESSIBILITYID",UploadcallButton);
+        if (isElementDisplayed("ACCESSIBILITYID", Uploadcallconfirmpopup)) {
+            click("ACCESSIBILITYID", Yesbutton);
+            if(Source(starttime)){
+                click("ACCESSIBILITYID", Uploadcallsbutton);
+            }
+        } else if (isElementDisplayed("Xpath", Perfectstorescorepopup)) {
+            click("ACCESSIBILITYID", Okbutton);
+            if(Source(starttime)){
+                click("ACCESSIBILITYID", Uploadcallsbutton);
+            }
+        }
+        if(ValidationManager.calluploadvalidation(tid)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    private static void closecallfunction(){
+
     }
 }

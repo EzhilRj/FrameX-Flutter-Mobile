@@ -4,6 +4,7 @@ import Utilities.Constants;
 import Utilities.ExcelReader;
 import Utilities.Utils;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.log4j.Logger;
@@ -92,6 +93,7 @@ public class AppiumTestSetup {
             }
             capabilities.setCapability("app", props.get("Apppath"));
             capabilities.setCapability("deviceName", Devicename);
+            capabilities.setCapability("skipServerInstallation", true);
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
