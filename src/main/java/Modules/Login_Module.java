@@ -3,6 +3,7 @@ package Modules;
 import Base.AppiumTestSetup;
 import Pages.Login_Page;
 import Utilities.ValidationManager;
+import com.sun.jdi.connect.spi.Connection;
 
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
@@ -32,7 +33,6 @@ public class Login_Module extends AppiumTestSetup {
             // Perform login actions
 			performLoginActivity(username, password, project, mobileNo);
 			click("ACCESSIBILITYID",LoginButton);
-
 			// Check login status and handle accordingly
 			if (ValidationManager.isLoggedIn("Call Plan")) {
 				logAndReportSuccess("Login Successful.");
@@ -81,5 +81,7 @@ public class Login_Module extends AppiumTestSetup {
 			return false;
 		}
 	}
+
+
 
 }

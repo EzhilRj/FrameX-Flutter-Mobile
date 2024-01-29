@@ -19,7 +19,6 @@ public class Attendance_Module extends AppiumTestSetup {
 
     public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
 
-
     public static boolean validateattendancesubmission(String attendancetype,String image) throws InterruptedException {
 
         HashMap<String,String>attendancesuccessmessages =  attendancemessages();

@@ -1,5 +1,6 @@
 package Base;
 
+import Interfaces.Setup;
 import Utilities.Constants;
 import Utilities.ExcelReader;
 import Utilities.Utils;
@@ -9,6 +10,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -21,6 +24,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -35,24 +40,25 @@ import static Utilities.Mailconfig.sendMailReport;
 import static Utilities.Utils.*;
 
 
-public class AppiumTestSetup {
+public class AppiumTestSetup implements Setup {
 
     public static AndroidDriver driver;
     public static AppiumDriverLocalService service;
     public static Logger log = Logger.getLogger(AppiumTestSetup.class);
-    public static String testSuiteName;
     public static String devicemodel;
     public static ExcelReader excel;
     public static HashMap<String,String>props;
 
+
     static {
         try {
-            props = Utils.propertyloader();
+            props = propertyloader();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
         excel = new ExcelReader(props.get("Datafilepath"));
     }
+
 
     public static HashMap<String,String>queries;
     static {
@@ -62,22 +68,21 @@ public class AppiumTestSetup {
             throw new RuntimeException(e);
         }
     }
+    private static DesiredCapabilities capabilities ;
+
+    {
+        PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
+    }
 
 
-    public static DesiredCapabilities capabilities ;
 
     // Method to start the app and set up the test environment
     @BeforeSuite
     public static void StartApp(ITestContext context) throws IOException {
         try {
-            PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
-
 
             // Start the Appium service
-            service = new AppiumServiceBuilder()
-                    .withAppiumJS(new File(props.get("Server")))
-                    .withIPAddress("127.0.0.1").usingPort(4723)
-                    .build();
+            service = new AppiumServiceBuilder().withAppiumJS(new File(props.get("Server"))).withIPAddress("127.0.0.1").usingPort(4723).build();
             service.start();
 
             String[]  capabs = {"platformName","appPackage","appActivity","autoGrantPermissions","automationName","skipDeviceInitialization","ignoreUnimportantViews","skipUnlock"};
@@ -93,7 +98,7 @@ public class AppiumTestSetup {
             }
             capabilities.setCapability("app", props.get("Apppath"));
             capabilities.setCapability("deviceName", Devicename);
-            capabilities.setCapability("skipServerInstallation", true);
+            capabilities.setCapability("adbExecTimeout", "120000");
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
@@ -105,6 +110,7 @@ public class AppiumTestSetup {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
     }
 
 
@@ -139,4 +145,8 @@ public class AppiumTestSetup {
 
     }
 
+    @Override
+    public void startapp() {
+
+    }
 }
