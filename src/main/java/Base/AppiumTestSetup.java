@@ -9,6 +9,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -21,6 +23,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -36,72 +40,66 @@ import static Utilities.Utils.*;
 
 
 public class AppiumTestSetup {
-
     public static AndroidDriver driver;
-    public static AppiumDriverLocalService service;
+    private static AppiumDriverLocalService service;
     public static Logger log = Logger.getLogger(AppiumTestSetup.class);
-    public static String testSuiteName;
+    private static DesiredCapabilities capabilities ;
     public static String devicemodel;
     public static ExcelReader excel;
     public static HashMap<String,String>props;
+    public static HashMap<String,String>queries;
 
     static {
         try {
-            props = Utils.propertyloader();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            // Load properties from the property file
+            props = propertyloader();
+            queries = (HashMap<String, String>) queryloader();
+        } catch (IOException e) {
+            throw new RuntimeException("Error loading file", e);
         }
+        // Initialize ExcelReader with the specified data file path
         excel = new ExcelReader(props.get("Datafilepath"));
     }
 
-    public static HashMap<String,String>queries;
-    static {
-        try {
-            queries = (HashMap<String, String>) queryloader();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    public static DesiredCapabilities capabilities ;
 
     // Method to start the app and set up the test environment
     @BeforeSuite
     public static void StartApp(ITestContext context) throws IOException {
+
         try {
             PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
-
-
             // Start the Appium service
             service = new AppiumServiceBuilder()
                     .withAppiumJS(new File(props.get("Server")))
-                    .withIPAddress("127.0.0.1").usingPort(4723)
+                    .withIPAddress("127.0.0.1")
+                    .usingPort(4723)
                     .build();
             service.start();
 
-            String[]  capabs = {"platformName","appPackage","appActivity","autoGrantPermissions","automationName","skipDeviceInitialization","ignoreUnimportantViews","skipUnlock"};
+            String[]  capabs = {"platformName","appPackage","appActivity","autoGrantPermissions","automationName","skipDeviceInitialization","skipServerInstallation","ignoreUnimportantViews","skipUnlock"};
             // Set desired capabilities for Android driver
             capabilities = new DesiredCapabilities();
             for(String capkey : capabs){
-                if(capkey.equalsIgnoreCase("autoGrantPermissions")||capkey.equalsIgnoreCase("skipDeviceInitialization")|| capkey.equalsIgnoreCase("ignoreUnimportantViews")||capkey.equalsIgnoreCase("skipUnlock")){
+                if(capkey.equalsIgnoreCase("autoGrantPermissions")||
+                        capkey.equalsIgnoreCase("skipDeviceInitialization")||
+                        capkey.equalsIgnoreCase("skipServerInstallation")||capkey.equalsIgnoreCase("ignoreUnimportantViews")||capkey.equalsIgnoreCase("skipUnlock")){
                     capabilities.setCapability(capkey,Boolean.parseBoolean(props.get(capkey)));
                 }else{
                     capabilities.setCapability(capkey,props.get(capkey));
                 }
-
             }
             capabilities.setCapability("app", props.get("Apppath"));
             capabilities.setCapability("deviceName", Devicename);
-            capabilities.setCapability("skipServerInstallation", true);
+            capabilities.setCapability("adbExecTimeout", "120000");
+
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
-            driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
+           // driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
             checkVersion(props.get("Appversion"));
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);
-            e.printStackTrace();
+            throw new RuntimeException("Error starting the app", e);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -111,7 +109,7 @@ public class AppiumTestSetup {
     // Method to tear down the test environment after test execution
     @AfterSuite
     public static void tearDownApp() throws InterruptedException, MessagingException, FileNotFoundException {
-
+        try {
         // Close the AndroidDriver instance if it exists
         if (driver != null) {
             log.info("AndroidDriver is Quited");
@@ -136,6 +134,11 @@ public class AppiumTestSetup {
 
         // Log completion message
         log.info("Test Execution Completed");
+
+        } catch (Exception e) {
+            log.error("An error occurred during test teardown:", e);
+            throw new RuntimeException("Error during test teardown", e);
+        }
 
     }
 

@@ -1,11 +1,22 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import Pages.HomePage_page;
 import Pages.Login_Page;
 import Utilities.ValidationManager;
+import com.sun.jdi.connect.spi.Connection;
+import io.appium.java_client.AppiumBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
+import static Pages.HomePage_page.Callplan;
 import static Pages.Login_Page.*;
 import static Utilities.Actions.*;
 import static Utilities.ValidationManager.Source;
@@ -41,11 +52,16 @@ public class Login_Module extends AppiumTestSetup {
 				// Handle login failure scenarios
 				if (ValidationManager.hasErrorMessage(usernamePasswordErrMsg) || ValidationManager.hasErrorMessage(invalidProjectErrMsg)) {
 					click("ACCESSIBILITYID","Ok");
-					logAndReportFailure("Negative data is given: Login was not successful.");
+					logAndReportFailure("Negative data is given: Username : "+username+"  , Password : "+password+"  , Project : "+project+"  , Mobileno : "+mobileNo);
+					logAndinfo("Login Failed");
 					return false;
 				} else if (ValidationManager.areFieldsRequired(requiredFieldErrors)) {
-					logAndReportFailure("Negative data is given: Please Fill all the credentials.");
+					logAndReportFailure("Negative data is given: Username : "+username+"  , Password : "+password+"  , Project : "+project+"  , Mobileno : "+mobileNo);
+					logAndReportFailure("Login Failed , Please Fill all the credentials.");
 					return false;
+				}else{
+					testReport.get().fatal(formatData("App is not logged in "));
+					log.fatal("App is not logged in");
 				}
 			}
 		} catch (Exception e) {
@@ -62,7 +78,6 @@ public class Login_Module extends AppiumTestSetup {
 	 * @return True if the specified version is displayed, false otherwise.
 	 */
 	public static boolean checkVersion(String versionToCheck) {
-
 		try {
 			WebdriverWait("Xpath", username,15);
 			boolean isVersionDisplayed = Source(versionToCheck);
@@ -72,8 +87,7 @@ public class Login_Module extends AppiumTestSetup {
 			} else {
 				System.out.println("App Version is not matched: " + versionToCheck);
 				log.error("App Version is not matched :  "+versionToCheck);
-				driver.quit();
-				service.stop();
+				AppiumTestSetup.tearDownApp();
 				return false;
 			}
 		} catch (Exception e) {
@@ -81,5 +95,7 @@ public class Login_Module extends AppiumTestSetup {
 			return false;
 		}
 	}
+
+
 
 }

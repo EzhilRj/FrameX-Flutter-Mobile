@@ -27,6 +27,7 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
     static Date d = new Date();
     public static final String fileName = props.get("Reportfilename") + d.toString().replace(":", "_").replace(" ", "_") + ".html";
 
+    public static boolean attachmentflag;
     private static ExtentReports extent;
 
     static {
@@ -58,7 +59,7 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
         String excepionMessage= Arrays.toString(result.getThrowable().getStackTrace());
         testReport.get().fail("<details>" + "<summary>" + "<b>" + "<font color=" + "red>" + "Exception Occured:Click to see"
                 + "</font>" + "</b >" + "</summary>" +excepionMessage.replaceAll(",", "<br>")+"</details>"+" \n");
-
+         attachmentflag = true;
         try {
             Utils.captureScreenshot();
             testReport.get().fail("<b>" + "<font color=" + "red>" + "Screenshot of failure" + "</font>" + "</b>",
@@ -71,6 +72,7 @@ public class FrameX_Listeners implements ITestListener, ISuiteListener {
         String failureLogg="TEST CASE FAILED";
         Markup m = MarkupHelper.createLabel(failureLogg, ExtentColor.RED);
         testReport.get().log(Status.FAIL, m);
+
 
     }
 

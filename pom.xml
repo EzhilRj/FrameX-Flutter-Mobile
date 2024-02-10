@@ -104,6 +104,7 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
+
     </dependencies>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

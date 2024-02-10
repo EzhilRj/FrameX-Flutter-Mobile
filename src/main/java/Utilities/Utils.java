@@ -11,9 +11,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
 
-import Base.AppiumTestSetup;
 import Pages.Login_Page;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -158,11 +158,6 @@ public class Utils {
         }
 
         return null;
-    }
-
-
-    public static String getCurrentMethodName() {
-        return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
 
 
@@ -405,6 +400,42 @@ public class Utils {
         // Return the modified value with HTML entities
         return value;
     }
+
+
+    public static void pssshopfrontimage(){
+        if(Source(Shutterbutton)){
+            WebdriverWait("Xpath", Shutterbutton, 4);
+            click("Xpath", Shutterbutton);
+        }
+
+    }
+
+
+    public static void networkconditions(String mode,String duration) throws InterruptedException {
+
+        int sleeptime = Integer.parseInt(duration+"000");
+        if(mode.equalsIgnoreCase("Wifi")){
+            networkconnections();
+            Thread.sleep(sleeptime);
+            driver.toggleWifi();
+        } else if (mode.equalsIgnoreCase("MobileData")) {
+            networkconnections();
+            Thread.sleep(sleeptime);
+            driver.toggleData();
+        } else if (mode.equalsIgnoreCase("Disable")) {
+            networkconnections();
+            Thread.sleep(sleeptime);
+            networkconnections();
+        }
+
+    }
+
+
+    public static void networkconnections(){
+        driver.toggleWifi();
+        driver.toggleData();
+    }
+
 
 }
 

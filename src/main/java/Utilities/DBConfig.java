@@ -5,7 +5,6 @@ import Base.AppiumTestSetup;
 import java.sql.*;
 import java.util.*;
 
-
 import static Utilities.Constants.*;
 
 
@@ -13,7 +12,6 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (
-
                 Connection con = DriverManager.getConnection(getProdUrl(), LiveDbusername, LiveDbpassword);
                 Statement statement = con.createStatement();
                 ResultSet result = statement.executeQuery(query)) {
@@ -44,7 +42,6 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<String> getColumnNamesFromDatabase(String query, String columnName) throws Exception {
         List<String> stringMapValues = new ArrayList<>();
-
         List<Map<String, String>> result = executeQuery(query);
         for (Map<String, String> stringMap : result) {
             String value = stringMap.get(columnName);
@@ -62,6 +59,11 @@ public class DBConfig extends AppiumTestSetup {
         stringMapValues.addAll(result);
 
         return stringMapValues;
+    }
+
+    public static void main(String[]args){
+
+
     }
 
 }

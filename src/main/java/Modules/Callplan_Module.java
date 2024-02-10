@@ -1,6 +1,7 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import Utilities.ExcelReader;
 import Utilities.ValidationManager;
 
 import java.text.MessageFormat;
@@ -24,42 +25,38 @@ public class Callplan_Module extends AppiumTestSetup {
     public static String Ctrltype;
     public static String Datatype;
     public static String enumfieldName;
-    public static boolean Validateuploadcall(String targetid , String uploadtype) throws Exception {
+    public static boolean validateUploadCall(String targetId, String uploadType,String networkmode,String networkduration) throws Exception {
 
         List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
-        String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+targetid+"')]";
+        String targetXPath = "//android.view.View[contains(@content-desc, 'Target ID: " + targetId + "')]";
 
-        click("ACCESSIBILITYID",Callplan);
-        if(!Source(TargetID)){
+        click("ACCESSIBILITYID", Callplan);
+        if (!Source(targetId)) {
             driver.navigate().back();
             Thread.sleep(3000);
-            click("ACCESSIBILITYID",Callplan);
+            click("ACCESSIBILITYID", Callplan);
         }
-        if(isElementDisplayed("Xpath",TargetID)){
-            click("Xpath",TargetID);
-            String starttime = datevisitedvalidation();
-            click("Xpath",Startworkbutton);
-            WebdriverWait("ACCESSIBILITYID", UploadcallButton,30);
-            if( DataBinder(categories,targetid)){
-                if(uploadtype.equalsIgnoreCase("Upload")){
-                    if(Uploadcallfunction(starttime,targetid)){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                }else{
+        if (Source(targetId)) {
+            click("Xpath", targetXPath);
+            String startTime = datevisitedvalidation();
+            click("Xpath", Startworkbutton);
+            pssshopfrontimage();
+            WebdriverWait("ACCESSIBILITYID", UploadcallButton, 15);
+            if (dataBinder(categories, targetId)) {
+                if (uploadType.equalsIgnoreCase("Upload")) {
+                    return Uploadcallfunction(startTime, targetId,networkmode,networkduration);
+                } else {
                     closecallfunction();
                 }
             }
-        }else {
-            logAndReportFailure(targetid+" is not showing");
-            return false;
+        } else {
+            logAndReportFailure("Target ID "+targetId + " is not Displayed ");
         }
         return false;
     }
 
 
-    private static boolean DataBinder(List<String> categories, String targetID) throws Exception {
+    private static boolean dataBinder(List<String> categories, String targetID) throws Exception {
         boolean isExecutionSuccessful = true;
         for (String category : categories) {
             String modifiedCategory = SetSpecialCharacter(category); // Apply SetSpecialCharacter to category name
@@ -78,8 +75,9 @@ public class Callplan_Module extends AppiumTestSetup {
 
         String modifiedCategory = SetSpecialCharacter(category);
         boolean isCategoryExecutionSuccessful = false;
-        if(isElementDisplayed("Xpath",generatecategorylocator(category))){
-            click("Xpath", generatecategorylocator(category));
+        String catexpath = generatecategorylocator(category);
+        if(isElementDisplayed("Xpath",catexpath)){
+            click("Xpath",catexpath);
             if(!Source(modifiedCategory)){
                 Scroll("up");
             }
@@ -160,87 +158,62 @@ public class Callplan_Module extends AppiumTestSetup {
     }
 
 
-
     private static boolean enterfieldprocess(String formName, String IsQuestionForm, String productName) throws Exception {
-
-        boolean isfielddataExecutionSuccessful = true;
-        int ForDEO = IsQuestionForm.equals("1") ? 0 : 1;
-        List<Object> fieldNames = new ArrayList<>();
-
-        if (IsQuestionForm.equals("1")) {
-            // For question forms, retrieve field names
-            fieldNames = getDataObject(MessageFormat.format(queries.get("QuestionFormFieldsquery"), formName, "'" + productName + "'", "'" + formName + "'"));
-        } else {
-            // For regular forms, retrieve field names
-            fieldNames = getDataObject(MessageFormat.format(queries.get("FormFieldsquery"), "'" + formName + "'", IsQuestionForm, ForDEO));
-        }
+        int forDEO = IsQuestionForm.equals("1") ? 0 : 1;
+        List<Object> fieldNames = getDataObject(IsQuestionForm.equals("1") ?
+                MessageFormat.format(queries.get("QuestionFormFieldsquery"), formName, "'" + productName + "'", "'" + formName + "'") :
+                MessageFormat.format(queries.get("FormFieldsquery"), "'" + formName + "'", IsQuestionForm, forDEO));
 
         for (Object field : fieldNames) {
-            if (field instanceof LinkedHashMap<?, ?>) {
-                LinkedHashMap<?, ?> fieldData = (LinkedHashMap<?, ?>) field;
-                Ctrltype = (String) fieldData.get("ControlType");
-                Datatype = (String) fieldData.get("DataType");
-                fieldName = IsQuestionForm.equals("1") ? Ctrltype : (String) fieldData.get("FieldName");
-                enumfieldName = (String) fieldData.get("FieldName");
+            if (!(field instanceof LinkedHashMap<?, ?>)) {
+                continue;
+            }
 
-                // Check if the field is required and add '*' if necessary
-                if (fieldData.get("Required").equals("1")) {
-                    fieldName = fieldName + " *";
-                    click("xpath", fieldName);
-                }
+            LinkedHashMap<?, ?> fieldData = (LinkedHashMap<?, ?>) field;
+            Ctrltype = (String) fieldData.get("ControlType");
+            Datatype = (String) fieldData.get("DataType");
+            fieldName = IsQuestionForm.equals("1") ? Ctrltype : (String) fieldData.get("FieldName");
+            enumfieldName = (String) fieldData.get("FieldName");
 
-                if (fieldName.contains("Photo ")) {
-                    if(Source("Photo *")){
-                        fieldName = "Photo *";
-                    }else{
-                        fieldName = "Photo";
-                    }
-                }
+            if(formName.contains("Picture")){
+                fieldName += productName.contains("*")?  " *":"";
+            } else if ("1".equals(fieldData.get("Required"))) {
+                fieldName += " *";
+            }
+            //click("xpath", fieldName);
+            // Check if the field is required and add '*' if necessary
 
-                // Skip field if it contains "Gap Facings"
-                if (fieldName.contains("Gap Facings")) {
-                    continue;
-                }
+            // Skip field if it contains "Gap Facings"
+            if (fieldName.contains("Gap Facings")) {
+                continue;
+            }
 
-                // Check if the field element is present
-                if (Source(fieldName)) {
-                    if (Ctrltype.equals("TextBox")) {
-                        String attribute = generatetextfieldlocator(fieldName);
-                        /*Scrollto(fieldName);*/
-                        String dataset = Datasetter(Datatype, fieldName);
-                        Enter("Xpath", attribute, dataset);
-                        driver.hideKeyboard();
-                    } else if (Ctrltype.equals("DropDownList")) {
-                        Dropdownsetter(formName, productName);
-                    } else if (Ctrltype.contains("FileUpload")) {
-                        ImageCapture();
-                    }
-                } else {
-                    Scroll("up");
-                    if (Source(fieldName)) {
-                        if (Ctrltype.equals("TextBox")) {
-                            String attribute = generatetextfieldlocator(fieldName);
-                            /*Scrollto(fieldName);*/
-                            String dataset = Datasetter(Datatype, fieldName);
-                            Enter("Xpath", attribute, dataset);
-                            driver.hideKeyboard();
-                        } else if (Ctrltype.equals("DropDownList")) {
-                            Dropdownsetter(formName, productName);
-                        } else if (Ctrltype.contains("FileUpload")) {
-                            ImageCapture();
-                        }
-                    }
-                    isfielddataExecutionSuccessful = false;
-
+            // Check if the field element is present
+            if (!Source(fieldName)) {
+                Scroll("up");
+                if (!Source(fieldName)) {
+                    return false;
                 }
             }
+
+            if (Ctrltype.equals("TextBox")) {
+                String attribute = generatetextfieldlocator(fieldName);
+                String dataset = Datasetter(Datatype, fieldName);
+                Enter("Xpath", attribute, dataset);
+                driver.hideKeyboard();
+            } else if (Ctrltype.equals("DropDownList")) {
+                Dropdownsetter(formName, productName);
+            } else if (Ctrltype.contains("FileUpload")) {
+                ImageCapture();
+            }
         }
-        return isfielddataExecutionSuccessful;
+        return true;
     }
 
 
-    private static boolean Uploadcallfunction(String starttime, String tid) throws InterruptedException {
 
+
+    private static boolean Uploadcallfunction(String starttime, String tid,String networkmode , String networkoffduration) throws InterruptedException {
 
         click("ACCESSIBILITYID",UploadcallButton);
         if (isElementDisplayed("ACCESSIBILITYID", Uploadcallconfirmpopup)) {
@@ -254,12 +227,12 @@ public class Callplan_Module extends AppiumTestSetup {
                 click("ACCESSIBILITYID", Uploadcallsbutton);
             }
         }
-        if(ValidationManager.calluploadvalidation(tid)){
+        networkconditions(networkmode,networkoffduration);
+        if(ValidationManager.calluploadvalidation(tid,networkmode)){
             return true;
         }else{
             return false;
         }
-
     }
 
     private static void closecallfunction(){

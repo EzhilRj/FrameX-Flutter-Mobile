@@ -1,5 +1,6 @@
 package Utilities;
 
+import Pages.CallPlan_page;
 import Pages.HomePage_page;
 
 import static Base.AppiumTestSetup.driver;
@@ -126,7 +127,7 @@ public class ValidationManager {
         return devicetime;
     }
 
-    public static boolean calluploadvalidation(String trgid) throws InterruptedException {
+    public static boolean calluploadvalidation(String trgid,String netmode) throws InterruptedException {
 
         String targetXPath = "//android.widget.ImageView[contains(@content-desc, 'Target ID: " + trgid + "')]";
         WebdriverWait("ACCESSIBILITYID", ActivityLog,15);
@@ -136,7 +137,18 @@ public class ValidationManager {
             Thread.sleep(5000);
             click("ACCESSIBILITYID",ActivityLog);
         }
-        if(Source("Target "+trgid+" successfully uploaded")){
+        if(!netmode.equalsIgnoreCase("Enable")){
+            click("ACCESSIBILITYID", CallPlan_page.sync);
+            Thread.sleep(5000);
+            click("ACCESSIBILITYID",ActivityLog);
+        }
+        if (Source("Starting the Upload process for Target . "+trgid)) {
+            driver.navigate().back();
+            Thread.sleep(7000);
+            click("ACCESSIBILITYID", ActivityLog);
+        }
+
+        if (Source("Target "+trgid+" successfully uploaded")) {
             driver.navigate().back();
             click("ACCESSIBILITYID", Callplan);
             click("xpath", targetXPath);
@@ -149,6 +161,7 @@ public class ValidationManager {
             logAndReportFailure(trgid+" Call is not Uploaded Successfully ");
             return false;
         }
+
         return true;
     }
 }

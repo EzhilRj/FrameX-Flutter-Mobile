@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static Base.AppiumTestSetup.props;
+import static Listeners.FrameX_Listeners.attachmentflag;
 import static Listeners.FrameX_Listeners.fileName;
 import static Utilities.Constants.*;
 import static Utilities.Utils.generatedateandtime;
@@ -42,7 +43,7 @@ public class Mailconfig {
         Session session = Session.getDefaultInstance(properties,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(props.get("Sendermail"), props.get("Senderpassword"));
+                        return new PasswordAuthentication(props.get("Sendermail"), props.get("Senderpassword"));
 
                     }
                 });
@@ -69,17 +70,20 @@ public class Mailconfig {
             messageBodyPart2.setDataHandler(new DataHandler(source));
             messageBodyPart2.setFileName("Automation Test Report"+generatedateandtime()+".html");
 
-            // Attach second file
-            MimeBodyPart messageBodyPart3 = new MimeBodyPart();
-            DataSource source2 = new FileDataSource(props.get("Screenshotpath") + screenshotName);
-            messageBodyPart3.setDataHandler(new DataHandler(source2));
-            messageBodyPart3.setFileName("Screenshot "+generatedateandtime()+".jpg");
 
+            // Attach second file
 
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart2);
             multipart.addBodyPart(messageBodyPart1);
-            multipart.addBodyPart(messageBodyPart3);
+            MimeBodyPart messageBodyPart3= null;
+            if(attachmentflag){
+                messageBodyPart3 = new MimeBodyPart();
+                DataSource source2 = new FileDataSource(props.get("Screenshotpath") + screenshotName);
+                messageBodyPart3.setDataHandler(new DataHandler(source2));
+                messageBodyPart3.setFileName("Screenshot "+generatedateandtime()+".jpg");
+                multipart.addBodyPart(messageBodyPart3);
+            }
             message.setContent(multipart);
             Transport.send(message);
             AppiumTestSetup.log.info("Email sent");

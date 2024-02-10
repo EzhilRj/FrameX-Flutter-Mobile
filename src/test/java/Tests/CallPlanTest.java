@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.util.Hashtable;
 
 import static Modules.Attendance_Module.validateAttendanceImageRequired;
-import static Modules.Callplan_Module.Validateuploadcall;
+import static Modules.Callplan_Module.validateUploadCall;
 
 public class CallPlanTest extends AppiumTestSetup {
 
@@ -17,11 +17,7 @@ public class CallPlanTest extends AppiumTestSetup {
     public static void TC001_VerifyUploadcall(Hashtable<String, String> data, Method m) throws Exception {
 
         Utils.checkexecution(m.getName(),data);
-        Assert.assertTrue(Validateuploadcall(data.get("TargetID"),data.get("UploadType")));
-
+        Assert.assertTrue(validateUploadCall(data.get("TargetID"),data.get("UploadType"),data.get("NetworkMode"),data.get("Duration")));
 
     }
-
-
-
 }

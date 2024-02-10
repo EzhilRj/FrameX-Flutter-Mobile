@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REGRESSION SUITE" verbose="3">
+    <listeners>
+        <listener class-name="Listeners.FrameX_Listeners"></listener>
+    </listeners>
+    <test name="LoginTest">
+        <classes>
+            <class name="Tests.LoginTest">
+                <methods>
+                    <include name="TC001_VerifyLogin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AttendanceTest">
+        <classes>
+            <class name="Tests.AttendanceTest">
+                <methods>
+                    <include name="TC001_VerifyImagerequired" />
+                    <include name="TC002_VerifyAttendance" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CallplanTest">
+        <classes>
+            <class name="Tests.CallPlanTest">
+                <methods>
+                    <include name="TC001_VerifyUploadcall" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DownloadcallsTest">
+        <classes>
+            <class name="Tests.DownloadcallsTest">
+                <methods>
+                    <include name="TC001_VerifyDownloadcalls" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ResourceCentre Test">
+        <classes>
+            <class name="Tests.ResourceCentreTest">
+                <methods>
+                    <include name="TC001_VerifyResourcecentrefiles" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="VisitorLogin Test">
+        <classes>
+            <class name="Tests.VisitorLoginTest">
+                <methods>
+                    <include name="TC001_VerifyVistorlogin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

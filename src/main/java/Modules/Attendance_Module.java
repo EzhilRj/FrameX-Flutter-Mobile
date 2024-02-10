@@ -19,7 +19,6 @@ public class Attendance_Module extends AppiumTestSetup {
 
     public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
 
-
     public static boolean validateattendancesubmission(String attendancetype,String image) throws InterruptedException {
 
         HashMap<String,String>attendancesuccessmessages =  attendancemessages();
@@ -38,11 +37,8 @@ public class Attendance_Module extends AppiumTestSetup {
             }
             WebdriverWait("ACCESSIBILITYID",savedmsg,10);
             // Verifying attendance submission success/failure
-            if(attendancesubmittedvalidation(attendancetype,savedmsg,Attendacemarkedmessage)){
-                return true;
-            }else{
-                return false;
-            }
+            return attendancesubmittedvalidation(attendancetype,savedmsg,Attendacemarkedmessage);
+
         } catch (Exception e) {
             logAndReportFailure("Exception occurred: " + e.getMessage());
             e.getMessage();
@@ -57,11 +53,8 @@ public class Attendance_Module extends AppiumTestSetup {
                 click("ACCESSIBILITYID", Attendance);
                 click("ACCESSIBILITYID", attendancetype);
             }
-            if(attendanceimagerequiredvalidation(attendancetype)){
-                return true;
-            }else{
-                return false;
-            }
+            return attendanceimagerequiredvalidation(attendancetype);
+
         }catch (Exception e) {
             logAndReportFailure("Exception occurred: " + e.getMessage());
             e.getMessage();
