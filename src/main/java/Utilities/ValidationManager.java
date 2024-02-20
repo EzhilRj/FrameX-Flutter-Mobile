@@ -1,5 +1,6 @@
 package Utilities;
 
+import Modules.Callplan_Module;
 import Pages.CallPlan_page;
 import Pages.HomePage_page;
 
@@ -8,6 +9,7 @@ import static Base.AppiumTestSetup.log;
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndinfo;
 import static Modules.Attendance_Module.attendanceimagerule;
+import static Modules.Callplan_Module.targetid;
 import static Pages.Attendance_page.imgmandatorymsg;
 import static Pages.CallPlan_page.uploadcallerr_msg;
 import static Pages.HomePage_page.*;
@@ -115,11 +117,10 @@ public class ValidationManager {
 
     //CallPlan Validations and Verifications================================================================
 
-
-
     public static String datevisitedvalidation() throws InterruptedException {
         String devicetime = datevisitedtime();
         if(Source(devicetime)){
+            log.info("Target start time  :  "+devicetime);
             log.info("Visited date and time is Showing");
         }else{
             logAndReportFailure("Visited date and time is not Showing");
@@ -127,41 +128,77 @@ public class ValidationManager {
         return devicetime;
     }
 
-    public static boolean calluploadvalidation(String trgid,String netmode) throws InterruptedException {
+    public static boolean calluploadvalidation(String netmode, String successMsg) throws InterruptedException {
+        String targetXPath = "//android.widget.ImageView[contains(@content-desc, 'Target ID: " + targetid + "')]";
 
-        String targetXPath = "//android.widget.ImageView[contains(@content-desc, 'Target ID: " + trgid + "')]";
-        WebdriverWait("ACCESSIBILITYID", ActivityLog,15);
-        click("ACCESSIBILITYID",ActivityLog);
-        if(!Source("Target "+trgid+" successfully uploaded")){
-            driver.navigate().back();
-            Thread.sleep(5000);
-            click("ACCESSIBILITYID",ActivityLog);
-        }
-        if(!netmode.equalsIgnoreCase("Enable")){
-            click("ACCESSIBILITYID", CallPlan_page.sync);
-            Thread.sleep(5000);
-            click("ACCESSIBILITYID",ActivityLog);
-        }
-        if (Source("Starting the Upload process for Target . "+trgid)) {
-            driver.navigate().back();
-            Thread.sleep(7000);
-            click("ACCESSIBILITYID", ActivityLog);
+        if (!netmode.equalsIgnoreCase("Enable")) {
+            handleNoInternetConnection();
         }
 
-        if (Source("Target "+trgid+" successfully uploaded")) {
-            driver.navigate().back();
-            click("ACCESSIBILITYID", Callplan);
-            click("xpath", targetXPath);
-            if (Source("You have already uploaded " + trgid + " target")) {
-                click("ACCESSIBILITYID", "Ok");
-                logAndReportSuccess(trgid+" Call Uploaded Successfully ");
-                driver.navigate().back();
-            }
-        }else{
-            logAndReportFailure(trgid+" Call is not Uploaded Successfully ");
-            return false;
+        clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
+        click("ACCESSIBILITYID", ActivityLog);
+
+        if (!Source(successMsg)) {
+            retryUploadProcess();
         }
 
-        return true;
+        if (Source(successMsg)) {
+            return handleUploadSuccess(targetXPath);
+        }
+
+        return false;
     }
+
+    private static void handleNoInternetConnection() throws InterruptedException {
+        if (Source("Please, check internet connection")) {
+            click("ACCESSIBILITYID", "Ok");
+        }
+
+        Thread.sleep(4000);
+        click("ACCESSIBILITYID", Callplan);
+        click("ACCESSIBILITYID", CallPlan_page.sync);
+
+        if (Source("Please, check internet connection")) {
+            click("ACCESSIBILITYID", "Ok");
+        }
+
+        Thread.sleep(3000);
+        click("ACCESSIBILITYID", ActivityLog);
+    }
+
+    private static void clickAndWait(String locatorType, String locator, int waitTime) {
+        WebdriverWait(locatorType, locator, waitTime);
+        click(locatorType, locator);
+    }
+
+    private static void retryUploadProcess() throws InterruptedException {
+        for (int i = 0; i < 3; i++) {
+            if (!Source("Starting the Upload process for Target . " + targetid)) {
+                driver.navigate().back();
+                Thread.sleep(3000);
+                clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
+                continue;
+            } else {
+                break;
+            }
+        }
+
+        driver.navigate().back();
+        Thread.sleep(5000);
+        clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
+    }
+
+    private static boolean handleUploadSuccess(String targetXPath) {
+        driver.navigate().back();
+        clickAndWait("ACCESSIBILITYID", Callplan, 15);
+        click("xpath", targetXPath);
+
+        if (Source("You have already uploaded " + targetid + " target")) {
+            click("ACCESSIBILITYID", "Ok");
+            return true;
+        }
+
+        return false;
+    }
+
 }

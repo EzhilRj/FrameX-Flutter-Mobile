@@ -10,8 +10,13 @@ public class Constants {
     public static final String Devicename  = getDeviceName();
     public static final String queryfilepath = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\queries.sql";
     public static String getProdUrl() {
-        return "jdbc:sqlserver://65.1.119.118:1433;DatabaseName=" + Login_Module.dburlproject + ";encrypt=true;trustServerCertificate=true";
+        return "jdbc:sqlserver://65.1.119.118:1433;DatabaseName=" + Login_Module.dburlproject + ";encrypt=true;trustServerCertificate=true";      //LIVE URL
     }
+
+    public static String gettestserverurl() {
+        return "jdbc:sqlserver://192.168.0.124:1433;DatabaseName=" + Login_Module.dburlproject + ";encrypt=true;trustServerCertificate=true";
+    }
+
     public static final String LiveDbusername = "Field2020";
     public static final String LiveDbpassword = "Fieldlytics@#@2020";
 

@@ -34,9 +34,13 @@ import java.util.concurrent.TimeUnit;
 import static Listeners.FrameX_Listeners.fileName;
 import static Modules.Login_Module.checkVersion;
 import static Pages.Attendance_page.presentsavedmsg;
+import static Pages.HomePage_page.ActivityLog;
+import static Utilities.Actions.click;
 import static Utilities.Constants.*;
+import static Utilities.DBConfig.getDataObject;
 import static Utilities.Mailconfig.sendMailReport;
 import static Utilities.Utils.*;
+import static Utilities.ValidationManager.Source;
 
 
 public class AppiumTestSetup {
@@ -95,7 +99,7 @@ public class AppiumTestSetup {
             // Specify the URL with the correct IP address and port for the Appium server
             driver = new AndroidDriver(new URL(props.get("Serverurl")), capabilities);
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
-           // driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
+           driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
             checkVersion(props.get("Appversion"));
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);

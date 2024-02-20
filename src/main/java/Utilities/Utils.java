@@ -43,10 +43,8 @@ public class Utils {
                 return Randomint().get(0).toString();
             }
             return Randomint().get(0).toString();
-        } else if (type.contains("Varchar")) {
-            return generateRandomString();
-        }else if (type.contains("string")) {
-            return generateRandomString();
+        } else if (type.contains("Varchar")||type.contains("string")) {
+            return "Testdata";
         }
         return null;
     }
@@ -64,32 +62,6 @@ public class Utils {
 
         return integerList;
     }
-
-    private static final String[] DICTIONARY = {
-            "Testdata0", "Testdata1", "Testdata2", "Testdata3", "Testdata4",
-            "Testdata5", "Testdata6", "Testdata7", "Testdata8", "Testdata9"
-    };
-    private static final int DEFAULT_LENGTH = 1;
-
-
-    public static String generateRandomString() {
-        return generateRandomString(DEFAULT_LENGTH);
-    }
-
-    public static String generateRandomString(int length) {
-        StringBuilder randomString = new StringBuilder();
-        Random random = new Random();
-
-        for (int i = 0; i < length; i++) {
-            int randomIndex = random.nextInt(DICTIONARY.length);
-            String randomWord = DICTIONARY[randomIndex];
-            randomString.append(randomWord).append(" ");
-
-        }
-
-        return randomString.toString().trim();
-    }
-
 
     public static void Dropdownsetter(String formName, String productName) throws Exception {
 
@@ -129,11 +101,8 @@ public class Utils {
         }
         WebdriverWait("Xpath", Shutterbutton, 4);
         click("Xpath", Shutterbutton);
-        Thread.sleep(1000);
+        WebdriverWait("ACCESSIBILITYID", "Done", 3);
         click("ACCESSIBILITYID", "Done");
-        /*}*/
-
-        Thread.sleep(3000);
 
     }
 
@@ -288,7 +257,6 @@ public class Utils {
     }
 
 
-
     public static String getdevicetime() {
         String time  =  driver.getDeviceTime();
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(time);
@@ -402,10 +370,17 @@ public class Utils {
     }
 
 
-    public static void pssshopfrontimage(){
-        if(Source(Shutterbutton)){
+    public static void pssshopfrontimage() throws InterruptedException {
+        log.info("Starting PSS Shop front image capture process");
+        Thread.sleep(2000);
+        if(Source("Take Photo")){
             WebdriverWait("Xpath", Shutterbutton, 4);
             click("Xpath", Shutterbutton);
+            log.info("Shutter button is Clicked");
+            WebdriverWait("ACCESSIBILITYID", "Done", 3);
+            click("ACCESSIBILITYID", "Done");
+            log.info("Done button is Clicked");
+            log.info("PSS Shop front image capture process completed successfully");
         }
 
     }

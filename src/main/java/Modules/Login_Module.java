@@ -16,6 +16,7 @@ import java.time.Duration;
 
 import static Listeners.FrameX_Listeners.*;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
+import static Pages.CallPlan_page.UploadcallButton;
 import static Pages.HomePage_page.Callplan;
 import static Pages.Login_Page.*;
 import static Utilities.Actions.*;
@@ -43,7 +44,7 @@ public class Login_Module extends AppiumTestSetup {
             // Perform login actions
 			performLoginActivity(username, password, project, mobileNo);
 			click("ACCESSIBILITYID",LoginButton);
-
+			WebdriverWait("ACCESSIBILITYID", "Call Plan", 6);
 			// Check login status and handle accordingly
 			if (ValidationManager.isLoggedIn("Call Plan")) {
 				logAndReportSuccess("Login Successful.");

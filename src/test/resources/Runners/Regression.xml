@@ -28,7 +28,7 @@
         <classes>
             <class name="Tests.CallPlanTest">
                 <methods>
-                    <include name="TC001_VerifyUploadcall" />
+                    <include name="TC001_VerifyCallPlan" />
                 </methods>
             </class>
         </classes>

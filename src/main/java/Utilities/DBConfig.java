@@ -12,7 +12,7 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (
-                Connection con = DriverManager.getConnection(getProdUrl(), LiveDbusername, LiveDbpassword);
+                Connection con = DriverManager.getConnection(gettestserverurl(), LiveDbusername, LiveDbpassword);
                 Statement statement = con.createStatement();
                 ResultSet result = statement.executeQuery(query)) {
 
@@ -54,17 +54,12 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<Object> getDataObject(String query) throws Exception {
         List<Object> stringMapValues = new ArrayList<>();
-
         List<Map<String, String>> result = executeQuery(query);
         stringMapValues.addAll(result);
 
         return stringMapValues;
     }
 
-    public static void main(String[]args){
-
-
-    }
 
 }
 
