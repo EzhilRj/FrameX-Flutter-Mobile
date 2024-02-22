@@ -18,6 +18,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.SkipException;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
 import static Base.AppiumTestSetup.driver;
@@ -64,45 +65,52 @@ public class Utils {
     }
 
     public static void Dropdownsetter(String formName, String productName) throws Exception {
+        try {
+            List<String> dropList = getColumnNamesFromDatabase(MessageFormat.format(queries.get("EnumFieldquery"),formName ,"'" + productName + "'","'" + formName + "'"), "FieldOption");
+            Collections.shuffle(dropList);
+            int size = dropList.size();
+            Random random = new Random();
+            int count = 0;
+            for (String drop : dropList) {
+                if (count >= size) {
+                    break;
+                }
+                /*String attribute = SetTextFieldAttribute(fieldName);*/
+                if (Source(fieldName)) {
+                    click("ACCESSIBILITYID", fieldName);
+                    click("ACCESSIBILITYID", drop);
+                    break;
+                } else {
+                    Scroll("up");
+                    click("ACCESSIBILITYID", fieldName);
+                    click("ACCESSIBILITYID", drop);
+                    break;
+                }
 
-        List<String> dropList = getColumnNamesFromDatabase(MessageFormat.format(queries.get("EnumFieldquery"),formName ,"'" + productName + "'","'" + formName + "'"), "FieldOption");
-        Collections.shuffle(dropList);
-        int size = dropList.size();
-        Random random = new Random();
-        int count = 0;
-        for (String drop : dropList) {
-            if (count >= size) {
-                break;
-            }
-            /*String attribute = SetTextFieldAttribute(fieldName);*/
-            if (Source(fieldName)) {
-                click("ACCESSIBILITYID", fieldName);
-                click("ACCESSIBILITYID", drop);
-                break;
-            } else {
-                Scroll("up");
-                click("ACCESSIBILITYID", fieldName);
-                click("ACCESSIBILITYID", drop);
-                break;
             }
 
+        } catch (Exception e) {
+            log.error("Error setting dropdown for field {} in form "+ fieldName);
+            log.error(e.getMessage());
         }
 
     }
 
     public static void ImageCapture() throws InterruptedException {
 
-        /*String attribute = SetTextFieldAttribute(fieldName);
-        if (isElementDisplayed("xpath", attribute)) {*/
         if(fieldName.contains("Photo *")){
             click("Xpath", Camerabutton_M);
+            log.info("Camera mandatory is Cliked");
         }else{
             click("Xpath", Camerabutton_NM);
+            log.info("Camera non mandatory is Cliked");
         }
         WebdriverWait("Xpath", Shutterbutton, 4);
         click("Xpath", Shutterbutton);
+        log.info("Shutter button is Cliked");
         WebdriverWait("ACCESSIBILITYID", "Done", 3);
         click("ACCESSIBILITYID", "Done");
+        log.info("Done button is Cliked");
 
     }
 
@@ -376,10 +384,8 @@ public class Utils {
         if(Source("Take Photo")){
             WebdriverWait("Xpath", Shutterbutton, 4);
             click("Xpath", Shutterbutton);
-            log.info("Shutter button is Clicked");
             WebdriverWait("ACCESSIBILITYID", "Done", 3);
             click("ACCESSIBILITYID", "Done");
-            log.info("Done button is Clicked");
             log.info("PSS Shop front image capture process completed successfully");
         }
 
@@ -388,19 +394,38 @@ public class Utils {
 
     public static void networkconditions(String mode,String duration) throws InterruptedException {
 
-        int sleeptime = Integer.parseInt(duration+"000");
-        if(mode.equalsIgnoreCase("Wifi")){
-            networkconnections();
-            Thread.sleep(sleeptime);
-            driver.toggleWifi();
-        } else if (mode.equalsIgnoreCase("MobileData")) {
-            networkconnections();
-            Thread.sleep(sleeptime);
-            driver.toggleData();
-        } else if (mode.equalsIgnoreCase("Disable")) {
-            networkconnections();
-            Thread.sleep(sleeptime);
-            networkconnections();
+        try {
+            int sleeptime = Integer.parseInt(duration+"000");
+            log.info("Network Mode: "+mode+" Duration : "+duration);
+            if(mode.equalsIgnoreCase("Wifi")){
+                networkconnections();
+                log.info("Wifi and Mobiledata is off");
+                Thread.sleep(sleeptime);
+                log.info("Thread is Waiting for "+sleeptime);
+                driver.toggleWifi();
+                log.info("Wifi is Turned On");
+            } else if (mode.equalsIgnoreCase("MobileData")) {
+                networkconnections();
+                log.info("Wifi and Mobiledata is off");
+                Thread.sleep(sleeptime);
+                log.info("Thread is Waiting for "+sleeptime);
+                driver.toggleData();
+                log.info("Mobiledata is Turned On");
+            } else if (mode.equalsIgnoreCase("Disable")) {
+                networkconnections();
+                log.info("Wifi and Mobiledata is off");
+                Thread.sleep(sleeptime);
+                log.info("Thread is Waiting for "+sleeptime);
+                networkconnections();
+                log.info("Wifi and Mobiledata is turned On");
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt(); // Restore interrupted status
+            log.error("Thread interrupted while waiting: {}"+ e.getMessage(), e);
+        } catch (NumberFormatException e) {
+            log.error("Invalid duration format: {}"+ duration);
+        } catch (Exception e) {
+            log.error("Error while managing network conditions: {}"+ e.getMessage(), e);
         }
 
     }

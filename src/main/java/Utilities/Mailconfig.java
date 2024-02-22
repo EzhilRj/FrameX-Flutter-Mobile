@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
+import static Base.AppiumTestSetup.log;
 import static Base.AppiumTestSetup.props;
 import static Listeners.FrameX_Listeners.attachmentflag;
 import static Listeners.FrameX_Listeners.fileName;
@@ -86,10 +87,11 @@ public class Mailconfig {
             }
             message.setContent(multipart);
             Transport.send(message);
-            AppiumTestSetup.log.info("Email sent");
+            log.info("Email sent");
 
         } catch (MessagingException e) {
-            AppiumTestSetup.log.error(e.getMessage());
+            log.info("Email is not sent");
+            log.error(e.getMessage());
             throw new RuntimeException(e);
         }
 

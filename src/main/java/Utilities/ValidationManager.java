@@ -138,11 +138,15 @@ public class ValidationManager {
         clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
         click("ACCESSIBILITYID", ActivityLog);
 
+
         if (!Source(successMsg)) {
+            log.info(successMsg+" is not showing in Activity log");
+            log.info("retryUploadProcess is Started");
             retryUploadProcess();
         }
 
         if (Source(successMsg)) {
+            log.info(successMsg+" is showing in Activity log");
             return handleUploadSuccess(targetXPath);
         }
 
@@ -157,7 +161,7 @@ public class ValidationManager {
         Thread.sleep(4000);
         click("ACCESSIBILITYID", Callplan);
         click("ACCESSIBILITYID", CallPlan_page.sync);
-
+        log.info("Clicked on Sync button");
         if (Source("Please, check internet connection")) {
             click("ACCESSIBILITYID", "Ok");
         }
@@ -174,6 +178,7 @@ public class ValidationManager {
     private static void retryUploadProcess() throws InterruptedException {
         for (int i = 0; i < 3; i++) {
             if (!Source("Starting the Upload process for Target . " + targetid)) {
+                log.info("Starting the Upload process for Target . " + targetid+" is not showing");
                 driver.navigate().back();
                 Thread.sleep(3000);
                 clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
@@ -182,10 +187,10 @@ public class ValidationManager {
                 break;
             }
         }
-
         driver.navigate().back();
         Thread.sleep(5000);
         clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
+
     }
 
     private static boolean handleUploadSuccess(String targetXPath) {
@@ -194,6 +199,7 @@ public class ValidationManager {
         click("xpath", targetXPath);
 
         if (Source("You have already uploaded " + targetid + " target")) {
+            log.info("You have already uploaded " + targetid + " target is showing");
             click("ACCESSIBILITYID", "Ok");
             return true;
         }

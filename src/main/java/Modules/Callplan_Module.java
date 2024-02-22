@@ -33,7 +33,6 @@ public class Callplan_Module extends AppiumTestSetup {
         try {
             formDatas = getDataObject(queries.get("FormMasterquery"));
         } catch (Exception e) {
-            // Handle the exception appropriately (e.g., log or rethrow)
             e.printStackTrace();
         }
     }
@@ -41,54 +40,60 @@ public class Callplan_Module extends AppiumTestSetup {
 
 
     public static String targetid ;
-    public static boolean validateUploadCall(String tid, String uploadType,String Closecallreason,String Closecallimage, String networkmode,String networkduration,String fieldtype) throws Exception {
+    public static boolean validateUploadCall(String targetId, String uploadType, String closeCallReason, String closeCallImage, String networkMode, String networkDuration, String fieldType) throws Exception {
+        // Set targetId
+        targetid = targetId;
 
-        targetid = tid;
-
+        // Retrieve categories from the database
         List<String> categories = getColumnNamesFromDatabase(queries.get("Categorymasterquery"), "Name");
-        log.info("Category Master Query : "+queries.get("Categorymasterquery"));
-        String targetXPath = "//android.view.View[contains(@content-desc, 'Target ID: " + targetid + "')]";
-        log.info("Xpath of targetid ; "+targetXPath);
 
+        // Construct target XPath
+        String targetXPath = "//android.view.View[contains(@content-desc, 'Target ID: " + targetid + "')]";
+
+        // Click on Call plan
         click("ACCESSIBILITYID", Callplan);
-        log.info("Call plan is Clicked");
+
+        // Check if the targetId is present
         if (!Source(targetid)) {
-            log.info("Source not having target id");
+            log.info("Target id not found. Navigating back and trying again.");
             driver.navigate().back();
             Thread.sleep(3000);
             click("ACCESSIBILITYID", Callplan);
-            log.info("Call plan is Clicked");
+            log.info("Clicked on Call plan again");
         }
+
+        // Process the targetId if found
         if (Source(targetid)) {
             click("Xpath", targetXPath);
-            log.info("Target is Clicked");
             String startTime = datevisitedvalidation();
             click("Xpath", Startworkbutton);
-            log.info("Start work button is clicked");
             pssshopfrontimage();
             WebdriverWait("ACCESSIBILITYID", UploadcallButton, 15);
+
+            // Process based on uploadType
             if (uploadType.equalsIgnoreCase("Upload")) {
-                log.info("Call Type : Upload");
-                if (dataBinder(categories,fieldtype)) {
-                    return Uploadcallfunction(startTime,networkmode,networkduration);
+                log.info("Call Type: Upload");
+                if (dataBinder(categories,fieldType)) {
+                    return Uploadcallfunction(startTime, networkMode, networkDuration);
                 }
             } else if (uploadType.equalsIgnoreCase("Close")) {
-                log.info("Call Type : Close");
-                return closecallfunction(Closecallreason,Closecallimage,networkmode,networkduration);
+                log.info("Call Type: Close");
+                return closecallfunction(closeCallReason, closeCallImage, networkMode, networkDuration);
             }
         } else {
-            logAndReportFailure("Target ID "+targetid + " is not Displayed ");
+            logAndReportFailure("Target ID " + targetid + " is not Displayed ");
         }
         return false;
     }
 
 
-    private static boolean dataBinder(List<String> categories, String fieldtype) throws Exception {
+
+    private static boolean dataBinder(List<String> categories, String fieldType) throws Exception {
         boolean isExecutionSuccessful = true;
         for (String category : categories) {
             String modifiedCategory = SetSpecialCharacter(category); // Apply SetSpecialCharacter to category name
             if (Source(modifiedCategory)) {
-                boolean isCategoryExecutionSuccessful = categoryprocess(category,fieldtype);
+                boolean isCategoryExecutionSuccessful = categoryProcess(category, fieldType);
                 if (!isCategoryExecutionSuccessful) {
                     isExecutionSuccessful = false;
                     break;
@@ -98,20 +103,26 @@ public class Callplan_Module extends AppiumTestSetup {
         return isExecutionSuccessful;
     }
 
-    private static boolean categoryprocess(String category, String fieldtype) throws Exception {
 
+    private static boolean categoryProcess(String category, String fieldType) throws Exception {
         String modifiedCategory = SetSpecialCharacter(category);
-        String catexpath = generatecategorylocator(category);
+        String catXpath = generatecategorylocator(category);
 
-        if (!isElementDisplayed("Xpath", catexpath)) {
+        // Check if the category element is displayed
+        if (!isElementDisplayed("Xpath", catXpath)) {
+            log.debug(catXpath+" is not displayed");
             return false;
         }
-        click("Xpath", catexpath);
 
+        // Click on the category element
+        click("Xpath", catXpath);
+
+        // Scroll up if the modified category is not displayed
         if (!Source(modifiedCategory)) {
             Scroll("up");
         }
 
+        // Process the category if it's displayed
         if (Source(modifiedCategory)) {
             for (Object formData : formDatas) {
                 if (formData instanceof LinkedHashMap<?, ?>) {
@@ -119,7 +130,7 @@ public class Callplan_Module extends AppiumTestSetup {
                     String formName = (String) formDataMap.get("FormName");
                     String isQuestionForm = (String) formDataMap.get("IsQuestionForm");
                     try {
-                        formprocess(category, formName, isQuestionForm, fieldtype);
+                        formprocess(category, formName, isQuestionForm, fieldType);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
@@ -128,8 +139,8 @@ public class Callplan_Module extends AppiumTestSetup {
             return true;
         }
         return false;
-
     }
+
 
 
     public static boolean formprocess(String category, String form, String IsQuestionForm, String fieldtype) throws Exception {
@@ -155,13 +166,16 @@ public class Callplan_Module extends AppiumTestSetup {
 
             // Use Collection.removeIf to filter out non-mandatory elements
             if (fieldtype.equalsIgnoreCase("Mandatory")) {
+                log.info("Fieldtype : "+ fieldtype);
                 productNames.removeIf(ele -> !ele.contains("*"));
+
             }
 
             for (String productName : productNames) {
                 try {
                     productprocess(formName, productName, IsQuestionForm);
                 } catch (Exception e) {
+                    log.error("Error processing product : "+ productName, e);
                     throw new RuntimeException(e);
                 }
             }
@@ -169,25 +183,32 @@ public class Callplan_Module extends AppiumTestSetup {
             // Refactor keyboard handling
             if (driver.isKeyboardShown()) {
                 driver.hideKeyboard();
+                log.info("Keyboard is hidden");
             }
 
             // Refactor button handling
             if (Source("Next")) {
                 click("ACCESSIBILITYID", NextButton);
+                log.info("Next button is clicked");
+
             } else if (Source("Done")) {
                 click("ACCESSIBILITYID", Donebutton);
+                log.info("Done button is clicked");
+
             }
 
             // Data binding for the form is successful
             isformExecutionSuccessful = true;
+        }else {
+            log.warn(form+" form is not present ");
         }
 
         return isformExecutionSuccessful;
     }
 
 
-
     private static boolean productprocess(String formName, String productName, String IsQuestionForm) throws Exception {
+        try {
         String modifiedProductName = SetSpecialCharacter(productName);
 
         if (!Source(modifiedProductName)) {
@@ -200,16 +221,16 @@ public class Callplan_Module extends AppiumTestSetup {
             enterfieldprocess(formName, IsQuestionForm, cleanProductName);
             return true;
         }
-
+        } catch (Exception e) {
+            log.error("Error processing product in form "+ productName);
+        }
         return false;
     }
 
 
     private static boolean enterfieldprocess(String formName, String IsQuestionForm, String productName) throws Exception {
         int forDEO = IsQuestionForm.equals("1") ? 0 : 1;
-        List<Object> fieldNames = getDataObject(IsQuestionForm.equals("1") ?
-                MessageFormat.format(queries.get("QuestionFormFieldsquery"), formName, "'" + productName + "'", "'" + formName + "'") :
-                MessageFormat.format(queries.get("FormFieldsquery"), "'" + formName + "'", IsQuestionForm, forDEO));
+        List<Object> fieldNames = getDataObject(IsQuestionForm.equals("1") ? MessageFormat.format(queries.get("QuestionFormFieldsquery"), formName, "'" + productName + "'", "'" + formName + "'") : MessageFormat.format(queries.get("FormFieldsquery"), "'" + formName + "'", IsQuestionForm, forDEO));
 
         for (Object field : fieldNames) {
             if (!(field instanceof LinkedHashMap<?, ?>)) {
@@ -221,6 +242,7 @@ public class Callplan_Module extends AppiumTestSetup {
             Datatype = (String) fieldData.get("DataType");
             fieldName = IsQuestionForm.equals("1") ? Ctrltype : (String) fieldData.get("FieldName");
             enumfieldName = (String) fieldData.get("FieldName");
+            log.info("Control type: " +Ctrltype+", EnumFieldname: " +enumfieldName+", Fieldname: " +fieldName+", Datatype: " +Datatype);
 
             updateFieldNameForRequired(formName, productName, fieldData);
 
@@ -246,15 +268,19 @@ public class Callplan_Module extends AppiumTestSetup {
     private static boolean Uploadcallfunction(String starttime, String networkmode , String networkoffduration) throws InterruptedException {
 
         click("ACCESSIBILITYID",UploadcallButton);
+        log.info("Upload call button is clicked");
         if (isElementDisplayed("ACCESSIBILITYID", Uploadcallconfirmpopup)) {
             click("ACCESSIBILITYID", Yesbutton);
             if(Source(starttime)){
                 click("ACCESSIBILITYID", Uploadcallsbutton);
+                log.info("Uploadcalls button is clicked");
             }
         } else if (isElementDisplayed("Xpath", Perfectstorescorepopup)) {
+            log.info("Perfect Store popup is showing");
             click("ACCESSIBILITYID", Okbutton);
             if(Source(starttime)){
                 click("ACCESSIBILITYID", Uploadcallsbutton);
+                log.info("Uploadcalls button is clicked");
             }
         }
         networkconditions(networkmode,networkoffduration);
@@ -272,13 +298,16 @@ public class Callplan_Module extends AppiumTestSetup {
     private static boolean closecallfunction(String reason, String closecallimage,String networkmode , String networkoffduration) throws InterruptedException {
 
         click("ACCESSIBILITYID",CloseCallButton);
+        log.info("Clicked on Close Call Button");
         click("ACCESSIBILITYID","Yes");
         click("ACCESSIBILITYID","Reason *");
         click("ACCESSIBILITYID",reason);
         if(closecallimage.equalsIgnoreCase("True")){
+            log.info("Close Call image status : True");
             captureCloseCallImage();
         }
         click("ACCESSIBILITYID", "Done");
+        log.info("Clicked on done button");
         networkconditions(networkmode,networkoffduration);
         if(Source("Please, Take  Reason")){
             logAndReportFailure("Please Take Close Call Reason Image ");
@@ -293,6 +322,7 @@ public class Callplan_Module extends AppiumTestSetup {
         }
 
         driver.navigate().back();
+        log.info("Swipe back");
         return calluploadvalidation(networkmode, successMessage);
 
     }
@@ -307,6 +337,7 @@ public class Callplan_Module extends AppiumTestSetup {
     }
 
     private static void handleControlType(String formName, String Ctrltype, String fieldName, String Datatype,String prodname) throws Exception {
+
         if (Ctrltype.equals("TextBox")) {
             Enter("Xpath", generatetextfieldlocator(fieldName),  Datasetter(Datatype, fieldName));
             driver.hideKeyboard();
