@@ -1,17 +1,13 @@
 package Modules;
 
 import Base.AppiumTestSetup;
-import Pages.Attendance_page;
-import Pages.HomePage_page;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
 import static Pages.HomePage_page.Attendance;
 import static Utilities.Actions.*;
-import static Utilities.Utils.getdevicetime;
 import static Utilities.Utils.gohomepage;
 import static Utilities.ValidationManager.*;
 
@@ -47,7 +43,7 @@ public class Attendance_Module extends AppiumTestSetup {
     }
 
     // Method to validate image requirement for different attendance types
-    public static boolean validateAttendanceImageRequired(String attendancetype) throws InterruptedException {
+    public static boolean validateAttendanceImageRequired(String attendancetype)  {
         try {
             if (!Source(attendancetype)) {
                 click("ACCESSIBILITYID", Attendance);

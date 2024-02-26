@@ -12,7 +12,7 @@ public class DBConfig extends AppiumTestSetup {
 
     public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (
-                Connection con = DriverManager.getConnection(gettestserverurl(), LiveDbusername, LiveDbpassword);
+                Connection con = DriverManager.getConnection(getProdUrl(), LiveDbusername, LiveDbpassword);
                 Statement statement = con.createStatement();
                 ResultSet result = statement.executeQuery(query)) {
 

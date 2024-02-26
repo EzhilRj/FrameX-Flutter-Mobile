@@ -126,7 +126,7 @@ public class AppiumTestSetup {
         }
 
         // Send mail report and open the generated report file in the default web browser
-        // sendMailReport();
+        sendMailReport();
 
         // Open the generated report file in the default web browser
         File extentReport = new File(props.get("TestReportspath")+fileName);

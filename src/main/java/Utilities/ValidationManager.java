@@ -1,17 +1,13 @@
 package Utilities;
 
-import Modules.Callplan_Module;
 import Pages.CallPlan_page;
-import Pages.HomePage_page;
 
 import static Base.AppiumTestSetup.driver;
 import static Base.AppiumTestSetup.log;
 import static Listeners.FrameX_Listeners.*;
-import static Listeners.FrameX_Listeners.logAndinfo;
 import static Modules.Attendance_Module.attendanceimagerule;
 import static Modules.Callplan_Module.targetid;
 import static Pages.Attendance_page.imgmandatorymsg;
-import static Pages.CallPlan_page.uploadcallerr_msg;
 import static Pages.HomePage_page.*;
 import static Utilities.Actions.*;
 import static Utilities.Utils.datevisitedtime;
@@ -117,7 +113,7 @@ public class ValidationManager {
 
     //CallPlan Validations and Verifications================================================================
 
-    public static String datevisitedvalidation() throws InterruptedException {
+    public static String datevisitedvalidation()  {
         String devicetime = datevisitedtime();
         if(Source(devicetime)){
             log.info("Target start time  :  "+devicetime);
@@ -130,26 +126,27 @@ public class ValidationManager {
 
     public static boolean calluploadvalidation(String netmode, String successMsg) throws InterruptedException {
         String targetXPath = "//android.widget.ImageView[contains(@content-desc, 'Target ID: " + targetid + "')]";
-
         if (!netmode.equalsIgnoreCase("Enable")) {
             handleNoInternetConnection();
         }
-
         clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
         click("ACCESSIBILITYID", ActivityLog);
 
+        for (int i = 0; i < 5; i++) {
+            if (!Source(successMsg)) {
+                log.info(successMsg+" is not showing in Activity log");
+                log.info("retryUploadProcess is Started");
+                retryUploadProcess();
+            }else{
 
-        if (!Source(successMsg)) {
-            log.info(successMsg+" is not showing in Activity log");
-            log.info("retryUploadProcess is Started");
-            retryUploadProcess();
+                if (Source(successMsg)) {
+                    log.info(successMsg+" is showing in Activity log");
+                    return handleUploadSuccess(targetXPath);
+                }
+            }
         }
 
-        if (Source(successMsg)) {
-            log.info(successMsg+" is showing in Activity log");
-            return handleUploadSuccess(targetXPath);
-        }
-
+        driver.navigate().back();
         return false;
     }
 
@@ -158,15 +155,15 @@ public class ValidationManager {
             click("ACCESSIBILITYID", "Ok");
         }
 
-        Thread.sleep(4000);
         click("ACCESSIBILITYID", Callplan);
+        Thread.sleep(4000);
         click("ACCESSIBILITYID", CallPlan_page.sync);
         log.info("Clicked on Sync button");
         if (Source("Please, check internet connection")) {
             click("ACCESSIBILITYID", "Ok");
         }
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         click("ACCESSIBILITYID", ActivityLog);
     }
 
@@ -176,19 +173,8 @@ public class ValidationManager {
     }
 
     private static void retryUploadProcess() throws InterruptedException {
-        for (int i = 0; i < 3; i++) {
-            if (!Source("Starting the Upload process for Target . " + targetid)) {
-                log.info("Starting the Upload process for Target . " + targetid+" is not showing");
-                driver.navigate().back();
-                Thread.sleep(3000);
-                clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
-                continue;
-            } else {
-                break;
-            }
-        }
         driver.navigate().back();
-        Thread.sleep(5000);
+        Thread.sleep(4000);
         clickAndWait("ACCESSIBILITYID", ActivityLog, 15);
 
     }

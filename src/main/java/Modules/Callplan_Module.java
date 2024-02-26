@@ -67,7 +67,10 @@ public class Callplan_Module extends AppiumTestSetup {
             click("Xpath", targetXPath);
             String startTime = datevisitedvalidation();
             click("Xpath", Startworkbutton);
-            pssshopfrontimage();
+            Thread.sleep(2000);
+            if(Source("Take Photo")){
+                pssshopfrontimage();
+            }
             WebdriverWait("ACCESSIBILITYID", UploadcallButton, 15);
 
             // Process based on uploadType
@@ -242,7 +245,6 @@ public class Callplan_Module extends AppiumTestSetup {
             Datatype = (String) fieldData.get("DataType");
             fieldName = IsQuestionForm.equals("1") ? Ctrltype : (String) fieldData.get("FieldName");
             enumfieldName = (String) fieldData.get("FieldName");
-            log.info("Control type: " +Ctrltype+", EnumFieldname: " +enumfieldName+", Fieldname: " +fieldName+", Datatype: " +Datatype);
 
             updateFieldNameForRequired(formName, productName, fieldData);
 
@@ -322,7 +324,6 @@ public class Callplan_Module extends AppiumTestSetup {
         }
 
         driver.navigate().back();
-        log.info("Swipe back");
         return calluploadvalidation(networkmode, successMessage);
 
     }

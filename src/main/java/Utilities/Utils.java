@@ -311,6 +311,7 @@ public class Utils {
                     value = System.getProperty("user.dir") +properties.getProperty(key);
                 }
                 propertiesMap.put(key, value);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -379,15 +380,13 @@ public class Utils {
 
 
     public static void pssshopfrontimage() throws InterruptedException {
+
         log.info("Starting PSS Shop front image capture process");
-        Thread.sleep(2000);
-        if(Source("Take Photo")){
-            WebdriverWait("Xpath", Shutterbutton, 4);
-            click("Xpath", Shutterbutton);
-            WebdriverWait("ACCESSIBILITYID", "Done", 3);
-            click("ACCESSIBILITYID", "Done");
-            log.info("PSS Shop front image capture process completed successfully");
-        }
+        WebdriverWait("Xpath", Shutterbutton, 4);
+        click("Xpath", Shutterbutton);
+        WebdriverWait("ACCESSIBILITYID", "Done", 3);
+        click("ACCESSIBILITYID", "Done");
+        log.info("PSS Shop front image capture process completed successfully");
 
     }
 
