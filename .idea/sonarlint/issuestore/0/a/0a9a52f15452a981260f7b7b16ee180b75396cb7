@@ -1,0 +1,9 @@
+
+m
+java:S1192"PDefine a constant instead of duplicating this literal "ACCESSIBILITYID" 5 times.(ϋ’όπ8ν±γα1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ϊ΄ά­8ο±γα1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½Λ©8χ±γα1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(—ϊΞϋÿÿÿÿ8Ψ²γα1
+{
+java:S2142@"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ύΎ8ά²γα1

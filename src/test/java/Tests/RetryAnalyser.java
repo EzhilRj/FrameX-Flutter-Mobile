@@ -3,10 +3,7 @@ package Tests;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import java.io.FileNotFoundException;
-
 import static Base.AppiumTestSetup.props;
-import static Utilities.Utils.propertyloader;
 
 public class RetryAnalyser implements IRetryAnalyzer {
     private static final int MAX_RETRY_COUNT= Integer.parseInt(props.get("Testretrycount"));

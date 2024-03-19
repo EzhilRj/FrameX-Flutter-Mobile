@@ -1,0 +1,19 @@
+
+a
+java:S1192"FDefine a constant instead of duplicating this literal "Xpath" 4 times.(ÂÖĞıÿÿÿÿ
+e
+java:S1192"PDefine a constant instead of duplicating this literal "ACCESSIBILITYID" 5 times.(§£§t
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Õßšûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜½Ë©
+Q	java:S107"=Method has 11 parameters, which is greater than 7 authorized.(üÿ¨#
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Õßšûÿÿÿÿ
+’
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(†öÿ°ÿÿÿÿÿ
+‰
+java:S1130"nRemove the declaration of thrown exception 'java.awt.AWTException', as it cannot be thrown from method's body.(†öÿ°ÿÿÿÿÿ
+‰
+java:S1172"nRemove these unused method parameters "storeinfo", "promgroom", "maintaincat", "awareabttargets", "selfieimg".(†öÿ°ÿÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(ç¶‚úşÿÿÿÿ
+l
+java:S1128"QRemove this unused import 'io.appium.java_client.touch.offset.PointOption.point'.(â””Êúÿÿÿÿ

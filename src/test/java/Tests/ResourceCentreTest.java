@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import java.lang.reflect.Method;
 import java.util.Hashtable;
 
-import static Modules.Downloadcalls_Module.validatedownloadcalls;
 import static Modules.Resourcentre_Module.validateFiles;
 
 public class ResourceCentreTest {

@@ -1,0 +1,85 @@
+{
+  "Login": {
+    "User1": {
+      "username": "sathiche",
+      "password": "sathiche",
+      "project": "jj",
+      "mobileno": "8345667899",
+      "expected": "Call Plan"
+
+    },
+    "User2": {
+      "username": "arunde",
+      "password": "arundel",
+      "project": "jj",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Please Enter a valid UserName and Password and try again....."
+    },
+    "User3": {
+      "username": "arundel",
+      "password": "arunde",
+      "project": "jj",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Please Enter a valid UserName and Password and try again....."
+    },
+    "User4": {
+      "username": "arundel",
+      "password": "arundel",
+      "project": "testproj",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Please enter a valid Project Name and try again."
+    },
+    "User5": {
+      "username": "arundel",
+      "password": "arundel",
+      "project": "jj",
+      "mobileno": "8345667",
+      "expectedErrorMessage": "Enter a Valid Mobile Number"
+    },
+    "User6": {
+      "username": "",
+      "password": "arundel",
+      "project": "jj",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Username is Required"
+    },
+    "User7": {
+      "username": "arundel",
+      "password": "",
+      "project": "jj",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Password is Required"
+    },
+    "User8": {
+      "username": "arundel",
+      "password": "arundel",
+      "project": "",
+      "mobileno": "8345667895",
+      "expectedErrorMessage": "Project is Required"
+    },
+    "User9": {
+      "username": "arundel",
+      "password": "arundel",
+      "project": "jj",
+      "mobileno": "",
+      "expectedErrorMessage": "Mobile Number is Required"
+    }
+  },
+
+
+
+  "Attendance":
+  {
+    "Attendance Submission": {
+      "type": "Present",
+      "Image": "True",
+      "expectedMessage": "Your attendance Marked for today as "
+    },
+
+    "Attendancewithoutcapturingimage": {
+      "type": "Present",
+      "Image": "False",
+      "expectedErrorMessage": "Please, Take Photo for submit attendance."
+    }
+  }
+}

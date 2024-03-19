@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import java.lang.reflect.Method;
 import java.util.Hashtable;
 
-import static Modules.Attendance_Module.validateAttendanceImageRequired;
 import static Modules.Callplan_Module.validateUploadCall;
 
 public class CallPlanTest extends AppiumTestSetup {

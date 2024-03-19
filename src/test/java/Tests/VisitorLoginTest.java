@@ -9,8 +9,6 @@ import Modules.VisitorLogin_Module;
 import java.lang.reflect.Method;
 import java.util.Hashtable;
 
-import static Modules.Resourcentre_Module.validateFiles;
-
 public class VisitorLoginTest {
 
     @Test(dataProviderClass = Utils.class, dataProvider = "Testdatas",priority = 6,retryAnalyzer = Tests.RetryAnalyser .class)

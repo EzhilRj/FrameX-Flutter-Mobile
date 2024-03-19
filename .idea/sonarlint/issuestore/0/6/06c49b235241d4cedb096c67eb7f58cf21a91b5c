@@ -1,0 +1,62 @@
+
+s
+java:S1104"VMake Attendance a static final constant or non-public and provide accessors if needed.(Ü¶«„8Å©™’á1
+q
+java:S1104"TMake Callplan a static final constant or non-public and provide accessors if needed.(Øšá‰8Ì©™’á1
+{
+java:S1104"YMake DownloadCalls a static final constant or non-public and provide accessors if needed.(®è¸›ÿÿÿÿÿ8Ì©™’á1
+v
+java:S1104	"ZMake ResourceCentre a static final constant or non-public and provide accessors if needed.(Áù¢8Ì©™’á1
+s
+java:S1104
+"QMake Inbox a static final constant or non-public and provide accessors if needed.(ƒÓØâÿÿÿÿÿ8Ì©™’á1
+t
+java:S1104"WMake ActivityLog a static final constant or non-public and provide accessors if needed.(›îéñ8Í©™’á1
+u
+java:S1104"XMake TravelReport a static final constant or non-public and provide accessors if needed.(¢ü²­8Í©™’á1
+z
+java:S1104"XMake visitorlogin a static final constant or non-public and provide accessors if needed.(Ø¨Ğıÿÿÿÿ8Í©™’á1
+m
+java:S1104"PMake home a static final constant or non-public and provide accessors if needed.(Ğ×–¿8Í©™’á1
+n
+java:S1104"RMake logout a static final constant or non-public and provide accessors if needed.(ôØ«78Í©™’á1
+M
+java:S1444"0Make this "public static Attendance" field final(Ü¶«„8Í©™’á1
+K
+java:S1444".Make this "public static Callplan" field final(Øšá‰8Í©™’á1
+U
+java:S1444"3Make this "public static DownloadCalls" field final(®è¸›ÿÿÿÿÿ8Í©™’á1
+P
+java:S1444	"4Make this "public static ResourceCentre" field final(Áù¢8Î©™’á1
+M
+java:S1444
+"+Make this "public static Inbox" field final(ƒÓØâÿÿÿÿÿ8Î©™’á1
+N
+java:S1444"1Make this "public static ActivityLog" field final(›îéñ8Î©™’á1
+O
+java:S1444"2Make this "public static TravelReport" field final(¢ü²­8Î©™’á1
+T
+java:S1444"2Make this "public static visitorlogin" field final(Ø¨Ğıÿÿÿÿ8Î©™’á1
+G
+java:S1444"*Make this "public static home" field final(Ğ×–¿8Î©™’á1
+H
+java:S1444",Make this "public static logout" field final(ôØ«78Î©™’á1
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(î„ôˆ8Ï©™’á1
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC8Ğ©™’á1
+r
+java:S3008"URename this field "Attendance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü¶«„8Ò©™’á1
+p
+java:S3008"SRename this field "Callplan" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øšá‰8Ò©™’á1
+z
+java:S3008"XRename this field "DownloadCalls" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®è¸›ÿÿÿÿÿ8Ò©™’á1
+u
+java:S3008	"YRename this field "ResourceCentre" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áù¢8Ò©™’á1
+r
+java:S3008
+"PRename this field "Inbox" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÓØâÿÿÿÿÿ8Ò©™’á1
+s
+java:S3008"VRename this field "ActivityLog" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›îéñ8Ó©™’á1
+t
+java:S3008"WRename this field "TravelReport" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ü²­8Ó©™’á1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(î„ôˆ8Ø©™’á1

@@ -1,0 +1,90 @@
+
+o
+java:S2293,"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ÿ«î¯
+g
+java:S11926"LUse already-defined constant 'resign' instead of duplicating its value here.(©Èìéüÿÿÿÿ
+i
+java:S1192A"NUse already-defined constant 'atoffice' instead of duplicating its value here.(Á±¸øÿÿÿÿ
+a
+java:S1192/"KUse already-defined constant 'Leave' instead of duplicating its value here.(­ÿ¾×
+b
+java:S11921"MUse already-defined constant 'weekoff' instead of duplicating its value here.(µéÍ(
+_
+java:S11924"IDefine a constant instead of duplicating this literal "Training" 3 times.(Û¯åÃ
+k
+java:S1192O"PDefine a constant instead of duplicating this literal "ACCESSIBILITYID" 3 times.(ÄñÂŞøÿÿÿÿ
+c
+java:S11922"MUse already-defined constant 'holiday' instead of duplicating its value here.(Æê–ú
+t
+java:S1192-"YUse already-defined constant 'attendance_dropdown' instead of duplicating its value here.(ê¶²ıÿÿÿÿ
+b
+java:S1192."LUse already-defined constant 'Absent' instead of duplicating its value here.(ÿ°ä¿
+k
+java:S11925"PDefine a constant instead of duplicating this literal "Monthly Meeting" 3 times.(ÿÌæÔüÿÿÿÿ
+J
+java:S1066V"/Merge this if statement with the enclosing one.(îÛå’øÿÿÿÿ
+ˆ
+java:S1319*"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(êúî¡úÿÿÿÿ
+‚
+java:S1319;"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‘È$
+r
+java:S1104"\Make Attendancecamera a static final constant or non-public and provide accessors if needed.(á´á
+x
+java:S1104"]Make Frontcamerabutton a static final constant or non-public and provide accessors if needed.(× Óøÿÿÿÿ
+t
+java:S1104"YMake shutterbutton a static final constant or non-public and provide accessors if needed.(´°ıÇûÿÿÿÿ
+m
+java:S1104"RMake Submit a static final constant or non-public and provide accessors if needed.(Í±Æåıÿÿÿÿ
+s
+java:S1104"^Make imgnonmandatorymsg a static final constant or non-public and provide accessors if needed.(ƒ™ŸD
+q
+java:S1104"[Make imgmandatorymsg a static final constant or non-public and provide accessors if needed.(÷˜Èª
+w
+java:S1104("aMake Attendacealreadysaved a static final constant or non-public and provide accessors if needed.(› í•
+L
+java:S1444"6Make this "public static Attendancecamera" field final(á´á
+R
+java:S1444"7Make this "public static Frontcamerabutton" field final(× Óøÿÿÿÿ
+N
+java:S1444"3Make this "public static shutterbutton" field final(´°ıÇûÿÿÿÿ
+G
+java:S1444",Make this "public static Submit" field final(Í±Æåıÿÿÿÿ
+M
+java:S1444"8Make this "public static imgnonmandatorymsg" field final(ƒ™ŸD
+K
+java:S1444"5Make this "public static imgmandatorymsg" field final(÷˜Èª
+Q
+java:S1444(";Make this "public static Attendacealreadysaved" field final(› í•
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(š‘÷
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC
+n	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¬ª¿f
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(©ÓÒÜüÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(âÄĞøÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ë¾­‹ıÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(©Ïçıúÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(•ÎÙıÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ó£úå
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Îæ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.( ô¢™
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ığ™’
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¨¯äï
+t	java:S115 "ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ïº¹İøÿÿÿÿ
+t	java:S115!"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÇÀ°øÿÿÿÿ
+n	java:S115""ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¸¢ 3
+t	java:S115#"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ØÏ‘Şøÿÿÿÿ
+o	java:S115$"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(È‚Äı
+t	java:S115%"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‹›Œèùÿÿÿÿ
+t	java:S115&"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(°°÷ûøÿÿÿÿ
+o	java:S115'"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‡š«
+q
+java:S3008"[Rename this field "Attendancecamera" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á´á
+w
+java:S3008"\Rename this field "Frontcamerabutton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(× Óøÿÿÿÿ
+l
+java:S3008"QRename this field "Submit" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í±Æåıÿÿÿÿ
+v
+java:S3008("`Rename this field "Attendacealreadysaved" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(› í•
+P
+java:S1118":Add a private constructor to hide the implicit public one.(š‘÷
+\
+java:S1128	"ARemove this unused import 'Utilities.Actions.isElementDisplayed'.(Ù³¢Øûÿÿÿÿ
