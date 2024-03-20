@@ -14,18 +14,23 @@ import java.util.regex.Pattern;
 import Pages.Login_Page;
 import io.appium.java_client.AppiumBy;
 import org.apache.commons.io.FileUtils;
+import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 
 import static Base.AppiumTestSetup.driver;
 import static Base.AppiumTestSetup.excel;
+import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Modules.Callplan_Module.fieldName;
 import static Pages.CallPlan_page.*;
+import static Pages.Login_Page.login;
 import static Utilities.Actions.*;
 import static Utilities.Constants.queryfilepath;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
+import static Utilities.TestDataUtil.gettestdata;
 
 public class Utils {
 
@@ -436,7 +441,26 @@ public class Utils {
         return driver.getPageSource().contains(value);
     }
 
+    public static void Assertion(String expected,String message){
+        try {
+            Assert.assertTrue(Source(expected), message);
+        } catch (AssertionError e) {
+            logAndReportFailure(message);
+        }
 
+    }
+
+   static void lgpage(){
+        JSONObject user1 = gettestdata("Login","User1");
+        login(user1.getString("username"), user1.getString("password"),user1.getString("project"),user1.getString("mobileno"));
+    }
+
+    public static void applogin(){
+
+        if(!Source("Attendance")){
+            lgpage();
+        }
+    }
 
 }
 

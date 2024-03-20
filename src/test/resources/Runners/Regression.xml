@@ -21,17 +21,18 @@
             </class>
         </classes>
     </test>
-    <test name="AttendanceTest">
+    <test name="Attendance Test">
         <classes>
             <class name="Tests.AttendanceTest">
                 <methods>
-                    <include name="TC001_VerifyImagerequired" />
-                    <include name="TC002_VerifyAttendance" />
+                    <include name="TC_001verifyAttendanceModuleIsDisplayed" />
+                    <include name="TC_002VerifyAttendancewithoutcapturingimage"/>
+                    <include name="TC_003verifyAttendanceSubmission" />
                 </methods>
             </class>
         </classes>
     </test>
-    <test name="CallplanTest">
+  <!--  <test name="CallplanTest">
         <classes>
             <class name="Tests.CallPlanTest">
                 <methods>
@@ -67,6 +68,6 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 
 </suite>

@@ -1,22 +1,18 @@
 package Pages;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import static Pages.HomePage_page.Attendance;
+import static Pages.Login_Page.login;
 import static Utilities.Actions.*;
+import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
 
 public class Attendance_page {
 
-    public static final String attendance_dropdown = "Present";
-    public static final String Present = "Present";
-    public static final String Leave = "Leave";
-    public static final String Absent = "Absent";
-    public static final String atoffice = "At Office";
-    public static final String weekoff = "Week off";
-    public static final String holiday = "Holiday";
-    public static final String tour = "Tour";
-    public static final String resign = "Resign";
     public static String Attendancecamera = "//android.view.View[2]";
     public static String Frontcamerabutton = "//android.widget.ImageView[4]";
     public static String shutterbutton = "//android.view.View[3]";
@@ -83,8 +79,8 @@ public class Attendance_page {
             click("xpath", shutterbutton);
         }
         click("ACCESSIBILITYID", Submit);
-
     }
+
 
 }
 

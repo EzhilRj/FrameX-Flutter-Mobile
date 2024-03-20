@@ -1,34 +1,0 @@
-
-g	java:S112_"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Óƒ¡’á1
-u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÄÍû8áƒ¡’á1
-W
-java:S1118":Add a private constructor to hide the implicit public one.(ıÁ«ò8ã„¡’á1
-“
-java:S1130"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(È˜Ûö8ç„¡’á1
-a
-java:S4143*"DVerify this is the key that was intended; it was already set before.(¤æßÛ8ê„¡’á1
-a
-java:S4143+"DVerify this is the key that was intended; it was already set before.(İè£¹8ê„¡’á1
-f
-java:S4143)"DVerify this is the key that was intended; it was already set before.(àÂ³¦øÿÿÿÿ8ê„¡’á1
-™
-java:S5527#"wEnable server hostname verification on this SSL/TLS connection, by setting "mail.smtp.ssl.checkserveridentity" to true.(£Ó±ùÿÿÿÿ8÷„¡’á1
-W
-java:S1161.":Add the "@Override" annotation above this method signature(‡èú×8…¡’á1
-S
-java:S1128"1Remove this unused import 'Base.AppiumTestSetup'.(ùµ¹§øÿÿÿÿ8·…¡’á1
-F
-java:S1128
-")Remove this unused import 'java.io.File'.(†Ğ¥Å8·…¡’á1
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8·…¡’á1
-N
-java:S1128"1Remove this unused import 'java.text.DateFormat'.(÷Œá¼8¸…¡’á1
-T
-java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8¸…¡’á1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¸…¡’á1
-H
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8¸…¡’á1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¸…¡’á1

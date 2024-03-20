@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NEGATIVE SUITE" verbose="3">
+    <listeners>
+        <listener class-name="Listeners.FrameX_Listeners"></listener>
+    </listeners>
+    <test name="Login Test">
+        <classes>
+            <class name="Tests.LoginTest">
+                <methods>
+                    <exclude name="TC_002VerifyLoginWithInvalidUsername" />
+                    <exclude name="TC_003VerifyLoginWithInvalidPassword" />
+                    <exclude name="TC_004VerifyLoginWithInvalidProject" />
+                    <exclude name="TC_005VerifyLoginWithInvalidMobilenumber" />
+                    <exclude name="TC_006VerifyLoginWithoutEnteringUsername" />
+                    <exclude name="TC_007VerifyLoginWithoutEnteringPassword" />
+                    <exclude name="TC_008VerifyLoginWithoutEnteringProject" />
+                    <exclude name="TC_009VerifyLoginWithoutEnteringMobilenumber" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Attendance Test">
+        <classes>
+            <class name="Tests.AttendanceTest">
+                <methods>
+                    <include name="TC_002VerifyAttendancewithoutcapturingimage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

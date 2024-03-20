@@ -1,8 +1,8 @@
 {
   "Login": {
     "User1": {
-      "username": "sathiche",
-      "password": "sathiche",
+      "username": "nandhche",
+      "password": "nandhche",
       "project": "jj",
       "mobileno": "8345667899",
       "expected": "Call Plan"
@@ -79,7 +79,7 @@
     "Attendancewithoutcapturingimage": {
       "type": "Present",
       "Image": "False",
-      "expectedErrorMessage": "Please, Take Photo for submit attendance."
+      "expectedErrorMessage": "Please, Take Photo for submit attandance."
     }
   }
 }

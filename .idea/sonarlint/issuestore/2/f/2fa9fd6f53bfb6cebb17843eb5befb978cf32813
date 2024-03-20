@@ -1,8 +1,0 @@
-
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şü³”ıÿÿÿÿJ$34e6ade8-3d66-4141-a5b6-4a192b9f8438
-‘
-java:S1450"URemove the "extent" field and declare it as a local variable in the relevant methods.(¹çÃæJ$38fc5ced-ff46-4f2d-86d0-6d8ad2c8ca46
-{
-java:S1118":Add a private constructor to hide the implicit public one.(¯ŸÁŒÿÿÿÿÿJ$51cf00bd-a216-404b-9f58-5e1c62c5eed1
-²
-java:S1130"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(êŸŒJ$cf4db98a-1916-48d3-b20b-3a4410d84dba

@@ -9,14 +9,6 @@
             <class name="Tests.LoginTest">
                 <methods>
                     <include name="TC_001VerifyLoginWithValidcredentials" />
-                    <include name="TC_002VerifyLoginWithInvalidUsername" />
-                    <include name="TC_003VerifyLoginWithInvalidPassword" />
-                    <include name="TC_004VerifyLoginWithInvalidProject" />
-                    <include name="TC_005VerifyLoginWithInvalidMobilenumber" />
-                    <include name="TC_006VerifyLoginWithoutEnteringUsername" />
-                    <include name="TC_007VerifyLoginWithoutEnteringPassword" />
-                    <include name="TC_008VerifyLoginWithoutEnteringProject" />
-                    <include name="TC_009VerifyLoginWithoutEnteringMobilenumber" />
                 </methods>
             </class>
         </classes>
@@ -26,7 +18,6 @@
             <class name="Tests.AttendanceTest">
                 <methods>
                     <include name="TC_001verifyAttendanceModuleIsDisplayed" />
-                    <include name="TC_002VerifyAttendancewithoutcapturingimage"/>
                     <include name="TC_003verifyAttendanceSubmission" />
                 </methods>
             </class>

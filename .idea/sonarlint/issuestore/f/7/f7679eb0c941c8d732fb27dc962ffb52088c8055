@@ -1,39 +1,0 @@
-
-k
-java:S1104"UMake addtarget a static final constant or non-public and provide accessors if needed.(½ñö°
-s
-java:S1104"XMake searchtarget a static final constant or non-public and provide accessors if needed.(€””Úşÿÿÿÿ
-h
-java:S1104"RMake submit a static final constant or non-public and provide accessors if needed.(îÒáû
-p
-java:S1104"ZMake targetidtxtbox a static final constant or non-public and provide accessors if needed.(œñÇ€
-m
-java:S1104	"RMake addbtn a static final constant or non-public and provide accessors if needed.(£‡ìÒøÿÿÿÿ
-k
-java:S1104
-"UMake cancelbtn a static final constant or non-public and provide accessors if needed.(şó€
-
-java:S1104"fMake targetalreadydownloadedmsg a static final constant or non-public and provide accessors if needed.(Çá¦şÿÿÿÿ
-~
-java:S1104"cMake targetdownloadsucessmsg a static final constant or non-public and provide accessors if needed.(ÿÇªÊüÿÿÿÿ
-E
-java:S1444"/Make this "public static addtarget" field final(½ñö°
-M
-java:S1444"2Make this "public static searchtarget" field final(€””Úşÿÿÿÿ
-B
-java:S1444",Make this "public static submit" field final(îÒáû
-J
-java:S1444"4Make this "public static targetidtxtbox" field final(œñÇ€
-G
-java:S1444	",Make this "public static addbtn" field final(£‡ìÒøÿÿÿÿ
-E
-java:S1444
-"/Make this "public static cancelbtn" field final(şó€
-[
-java:S1444"@Make this "public static targetalreadydownloadedmsg" field final(Çá¦şÿÿÿÿ
-X
-java:S1444"=Make this "public static targetdownloadsucessmsg" field final(ÿÇªÊüÿÿÿÿ
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(î°·”
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC
-P
-java:S1118":Add a private constructor to hide the implicit public one.(î°·”

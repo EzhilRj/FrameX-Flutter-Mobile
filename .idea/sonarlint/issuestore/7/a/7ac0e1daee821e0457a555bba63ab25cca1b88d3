@@ -1,8 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(È©ˆşÿÿÿÿ8‰Î‰­Ş1
-u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÄÍû8‹Î‰­Ş1
-S
-java:S6437"6Revoke and change this password, as it is compromised.(Ñíßß8ÌÎ‰­Ş1
-L	java:S106%"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ8ÕÎ‰­Ş1
-H
-java:S1168'"+Return an empty collection instead of null.(¥¹ï8ÙÎ‰­Ş1
