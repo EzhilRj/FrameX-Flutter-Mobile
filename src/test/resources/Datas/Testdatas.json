@@ -1,8 +1,8 @@
 {
   "Login": {
     "User1": {
-      "username": "nandhche",
-      "password": "nandhche",
+      "username": "rahulche",
+      "password": "rahulche",
       "project": "jj",
       "mobileno": "8345667899",
       "expected": "Call Plan"
@@ -73,13 +73,13 @@
     "Attendance Submission": {
       "type": "Present",
       "Image": "True",
-      "expectedMessage": "Your attendance Marked for today as "
+      "expectedMessage": "Your attendance Marked for today as Present"
     },
 
     "Attendancewithoutcapturingimage": {
       "type": "Present",
       "Image": "False",
-      "expectedErrorMessage": "Please, Take Photo for submit attandance."
+      "expectedErrorMessage": "Please, Take Photo for submit attendance."
     }
   }
 }

@@ -19,27 +19,4 @@ public class Login_Page {
     public static String Logoutbutton = "Logout";
     public static String yes = "Yes";
 
-
-    public static void login(String Username,String Password,String Project,String Mobileno){
-
-        Enter("Xpath", username, Username);
-        Enter("Xpath", password,  Password);
-        Enter("Xpath", project, Project);
-        driver.hideKeyboard();
-        Enter("Xpath", Mobiileno, Mobileno);
-        click("ACCESSIBILITYID",LoginButton);
-        log.info("Username : " + Username );
-        log.info("Password : " + Password );
-        log.info("Project : " + Project );
-        log.info("Mobilenumber : " + Mobileno );
-    }
-
-
-
-    public static void logout(){
-        click("Xpath",menubutton);
-        click("ACCESSIBILITYID",Logoutbutton);
-        click("ACCESSIBILITYID",yes);
-    }
-
 }

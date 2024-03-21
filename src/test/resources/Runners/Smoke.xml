@@ -1,26 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SMOKE SUITE" verbose="3">
+<suite name="Smoke Suite">
     <listeners>
         <listener class-name="Listeners.FrameX_Listeners"></listener>
     </listeners>
-    <test name="Login Test">
+    <test name="Smoke Tests">
+        <groups>
+            <run>
+                <include name="smoke" />
+            </run>
+        </groups>
         <classes>
-            <class name="Tests.LoginTest">
-                <methods>
-                    <include name="TC_001VerifyLoginWithValidcredentials" />
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test name="Attendance Test">
-        <classes>
-            <class name="Tests.AttendanceTest">
-                <methods>
-                    <include name="TC_001verifyAttendanceModuleIsDisplayed" />
-                    <include name="TC_003verifyAttendanceSubmission" />
-                </methods>
-            </class>
+            <class name="Tests.LoginTest" />
+            <class name="Tests.AttendanceTest" />
         </classes>
     </test>
 </suite>

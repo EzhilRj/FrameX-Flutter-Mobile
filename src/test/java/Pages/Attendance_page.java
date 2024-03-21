@@ -1,12 +1,15 @@
 package Pages;
 
 import org.json.JSONObject;
+import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+import static Listeners.FrameX_Listeners.logAndReportFailure;
+import static Modules.Attendance_Module.validateattendancesubmission;
 import static Pages.HomePage_page.Attendance;
-import static Pages.Login_Page.login;
+import static Pages.Login_Page.menubutton;
 import static Utilities.Actions.*;
 import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
@@ -64,22 +67,7 @@ public class Attendance_page {
         return attendanceMap;
     }
 
-    public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
-        for (String key : attendancemessages().keySet()) {
-            if(Source(key)) {
-                click("ACCESSIBILITYID", key);
-                break;
-            }
-        }
-        click("ACCESSIBILITYID", type);
-        if(img.equalsIgnoreCase("True")){
-            click("xpath", Attendancecamera);
-            WebdriverWait("xpath",shutterbutton,15);
-            click("xpath", shutterbutton);
-        }
-        click("ACCESSIBILITYID", Submit);
-    }
 
 
 }

@@ -52,8 +52,8 @@ public class AppiumTestSetup {
     }
 
     // Method to start the app and set up the test environment
-    @BeforeSuite
-    public static void StartApp(ITestContext context) throws IOException {
+    @BeforeSuite(alwaysRun = true)
+    public static void StartApp() throws IOException {
 
         try {
             PropertyConfigurator.configure(props.get("Logpropertiesfilepath"));
@@ -95,7 +95,7 @@ public class AppiumTestSetup {
     }
 
     // Method to tear down the test environment after test execution
-    @AfterSuite
+    @AfterSuite(alwaysRun=true)
     public static void tearDownApp() throws InterruptedException, MessagingException, FileNotFoundException {
         try {
             // Close the AndroidDriver instance if it exists

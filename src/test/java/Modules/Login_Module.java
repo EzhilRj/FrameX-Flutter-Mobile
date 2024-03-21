@@ -8,6 +8,32 @@ import static Utilities.Utils.Source;
 
 public class Login_Module extends AppiumTestSetup {
 
+
+
+	public static void login(String Username,String Password,String Project,String Mobileno){
+
+		Enter("Xpath", username, Username);
+		Enter("Xpath", password,  Password);
+		Enter("Xpath", project, Project);
+		driver.hideKeyboard();
+		Enter("Xpath", Mobiileno, Mobileno);
+		click("ACCESSIBILITYID",LoginButton);
+		log.info("Username : " + Username );
+		log.info("Password : " + Password );
+		log.info("Project : " + Project );
+		log.info("Mobilenumber : " + Mobileno );
+	}
+
+
+
+	public static void logout(){
+		click("Xpath",menubutton);
+		click("ACCESSIBILITYID",Logoutbutton);
+		click("ACCESSIBILITYID",yes);
+	}
+
+
+
 	/**
 	 * Validates if the specified application version is displayed.
 	 *

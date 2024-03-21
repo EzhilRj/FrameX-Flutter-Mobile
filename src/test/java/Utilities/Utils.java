@@ -11,6 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
 
+import Base.AppiumTestSetup;
 import Pages.Login_Page;
 import io.appium.java_client.AppiumBy;
 import org.apache.commons.io.FileUtils;
@@ -18,21 +19,20 @@ import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 
-import static Base.AppiumTestSetup.driver;
-import static Base.AppiumTestSetup.excel;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Modules.Callplan_Module.fieldName;
+import static Modules.Login_Module.login;
 import static Pages.CallPlan_page.*;
-import static Pages.Login_Page.login;
 import static Utilities.Actions.*;
 import static Utilities.Constants.queryfilepath;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
 import static Utilities.TestDataUtil.gettestdata;
 
-public class Utils {
+public class Utils extends AppiumTestSetup {
 
     public static String screenshotPath;
     public static String screenshotName;

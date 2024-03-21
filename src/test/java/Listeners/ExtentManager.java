@@ -20,7 +20,8 @@ public class ExtentManager {
         htmlReporter.config().setTheme(Theme.valueOf(props.get("Reporttheme")));
         htmlReporter.config().setDocumentTitle(props.get("Reporttitle"));
         htmlReporter.config().setEncoding("utf-8");
-        htmlReporter.config().setReportName(props.get("Reportname"));
+       htmlReporter.config().setReportName(props.get("Reportname"));
+
         
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);

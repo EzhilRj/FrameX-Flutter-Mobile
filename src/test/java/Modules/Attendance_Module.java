@@ -1,6 +1,7 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import org.testng.Assert;
 
 import java.util.HashMap;
 
@@ -8,9 +9,10 @@ import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
 import static Pages.HomePage_page.Attendance;
 import static Pages.HomePage_page.Callplan;
+import static Pages.Login_Page.menubutton;
 import static Utilities.Actions.*;
+import static Utilities.Utils.Assertion;
 import static Utilities.Utils.Source;
-import static Utilities.Utils.gohomepage;
 
 public class Attendance_Module extends AppiumTestSetup {
 
@@ -34,7 +36,7 @@ public class Attendance_Module extends AppiumTestSetup {
             }
             WebdriverWait("ACCESSIBILITYID",savedmsg,15);
             // Verifying attendance submission success/failure
-            return attendancesubmittedvalidation(attendancetype,savedmsg,expected+attendancetype);
+            return attendancesubmittedvalidation(attendancetype,savedmsg,expected);
 
         } catch (Exception e) {
             logAndReportFailure("Exception occurred: " + e.getMessage());
@@ -48,16 +50,24 @@ public class Attendance_Module extends AppiumTestSetup {
 
         if (Source(response)){
             click("ACCESSIBILITYID", Attendance);
+            log.info(response);
             if(Source(confirmresponse)){
                 return true;
             }else{
                 driver.navigate().back();
                 click("ACCESSIBILITYID", Callplan);
-                Thread.sleep(1500);
+                Thread.sleep(2000);
                 driver.navigate().back();
                 click("ACCESSIBILITYID", Attendance);
+                Thread.sleep(700);
                 if(Source(confirmresponse)) {
-                    return true;
+                    if(!Source("Submit")){
+                        logAndReportSuccess("Attendance Submitted successfully");
+                        return true;
+                    }else{
+                        logAndinfo("Attendance Submitted successfully But submit button is showing");
+                        return false;
+                    }
                 } else {
                     return false;
                 }
@@ -66,48 +76,52 @@ public class Attendance_Module extends AppiumTestSetup {
         return false;
     }
 
+    public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
-    // Method to validate image requirement for different attendance types
-   /* public static boolean validateAttendanceImageRequired(String attendancetype)  {
-        try {
-            if (!Source(attendancetype)) {
-                click("ACCESSIBILITYID", Attendance);
-                click("ACCESSIBILITYID", attendancetype);
+        for (String key : attendancemessages().keySet()) {
+            if(Source(key)) {
+                click("ACCESSIBILITYID", key);
+                break;
             }
-            return attendanceimagerequiredvalidation(attendancetype);
+        }
+        click("ACCESSIBILITYID", type);
+        if(img.equalsIgnoreCase("True")){
+            click("xpath", Attendancecamera);
+            WebdriverWait("xpath",shutterbutton,15);
+            click("xpath", shutterbutton);
+        }
+        click("ACCESSIBILITYID", Submit);
+    }
 
-        }catch (Exception e) {
-            logAndReportFailure("Exception occurred: " + e.getMessage());
-            e.getMessage();
-            return false;
+    public static void doattendance(String type,String image,String expectedmessage) throws InterruptedException {
+        if(!validateattendancesubmission(type,image,expectedmessage)){
+            logAndReportFailure("Attendance Submission Failed");
+            Assert.fail("Attendance Submission Failed");
         }
     }
 
-     static boolean attendanceimagerequiredvalidation(String type){
-
-        if (type.equalsIgnoreCase("Present") || type.equalsIgnoreCase("At office") || type.equalsIgnoreCase("Training") || type.equalsIgnoreCase("Monthly Meeting")) {
-            click("ACCESSIBILITYID", type);
-            if (isElementDisplayed("xpath", attendanceimagerule.get(type))) {
-                click("ACCESSIBILITYID", type);
-                logAndReportSuccess("Image is Required for " + type);
-                if(type.equalsIgnoreCase("Monthly Meeting")){
-                    driver.navigate().back();
-                }
-                return true;
-            } else {
-                logAndReportFailure("Image is Required for " + type + " but camera option is not displayed");
-                return false;
-            }
-        } else {
-            click("ACCESSIBILITYID", type);
-            if (isElementDisplayed("ACCESSIBILITYID", attendanceimagerule.get(type))) {
-                click("ACCESSIBILITYID", type);
-                logAndReportSuccess("Image is Not Required for " + type);
-                return true;
-            } else {
-                logAndReportFailure("Image is Not Required for " + type + " but camera option is displayed");
-                return false;
-            }
+    public static void navigateToAttendancePage() {
+        if (!Source("Attendance")) {
+            click("Xpath", menubutton);
         }
-    }*/
+        click("ACCESSIBILITYID", Attendance);
+    }
+
+    public static void validateimgrequired(String type,String errmsg){
+
+        if(Source("Attendance")){
+            click("ACCESSIBILITYID", Attendance);
+            if(Source("Your attendance Marked for today")){
+                logAndReportFailure("Attendance is already Marked for this user Submit button is not showing");
+                Assert.fail("Attendance is already Marked ");
+            }
+            click("ACCESSIBILITYID", "Present");
+            click("ACCESSIBILITYID", type);
+            click("ACCESSIBILITYID", Submit);
+            Assertion(errmsg,"Please, Take Photo for submit attendance is not displayed");
+        }else{
+            Assert.fail("Attendance Module is Not showing");
+        }
+    }
+
 }

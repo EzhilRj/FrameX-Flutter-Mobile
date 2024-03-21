@@ -31,3 +31,17 @@ Z
 *src/test/java/Pages/Visitorlogin_page.java,4\b\4bc9381171aa13841da390ca09ade5a01c00946d
 W
 'src/test/java/Modules/Login_Module.java,9\a\9ad5be0afb83ce3333ea7268028576720b79aec8
+W
+'src/test/java/Base/AppiumTestSetup.java,b\b\bbb506003d5398506764f6321afde0bf006c0ccb
+W
+'src/test/java/Utilities/Mailconfig.java,7\c\7c80974c838c5870e1ed36382ba75eb0224a6c34
+]
+-src/test/java/Listeners/FrameX_Listeners.java,9\f\9fa3f52a973032b516ed10af16d32842b433bf16
+Z
+*src/test/java/Listeners/ExtentManager.java,b\2\b21166e2bcb45528cde7cb2b19a8c6331cd2b9d9
+Z
+*src/test/java/Modules/Callplan_Module.java,7\f\7f3c7ce5a5505a6f0032f1f792b36ed4a9af4561
+^
+.src/test/java/Modules/Resourcentre_Module.java,1\4\14c29e440009b0de789dfd09315a4e1f3a81adfa
+\
+,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
