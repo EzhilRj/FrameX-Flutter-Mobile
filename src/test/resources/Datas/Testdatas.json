@@ -1,8 +1,8 @@
 {
   "Login": {
     "User1": {
-      "username": "SANAN",
-      "password": "SANAN",
+      "username": "Abhisdel",
+      "password": "Abhisdel",
       "project": "jj",
       "mobileno": "8345667899",
       "expected": "Call Plan"
@@ -80,6 +80,19 @@
       "type": "Present",
       "Image": "False",
       "expectedErrorMessage": "Please, Take Photo for submit attendance."
+    }
+  },
+
+
+  "Callplan":
+  {
+    "5minutesSync": {
+      "expectedMessage": "You can click after 5 minutes, since it is in Downloading or Uploading Call process."
+    },
+
+    "ConcurrentJob validation": {
+      "Target1": "27503",
+      "Target2": "26501"
     }
   }
 }

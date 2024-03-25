@@ -4,7 +4,7 @@ import Base.AppiumTestSetup;
 
 import static Pages.Login_Page.*;
 import static Utilities.Actions.*;
-import static Utilities.Utils.Source;
+import static Utilities.Utils.sourceExists;
 
 public class Login_Module extends AppiumTestSetup {
 
@@ -43,7 +43,7 @@ public class Login_Module extends AppiumTestSetup {
 	public static boolean checkVersion(String versionToCheck) {
 		try {
 			WebdriverWait("Xpath", username,15);
-			boolean isVersionDisplayed = Source(versionToCheck);
+			boolean isVersionDisplayed = sourceExists(versionToCheck);
 			if (isVersionDisplayed) {
 				log.info("App version is Matched");
 				return true;

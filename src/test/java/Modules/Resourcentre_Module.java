@@ -8,15 +8,14 @@ import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
 import static Pages.HomePage_page.ResourceCentre;
 import static Utilities.Actions.*;
-import static Utilities.Utils.Source;
-import static Utilities.Utils.gohomepage;
+import static Utilities.Utils.*;
 
 public class Resourcentre_Module extends AppiumTestSetup {
 	
     public static boolean validateFiles(String filename) throws InterruptedException {
         try {
             gohomepage(ResourceCentre);
-            if(!Source( filename)){
+            if(!sourceExists( filename)){
                 click("ACCESSIBILITYID", ResourceCentre);
             }
             if (isElementDisplayed("ACCESSIBILITYID", filename)) {
@@ -29,7 +28,7 @@ public class Resourcentre_Module extends AppiumTestSetup {
                             testReport.get().pass(formatData(filename + " file downloaded Successfully"));
                             log.info(filename + " File downloaded Successfully");
                             return true;
-                        } else if (Source(filename)) {
+                        } else if (sourceExists(filename)) {
                             testReport.get().pass(formatData(filename + " file downloaded Successfully"));
                             log.info(filename + " File downloaded Successfully");
                             return true;
@@ -42,7 +41,7 @@ public class Resourcentre_Module extends AppiumTestSetup {
                     driver.terminateApp("com.android.chrome");
                 }
             } else {
-                if (Source("No Resource Center record")) {
+                if (sourceExists("No Resource Center record")) {
                     testReport.get().fail(formatData("No record found in Resource center"));
                     log.debug("No record found in Resource center");
                     return false;

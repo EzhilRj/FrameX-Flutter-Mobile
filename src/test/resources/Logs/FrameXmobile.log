@@ -1,0 +1,430 @@
+2024-03-21 20:02:51,287 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-21 20:03:03,867 [main] INFO  Base.AppiumTestSetup  - Username : rahulche
+2024-03-21 20:03:03,869 [main] INFO  Base.AppiumTestSetup  - Password : rahulche
+2024-03-21 20:03:03,869 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-21 20:03:03,869 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-21 20:03:06,260 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-21 20:03:07,556 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-21 20:03:11,821 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-21 20:03:12,517 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 11:28:44,855 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 11:28:46,673 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 15:42:29,897 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 15:42:40,909 [main] INFO  Base.AppiumTestSetup  - Username : sunirache
+2024-03-22 15:42:40,909 [main] INFO  Base.AppiumTestSetup  - Password : sunirache
+2024-03-22 15:42:40,909 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 15:42:40,909 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 15:42:57,910 [main] INFO  Base.AppiumTestSetup  - Username : sunirache
+2024-03-22 15:42:57,910 [main] INFO  Base.AppiumTestSetup  - Password : sunirache
+2024-03-22 15:42:57,910 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 15:42:57,910 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 15:43:17,951 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 15:43
+2024-03-22 15:43:25,683 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 15:44:10,475 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-22 15:44:11,344 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-22 15:44:18,798 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 15:44:19,752 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 16:03:45,653 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 16:04:00,789 [main] INFO  Base.AppiumTestSetup  - Username : sathiche
+2024-03-22 16:04:00,789 [main] INFO  Base.AppiumTestSetup  - Password : sathiche
+2024-03-22 16:04:00,790 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:04:00,790 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:04:16,623 [main] INFO  Base.AppiumTestSetup  - Username : sathiche
+2024-03-22 16:04:16,624 [main] INFO  Base.AppiumTestSetup  - Password : sathiche
+2024-03-22 16:04:16,624 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:04:16,624 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:04:41,531 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 16:04
+2024-03-22 16:04:50,059 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 16:08:10,259 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 16:08:21,402 [main] INFO  Base.AppiumTestSetup  - Username : dilidel
+2024-03-22 16:08:21,402 [main] INFO  Base.AppiumTestSetup  - Password : dilidel
+2024-03-22 16:08:21,403 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:08:21,403 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:08:38,439 [main] INFO  Base.AppiumTestSetup  - Username : dilidel
+2024-03-22 16:08:38,440 [main] INFO  Base.AppiumTestSetup  - Password : dilidel
+2024-03-22 16:08:38,440 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:08:38,440 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:09:00,713 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 16:08
+2024-03-22 16:09:08,719 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 16:13:00,210 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-22 16:13:04,837 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 16:13:05,730 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 16:13:39,890 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 16:13:52,129 [main] INFO  Base.AppiumTestSetup  - Username : harikdel
+2024-03-22 16:13:52,129 [main] INFO  Base.AppiumTestSetup  - Password : harikdel
+2024-03-22 16:13:52,129 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:13:52,129 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:14:09,327 [main] INFO  Base.AppiumTestSetup  - Username : harikdel
+2024-03-22 16:14:09,328 [main] INFO  Base.AppiumTestSetup  - Password : harikdel
+2024-03-22 16:14:09,328 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 16:14:09,328 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 16:14:33,827 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 16:14
+2024-03-22 16:14:44,229 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 16:30:20,855 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-22 16:30:25,663 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 16:30:26,448 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 17:01:30,671 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 17:01:42,073 [main] INFO  Base.AppiumTestSetup  - Username : vinaydel
+2024-03-22 17:01:42,073 [main] INFO  Base.AppiumTestSetup  - Password : vinaydel
+2024-03-22 17:01:42,073 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:01:42,074 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:02:00,432 [main] INFO  Base.AppiumTestSetup  - Username : vinaydel
+2024-03-22 17:02:00,432 [main] INFO  Base.AppiumTestSetup  - Password : vinaydel
+2024-03-22 17:02:00,432 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:02:00,432 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:02:24,799 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 17:02
+2024-03-22 17:02:34,904 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 17:03:35,673 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-22 17:03:35,711 [main] ERROR Base.AppiumTestSetup  - An error occurred during test teardown:
+org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [ac42ffb1-dc39-43b9-8c88-f8c935b80ab5, quit {}]
+Capabilities {appium:adbExecTimeout: 120000, appium:app: E:\Automation Workspace\Fra..., appium:appActivity: com.fieldlytics.frame.MainA..., appium:appPackage: com.fieldlytics.framex, appium:autoGrantPermissions: false, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, app: E:\Automation Workspace\Fra..., appActivity: com.fieldlytics.frame.MainA..., appPackage: com.fieldlytics.framex, autoGrantPermissions: false, automationName: UIAutomator2, deviceName: 192.168.0.171:5555, ignoreUnimportantViews: true, platformName: android, skipDeviceInitialization: true, skipServerInstallation: true, skipUnlock: true}, appium:deviceApiLevel: 33, appium:deviceManufacturer: vivo, appium:deviceModel: I2208, appium:deviceName: 192.168.0.171:5555, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2408, appium:deviceUDID: 192.168.0.171:5555, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 13, appium:skipDeviceInitialization: true, appium:skipServerInstallation: true, appium:skipUnlock: true, appium:statBarHeight: 88, appium:takesScreenshot: true, appium:viewportRect: {height: 2188, left: 0, top: 88, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: ac42ffb1-dc39-43b9-8c88-f8c935b80ab5
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:272)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:445)
+	at Base.AppiumTestSetup.tearDownApp(AppiumTestSetup.java:104)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:404)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+2024-03-22 17:09:25,387 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 17:09:36,340 [main] INFO  Base.AppiumTestSetup  - Username : nandhche
+2024-03-22 17:09:36,340 [main] INFO  Base.AppiumTestSetup  - Password : nandhche
+2024-03-22 17:09:36,340 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:09:36,340 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:09:53,480 [main] INFO  Base.AppiumTestSetup  - Username : nandhche
+2024-03-22 17:09:53,480 [main] INFO  Base.AppiumTestSetup  - Password : nandhche
+2024-03-22 17:09:53,480 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:09:53,480 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:10:25,943 [main] ERROR Base.AppiumTestSetup  - Attendance Submission Failed
+2024-03-22 17:10:27,324 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-22 17:10:27,927 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-22 17:10:33,197 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 17:10:33,828 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-22 17:12:40,444 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-22 17:12:51,765 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-22 17:12:51,765 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-22 17:12:51,766 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:12:51,767 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:13:08,760 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-22 17:13:08,760 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-22 17:13:08,760 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-22 17:13:08,761 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-22 17:13:33,872 [main] INFO  Base.AppiumTestSetup  - Your Attendance is Marked for Today  Present 22-03-24 17:13
+2024-03-22 17:13:43,001 [main] INFO  Base.AppiumTestSetup  - Attendance Submitted successfully
+2024-03-22 17:13:43,597 [main] INFO  Base.AppiumTestSetup  - Attendance datas is matched in Database
+2024-03-22 17:13:43,882 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-22 17:13:44,507 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-22 17:13:49,270 [main] INFO  Base.AppiumTestSetup  - Email sent
+2024-03-22 17:13:49,900 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:03:06,965 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:03:52,181 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:04:03,303 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:04:03,303 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:04:03,303 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:04:03,305 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:04:20,272 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:04:20,272 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:04:20,272 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:04:20,272 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:04:20,809 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:04:21,747 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:04:22,309 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:10:24,479 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:10:36,389 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:10:36,389 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:10:36,389 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:10:36,389 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:10:51,893 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:10:51,893 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:10:51,893 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:10:51,893 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:10:54,979 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:10:55,663 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:10:56,224 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:15:20,804 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:15:33,133 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:15:33,133 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:15:33,133 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:15:33,133 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:15:50,045 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:15:50,045 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:15:50,047 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:15:50,047 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:15:54,002 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:15:54,770 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:15:55,323 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:27:08,947 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:27:20,026 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:27:20,027 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:27:20,027 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:27:20,027 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:27:36,886 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:27:36,886 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:27:36,886 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:27:36,887 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:27:44,246 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:27:45,262 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:27:45,800 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:28:21,509 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:28:32,521 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:28:32,521 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:28:32,521 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:28:32,521 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:28:47,246 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:28:47,247 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:28:47,247 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:28:47,247 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:29:06,687 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:29:34,729 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:29:47,577 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:29:47,577 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:29:47,578 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:29:47,578 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:30:06,191 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:30:06,191 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:30:06,191 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:30:06,191 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:30:16,096 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:30:17,083 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:30:17,650 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:36:53,804 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:37:06,706 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:37:06,706 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:37:06,706 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:37:06,707 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:37:23,944 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:37:23,944 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:37:23,944 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:37:23,944 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:37:31,961 [main] INFO  Base.AppiumTestSetup  - 5 Minutes Sync is woking
+2024-03-25 12:37:32,211 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:37:32,860 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:37:33,386 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:38:31,853 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:38:44,424 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:38:44,426 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:38:44,426 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:38:44,426 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:39:06,090 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 12:39:39,868 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 12:39:52,484 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:39:52,484 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:39:52,485 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:39:52,485 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:40:09,341 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 12:40:09,341 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 12:40:09,341 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 12:40:09,341 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 12:40:19,535 [main] INFO  Base.AppiumTestSetup  - 5 Minutes Sync is woking
+2024-03-25 12:40:19,783 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 12:40:20,352 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 12:40:20,880 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 13:08:03,550 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:08:17,053 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:08:17,054 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:08:17,054 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:08:17,054 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:08:33,011 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:08:33,011 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:08:33,011 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:08:33,011 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:08:43,973 [main] INFO  Base.AppiumTestSetup  - 5 Minutes Sync is woking
+2024-03-25 13:08:44,241 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 13:08:45,360 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 13:08:46,217 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 13:42:54,402 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:43:07,433 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:43:07,433 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:43:07,434 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:43:07,434 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:43:22,892 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:43:22,892 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:43:22,893 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:43:22,893 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:44:54,619 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:45:06,236 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:45:06,237 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:45:06,237 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:45:06,237 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:45:24,133 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:45:24,133 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:45:24,133 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:45:24,133 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:47:21,213 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:47:32,071 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:47:32,071 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:47:32,071 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:47:32,072 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:47:48,789 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:47:48,789 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:47:48,789 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:47:48,789 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:49:55,686 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:50:09,256 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:50:09,257 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:50:09,257 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:50:09,257 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:50:24,934 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:50:24,935 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:50:24,935 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:50:24,935 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:50:59,606 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 13:51:00,243 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 13:51:01,033 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 13:53:35,117 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:53:47,092 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:53:47,092 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:53:47,093 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:53:47,093 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:54:04,934 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:54:04,934 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:54:04,934 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:54:04,934 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:55:28,796 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 13:55:58,468 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:56:11,546 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:56:11,547 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:56:11,547 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:56:11,547 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:56:28,453 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:56:28,453 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:56:28,453 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:56:28,453 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:56:33,421 [main] INFO  Base.AppiumTestSetup  - Target id not found. Navigating back and trying again.
+2024-03-25 13:56:44,289 [main] INFO  Base.AppiumTestSetup  - Clicked on Call plan again
+2024-03-25 13:57:27,497 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 13:57:52,011 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 13:58:04,072 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:58:04,072 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:58:04,072 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:58:04,072 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:58:21,364 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 13:58:21,364 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 13:58:21,364 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 13:58:21,364 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 13:58:24,079 [main] INFO  Base.AppiumTestSetup  - Target id not found. Navigating back and trying again.
+2024-03-25 13:58:29,167 [main] INFO  Base.AppiumTestSetup  - Clicked on Call plan again
+2024-03-25 13:58:32,911 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 13:58:33,527 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 13:58:34,076 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 15:12:20,298 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 15:12:31,019 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 15:12:31,019 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 15:12:31,019 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 15:12:31,019 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 15:12:46,730 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 15:12:46,730 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 15:12:46,730 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 15:12:46,731 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 15:12:50,469 [main] INFO  Base.AppiumTestSetup  - Target id not found. Navigating back and trying again.
+2024-03-25 15:12:55,791 [main] INFO  Base.AppiumTestSetup  - Clicked on Call plan again
+2024-03-25 15:12:59,850 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 15:13:00,507 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 15:13:01,391 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 15:14:58,269 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 15:15:10,168 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 15:15:10,168 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 15:15:10,168 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 15:15:10,168 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 15:15:28,185 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 15:15:28,185 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 15:15:28,185 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 15:15:28,185 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 15:15:35,001 [main] INFO  Base.AppiumTestSetup  - 5 Minutes Sync is woking
+2024-03-25 15:15:47,535 [main] INFO  Base.AppiumTestSetup  - Concurrent job start error message displayed successfully.
+2024-03-25 15:15:47,824 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 15:15:48,810 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 15:15:49,390 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 18:41:41,548 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 18:41:55,011 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 18:41:55,012 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 18:41:55,012 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 18:41:55,012 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 18:41:55,793 [main] ERROR Base.AppiumTestSetup  - Login Failed
+2024-03-25 18:42:33,295 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 18:42:43,349 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 18:42:43,350 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 18:42:43,350 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 18:42:43,350 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 18:43:00,171 [main] INFO  Base.AppiumTestSetup  - Username : SANAN
+2024-03-25 18:43:00,171 [main] INFO  Base.AppiumTestSetup  - Password : SANAN
+2024-03-25 18:43:00,171 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 18:43:00,171 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 18:43:38,924 [main] INFO  Base.AppiumTestSetup  - Concurrent job start error message displayed successfully.
+2024-03-25 19:07:13,507 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 19:07:25,014 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:07:25,015 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:07:25,015 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:07:25,015 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:07:43,280 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:07:43,280 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:07:43,280 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:07:43,280 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:08:26,714 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 19:08:27,250 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 19:08:28,142 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 19:10:43,302 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 19:10:55,077 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:10:55,077 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:10:55,078 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:10:55,078 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:11:10,344 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:11:10,344 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:11:10,344 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:11:10,344 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:11:24,768 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 19:11:25,480 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 19:11:26,114 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 19:38:55,247 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 19:39:07,201 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:39:07,201 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:39:07,202 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:39:07,202 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:39:20,418 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:39:20,418 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:39:20,418 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:39:20,418 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:39:31,429 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 19:39:32,005 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 19:39:32,793 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed
+2024-03-25 19:43:29,404 [main] INFO  Base.AppiumTestSetup  - App version is Matched
+2024-03-25 19:43:41,331 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:43:41,331 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:43:41,331 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:43:41,332 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:43:55,436 [main] INFO  Base.AppiumTestSetup  - Username : Abhisdel
+2024-03-25 19:43:55,436 [main] INFO  Base.AppiumTestSetup  - Password : Abhisdel
+2024-03-25 19:43:55,437 [main] INFO  Base.AppiumTestSetup  - Project : jj
+2024-03-25 19:43:55,437 [main] INFO  Base.AppiumTestSetup  - Mobilenumber : 8345667899
+2024-03-25 19:44:03,930 [main] INFO  Base.AppiumTestSetup  - 5 Minutes Sync is woking
+2024-03-25 19:44:09,761 [main] INFO  Base.AppiumTestSetup  - Concurrent job start error message displayed successfully.
+2024-03-25 19:44:34,277 [main] ERROR Base.AppiumTestSetup  - First fill all categories data to upload is Not Displayed
+2024-03-25 19:44:35,650 [main] INFO  Base.AppiumTestSetup  - AndroidDriver is Quited
+2024-03-25 19:44:36,376 [main] INFO  Base.AppiumTestSetup  - Appium service is Stopped
+2024-03-25 19:44:37,008 [main] INFO  Base.AppiumTestSetup  - Test Execution Completed

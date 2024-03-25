@@ -8,8 +8,7 @@ import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
 import static Pages.Downloadcalls_page.*;
 import static Utilities.Actions.*;
-import static Utilities.Utils.Source;
-import static Utilities.Utils.gohomepage;
+import static Utilities.Utils.*;
 
 public class Downloadcalls_Module extends AppiumTestSetup {
 
@@ -25,13 +24,13 @@ public class Downloadcalls_Module extends AppiumTestSetup {
 			click("ACCESSIBILITYID", Downloadcalls_page.addtarget);
 			Enter("classname", targetidtxtbox, trgtid);
 			click("ACCESSIBILITYID", addbtn);
-			if (Source(trgtid)) {
+			if (sourceExists(trgtid)) {
 				click("ACCESSIBILITYID", submit);
 				Thread.sleep(3000);
-				if (Source("Downloaded Successfully for target " + trgtid)) {
+				if (sourceExists("Downloaded Successfully for target " + trgtid)) {
 					click("ACCESSIBILITYID", HomePage_page.Callplan);
 					Scroll("up");
-					if (Source("&#10;Unplanned Calls")) {
+					if (sourceExists("&#10;Unplanned Calls")) {
 						if (isElementDisplayed("xpath",
 								"//android.view.View[contains(@content-desc, 'Target ID: " + trgtid + "')]")) {
 							testReport.get().pass(formatData(targetdownloadsucessmsg + trgtid) + " and showing in unplanned calls");
@@ -43,11 +42,11 @@ public class Downloadcalls_Module extends AppiumTestSetup {
 						log.error("Target is downloaded but not showing in Unplanned calls");
 						return false;
 					}
-				} else if (Source(invalididmsg)) {
+				} else if (sourceExists(invalididmsg)) {
 					testReport.get().fail(formatData("Negative data is givern : Info Target ID " + trgtid+ " is invalid. Please enter a valid Target Id and try again."));
 					log.error("Negative data is given : " + invalididmsg);
 					return false;
-				} else if (Source(alreadydownloadedmsg)) {
+				} else if (sourceExists(alreadydownloadedmsg)) {
 					testReport.get().fail(formatData("Negative data is given :  Info Store " + trgtid + " already downloaded."));
 					log.error("Negative data is given : " + alreadydownloadedmsg);
 					return false;

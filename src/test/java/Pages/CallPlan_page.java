@@ -1,14 +1,26 @@
 package Pages;
 
+import org.testng.Assert;
+
 import java.util.List;
 
-public class CallPlan_page {
+import static Base.AppiumTestSetup.driver;
+import static Base.AppiumTestSetup.log;
+import static Listeners.FrameX_Listeners.logAndReportFailure;
+import static Listeners.FrameX_Listeners.logAndReportSuccess;
+import static Pages.HomePage_page.Callplan;
+import static Utilities.Actions.click;
+import static Utilities.DBConfig.*;
+import static Utilities.DBConfig.getColumnNamesFromDatabase;
+import static Utilities.Utils.generateFormattedDate;
+import static Utilities.Utils.sourceExists;
 
+public class CallPlan_page {
+	public static  String currentdate = generateFormattedDate("yyyy-MM-dd");
 	public static String sync = "Sync";
-	public static String TargetID = "//android.view.View[contains(@content-desc, 'Target ID: "+38356+"')]";
 	public static String targetdownloadnotification = "//*[@text='Downloaded Successfully for target " + 38356+"']";
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
-	public static String syncbuttonvalidation = "You can click after 5 minutes, since it is in Downloading or Uploading Call process.";
+	public static String fiveminituesSyncmsg = "You can click after 5 minutes, since it is in Downloading or Uploading Call process.";
 	public static String startworkvalidation = "You cannot view this target because another target  38353 is already in process. Please complete it first";
 	public static String formcompleted = "Store Front Photo Completed";
 	public static String UploadcallButton = "Upload Call";
@@ -39,6 +51,7 @@ public class CallPlan_page {
 	public static String Yesbutton = "Yes";
 	public static String Nobutton = "No";
 	public static String Attendancepopup = "Please also mark your Attendance for today!";
+	public static String uploadcall_errmsg = "First fill all categories data to upload";
 	public static String Underprocesspopup = "Attendance is under process  please Proceed to next step ?";
 	public static String Camerabutton_M = "//android.view.View[@content-desc='Photo *']/android.view.View[2]";
 	public static String Camerabutton_NM= "//android.view.View[@content-desc='Photo']/android.view.View[2]";
@@ -71,5 +84,76 @@ public class CallPlan_page {
 		return fieldnames.toString();
 	}*/
 
+	public static String gettargetxpath(String trgid){
+		return "//android.view.View[contains(@content-desc, 'Target ID: "+trgid+"')]";
+	}
 
+
+	public static void sync(){
+		if(!sourceExists(sync)){
+			click("ACCESSIBILITYID",Callplan);
+		}
+		click("ACCESSIBILITYID",sync);
+	}
+
+
+	public static void fiveminssync(String expected){
+		if(!sourceExists(sync)){
+			click("ACCESSIBILITYID",Callplan);
+		}
+		click("ACCESSIBILITYID",sync);
+		if(sourceExists(Callplan)){
+			click("ACCESSIBILITYID",Callplan);
+			click("ACCESSIBILITYID",sync);
+		}
+		if(sourceExists(expected)){
+			click("ACCESSIBILITYID","Ok");
+			logAndReportSuccess("5 Minutes Sync is woking");
+			Assert.assertTrue(true);
+		}else{
+			logAndReportFailure("5 Minutes Sync is not woking");
+			Assert.assertTrue(false,"5 Minutes Sync is not woking");
+
+		}
+	}
+
+	public static void  validate_Concurrent_Job_Start(String trg1,String trg2) throws InterruptedException {
+		if(!sourceExists(sync)){
+			click("ACCESSIBILITYID",Callplan);
+		}
+		if (!sourceExists(trg1)||!sourceExists(trg2)) {
+			log.info("Target id not found. Navigating back and trying again.");
+			driver.navigate().back();
+			Thread.sleep(3000);
+			click("ACCESSIBILITYID", Callplan);
+			log.info("Clicked on Call plan again");
+		}
+		click("xpath",gettargetxpath(trg1));
+		driver.navigate().back();
+		click("xpath",gettargetxpath(trg2));
+		if(sourceExists("You cannot view this target because another target  "+trg1+" is already in process. Please complete it first")){
+			logAndReportSuccess("Concurrent job start error message displayed successfully.");
+			Assert.assertTrue(true);
+		}else{
+			logAndReportFailure("Error message is not displayed when user tries to start another target.");
+			Assert.assertTrue(false);
+		}
+
+	}
+
+
+	public static List<String> gettargetsfrom_db(String username) throws Exception {
+		if(!getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' order by createddate desc","TargetId").isEmpty()) {
+			String pjpdate = getdatafromdatabase("select top 1 Pjpdate, Status, createddate from Pjpplan where username = '"+username+"' order by createddate desc","Pjpdate");
+			String created_date = getdatafromdatabase("select top 1 Pjpdate, Status, createddate from Pjpplan where username = '"+username+"' order by createddate desc","createddate");
+			String updatequery = "update Pjpplan set Pjpdate = '"+currentdate+"' , status = 'T' , createddate = '"+currentdate+" 11:52:59.927' where username = '"+username+"' and Pjpdate = '"+pjpdate+"' and createddate = '"+created_date+"'";
+			executeQuery(updatequery);
+			List<String>Targetslist= getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' and Pjpdate = '"+currentdate+"' order by createddate desc","TargetId");
+			return Targetslist;
+		}else{
+			logAndReportFailure(username+" No targets Available for this user");
+			Assert.assertTrue(false);
+		}
+		return null;
+	}
 }

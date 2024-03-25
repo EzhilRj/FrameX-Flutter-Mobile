@@ -78,7 +78,7 @@ public class Utils extends AppiumTestSetup {
                     break;
                 }
                 /*String attribute = SetTextFieldAttribute(fieldName);*/
-                if (Source(fieldName)) {
+                if (sourceExists(fieldName)) {
                     click("ACCESSIBILITYID", fieldName);
                     click("ACCESSIBILITYID", drop);
                     break;
@@ -286,7 +286,7 @@ public class Utils extends AppiumTestSetup {
 
     public static void gohomepage(String module){
 
-        if(!Source(module)){
+        if(!sourceExists(module)){
             click("xpath", Login_Page.menubutton);
 
         }
@@ -436,14 +436,14 @@ public class Utils extends AppiumTestSetup {
         driver.toggleData();
     }
 
-    public static boolean Source(String value) {
+    public static boolean sourceExists(String value) {
 
         return driver.getPageSource().contains(value);
     }
 
     public static void Assertion(String expected,String message){
         try {
-            Assert.assertTrue(Source(expected), message);
+            Assert.assertTrue(sourceExists(expected), message);
         } catch (AssertionError e) {
             logAndReportFailure(message);
         }
@@ -455,9 +455,9 @@ public class Utils extends AppiumTestSetup {
         login(user1.getString("username"), user1.getString("password"),user1.getString("project"),user1.getString("mobileno"));
     }
 
-    public static void applogin(){
+    public static void applogin(String module){
 
-        if(!Source("Attendance")){
+        if(!sourceExists(module)){
             lgpage();
         }
     }

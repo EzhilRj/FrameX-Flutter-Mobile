@@ -1,6 +1,7 @@
 package Utilities;
 
 import Tests.LoginTest;
+import org.json.JSONObject;
 
 import static Utilities.Utils.generateFormattedDate;
 import static Utilities.Utils.getDeviceName;
@@ -8,6 +9,7 @@ import static Utilities.Utils.getDeviceName;
 public class Constants {
 
     public static final String Devicename  = getDeviceName();
+
     public static final String queryfilepath = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\queries.sql";
 
     public static String getProdUrl() {

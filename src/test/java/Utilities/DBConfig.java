@@ -62,6 +62,16 @@ public class DBConfig extends AppiumTestSetup {
         return stringMapValues;
     }
 
+    public static String getdatafromdatabase(String query, String columnName) throws Exception {
+
+        List<Map<String, String>> result = executeQuery(query);
+        if (!result.isEmpty()) {
+            Map<String, String> firstRow = result.get(0); // Assuming there's only one row
+            return firstRow.get(columnName);
+        }
+        return null;
+    }
+
 
 }
 

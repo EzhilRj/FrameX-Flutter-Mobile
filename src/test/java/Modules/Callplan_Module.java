@@ -2,6 +2,7 @@ package Modules;
 
 import Base.AppiumTestSetup;
 import Pages.CallPlan_page;
+import org.testng.Assert;
 
 import java.text.MessageFormat;
 import java.util.LinkedHashMap;
@@ -36,6 +37,7 @@ public class Callplan_Module extends AppiumTestSetup {
     }
 
     public static String targetid ;
+
     public static boolean validateUploadCall(String targetId, String uploadType, String closeCallReason, String closeCallImage, String networkMode, String networkDuration, String fieldType) throws Exception {
         // Set targetId
         targetid = targetId;
@@ -50,7 +52,7 @@ public class Callplan_Module extends AppiumTestSetup {
         click("ACCESSIBILITYID", Callplan);
 
         // Check if the targetId is present
-        if (!Source(targetid)) {
+        if (!sourceExists(targetid)) {
             log.info("Target id not found. Navigating back and trying again.");
             driver.navigate().back();
             Thread.sleep(3000);
@@ -59,12 +61,12 @@ public class Callplan_Module extends AppiumTestSetup {
         }
 
         // Process the targetId if found
-        if (Source(targetid)) {
+        if (sourceExists(targetid)) {
             click("Xpath", targetXPath);
             String startTime = datevisitedvalidation();
             click("Xpath", Startworkbutton);
             Thread.sleep(2000);
-            if(Source("Take Photo")){
+            if(sourceExists("Take Photo")){
                 pssshopfrontimage();
             }
             WebdriverWait("ACCESSIBILITYID", UploadcallButton, 15);
@@ -91,7 +93,7 @@ public class Callplan_Module extends AppiumTestSetup {
         boolean isExecutionSuccessful = true;
         for (String category : categories) {
             String modifiedCategory = SetSpecialCharacter(category); // Apply SetSpecialCharacter to category name
-            if (Source(modifiedCategory)) {
+            if (sourceExists(modifiedCategory)) {
                 boolean isCategoryExecutionSuccessful = categoryProcess(category, fieldType);
                 if (!isCategoryExecutionSuccessful) {
                     isExecutionSuccessful = false;
@@ -117,12 +119,12 @@ public class Callplan_Module extends AppiumTestSetup {
         click("Xpath", catXpath);
 
         // Scroll up if the modified category is not displayed
-        if (!Source(modifiedCategory)) {
+        if (!sourceExists(modifiedCategory)) {
             Scroll("up");
         }
 
         // Process the category if it's displayed
-        if (Source(modifiedCategory)) {
+        if (sourceExists(modifiedCategory)) {
             for (Object formData : formDatas) {
                 if (formData instanceof LinkedHashMap<?, ?>) {
                     LinkedHashMap<?, ?> formDataMap = (LinkedHashMap<?, ?>) formData;
@@ -144,7 +146,7 @@ public class Callplan_Module extends AppiumTestSetup {
     public static boolean formprocess(String category, String form, String IsQuestionForm, String fieldtype) throws Exception {
         boolean isformExecutionSuccessful = false;
 
-        if (Source(form)) {
+        if (sourceExists(form)) {
             click("ACCESSIBILITYID", form);
             String formName = form.replace(" ", "_");
 
@@ -184,11 +186,11 @@ public class Callplan_Module extends AppiumTestSetup {
             }
 
             // Refactor button handling
-            if (Source("Next")) {
+            if (sourceExists("Next")) {
                 click("ACCESSIBILITYID", NextButton);
                 log.info("Next button is clicked");
 
-            } else if (Source("Done")) {
+            } else if (sourceExists("Done")) {
                 click("ACCESSIBILITYID", Donebutton);
                 log.info("Done button is clicked");
 
@@ -208,11 +210,11 @@ public class Callplan_Module extends AppiumTestSetup {
         try {
             String modifiedProductName = SetSpecialCharacter(productName);
 
-            if (!Source(modifiedProductName)) {
+            if (!sourceExists(modifiedProductName)) {
                 Scroll("up");
             }
 
-            if (Source(modifiedProductName)) {
+            if (sourceExists(modifiedProductName)) {
                 click("ACCESSIBILITYID", productName);
                 String cleanProductName = productName.replace(" *", "");
                 enterfieldprocess(formName, IsQuestionForm, cleanProductName);
@@ -248,9 +250,9 @@ public class Callplan_Module extends AppiumTestSetup {
             }
 
             // Check if the field element is present
-            if (!Source(fieldName)) {
+            if (!sourceExists(fieldName)) {
                 Scroll("up");
-                if (!Source(fieldName)) {
+                if (!sourceExists(fieldName)) {
                     return false;
                 }
             }
@@ -267,14 +269,14 @@ public class Callplan_Module extends AppiumTestSetup {
         log.info("Upload call button is clicked");
         if (isElementDisplayed("ACCESSIBILITYID", Uploadcallconfirmpopup)) {
             click("ACCESSIBILITYID", Yesbutton);
-            if(Source(starttime)){
+            if(sourceExists(starttime)){
                 click("ACCESSIBILITYID", Uploadcallsbutton);
                 log.info("Uploadcalls button is clicked");
             }
         } else if (isElementDisplayed("Xpath", Perfectstorescorepopup)) {
             log.info("Perfect Store popup is showing");
             click("ACCESSIBILITYID", Okbutton);
-            if(Source(starttime)){
+            if(sourceExists(starttime)){
                 click("ACCESSIBILITYID", Uploadcallsbutton);
                 log.info("Uploadcalls button is clicked");
             }
@@ -305,7 +307,7 @@ public class Callplan_Module extends AppiumTestSetup {
         click("ACCESSIBILITYID", "Done");
         log.info("Clicked on done button");
         networkconditions(networkmode,networkoffduration);
-        if(Source("Please, Take  Reason")){
+        if(sourceExists("Please, Take  Reason")){
             logAndReportFailure("Please Take Close Call Reason Image ");
             return false;
         }
@@ -354,7 +356,7 @@ public class Callplan_Module extends AppiumTestSetup {
 
     public static String datevisitedvalidation()  {
         String devicetime = datevisitedtime();
-        if(Source(devicetime)){
+        if(sourceExists(devicetime)){
             log.info("Target start time  :  "+devicetime);
             log.info("Visited date and time is Showing");
         }else{
@@ -372,13 +374,13 @@ public class Callplan_Module extends AppiumTestSetup {
         click("ACCESSIBILITYID", ActivityLog);
 
         for (int i = 0; i < 5; i++) {
-            if (!Source(successMsg)) {
+            if (!sourceExists(successMsg)) {
                 log.info(successMsg+" is not showing in Activity log");
                 log.info("retryUploadProcess is Started");
                 retryUploadProcess();
             }else{
 
-                if (Source(successMsg)) {
+                if (sourceExists(successMsg)) {
                     log.info(successMsg+" is showing in Activity log");
                     return handleUploadSuccess(targetXPath);
                 }
@@ -390,7 +392,7 @@ public class Callplan_Module extends AppiumTestSetup {
     }
 
     private static void handleNoInternetConnection() throws InterruptedException {
-        if (Source("Please, check internet connection")) {
+        if (sourceExists("Please, check internet connection")) {
             click("ACCESSIBILITYID", "Ok");
         }
 
@@ -398,7 +400,7 @@ public class Callplan_Module extends AppiumTestSetup {
         Thread.sleep(4000);
         click("ACCESSIBILITYID", CallPlan_page.sync);
         log.info("Clicked on Sync button");
-        if (Source("Please, check internet connection")) {
+        if (sourceExists("Please, check internet connection")) {
             click("ACCESSIBILITYID", "Ok");
         }
 
@@ -423,7 +425,7 @@ public class Callplan_Module extends AppiumTestSetup {
         clickAndWait("ACCESSIBILITYID", Callplan, 15);
         click("xpath", targetXPath);
 
-        if (Source("You have already uploaded " + targetid + " target")) {
+        if (sourceExists("You have already uploaded " + targetid + " target")) {
             log.info("You have already uploaded " + targetid + " target is showing");
             click("ACCESSIBILITYID", "Ok");
             return true;

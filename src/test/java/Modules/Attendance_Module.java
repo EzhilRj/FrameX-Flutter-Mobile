@@ -29,7 +29,7 @@ public class Attendance_Module extends AppiumTestSetup {
         savedmsg = "";
 
         try {
-            if(Source("Your attendance Marked for today")){
+            if(sourceExists("Your attendance Marked for today")){
                 logAndReportFailure("Attendance is already Marked for this user");
                 return false;
             }
@@ -53,10 +53,10 @@ public class Attendance_Module extends AppiumTestSetup {
 
     static boolean attendancesubmittedvalidation(String type , String response,String confirmresponse) throws InterruptedException {
 
-        if (Source(response)){
+        if (sourceExists(response)){
             click("ACCESSIBILITYID", Attendance);
             log.info(response);
-            if(Source(confirmresponse)){
+            if(sourceExists(confirmresponse)){
                 return true;
             }else{
                 driver.navigate().back();
@@ -65,8 +65,8 @@ public class Attendance_Module extends AppiumTestSetup {
                 driver.navigate().back();
                 click("ACCESSIBILITYID", Attendance);
                 Thread.sleep(700);
-                if(Source(confirmresponse)) {
-                    if(!Source("Submit")){
+                if(sourceExists(confirmresponse)) {
+                    if(!sourceExists("Submit")){
                         logAndReportSuccess("Attendance Submitted successfully");
                         return true;
                     }else{
@@ -84,7 +84,7 @@ public class Attendance_Module extends AppiumTestSetup {
     public static void performAttendanceActivity(String type , String img) throws InterruptedException {
 
         for (String key : attendancemessages().keySet()) {
-            if(Source(key)) {
+            if(sourceExists(key)) {
                 click("ACCESSIBILITYID", key);
                 break;
             }
@@ -106,7 +106,7 @@ public class Attendance_Module extends AppiumTestSetup {
     }
 
     public static void navigateToAttendancePage() {
-        if (!Source("Attendance")) {
+        if (!sourceExists("Attendance")) {
             click("Xpath", menubutton);
         }
         click("ACCESSIBILITYID", Attendance);
@@ -114,9 +114,9 @@ public class Attendance_Module extends AppiumTestSetup {
 
     public static void validateimgrequired(String type,String errmsg){
 
-        if(Source("Attendance")){
+        if(sourceExists("Attendance")){
             click("ACCESSIBILITYID", Attendance);
-            if(Source("Your attendance Marked for today")){
+            if(sourceExists("Your attendance Marked for today")){
                 logAndReportFailure("Attendance is already Marked for this user Submit button is not showing");
                 Assert.fail("Attendance is already Marked ");
             }
@@ -131,7 +131,6 @@ public class Attendance_Module extends AppiumTestSetup {
 
     public static String getstatusandtime(String username, String columnName) throws Exception {
         String todaydate = generateFormattedDate("yyyy-MM-dd");
-        String dummyquery  = "select username, status, createddate from Attendancedetail where username = '"+username+"' and date = '"+todaydate+"'";
         List<Map<String, String>> result = executeQuery("select username, status, createddate from Attendancedetail where username = '"+username+"' and date = '"+todaydate+"'");
         if (!result.isEmpty()) {
             Map<String, String> firstRow = result.get(0); // Assuming there's only one row

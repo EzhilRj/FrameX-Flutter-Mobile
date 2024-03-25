@@ -3,8 +3,7 @@ package Modules;
 import static Pages.HomePage_page.visitorlogin;
 import static Pages.Visitorlogin_page.*;
 import static Utilities.Actions.*;
-import static Utilities.Utils.Source;
-import static Utilities.Utils.gohomepage;
+import static Utilities.Utils.*;
 import static io.appium.java_client.touch.offset.PointOption.point;
 
 import java.awt.*;
@@ -15,10 +14,10 @@ public class VisitorLogin_Module {
 													String remarks , String storeinfo , String promgroom ,String maintaincat,String awareabttargets , String selfieimg) throws InterruptedException, AWTException {
 
 		gohomepage(visitorlogin);
-		if(!Source("Select Visitor")){
+		if(!sourceExists("Select Visitor")){
 			click("ACCESSIBILITYID", visitorlogin);
 		}
-		if(Source("There is no Visitor")) {
+		if(sourceExists("There is no Visitor")) {
 			click("ACCESSIBILITYID", selectvisitordd);
 			click("ACCESSIBILITYID", "Visitor"+visitor);
 			click("ACCESSIBILITYID", visitortype_dd);

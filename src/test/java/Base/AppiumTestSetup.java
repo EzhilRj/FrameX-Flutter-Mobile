@@ -7,6 +7,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.json.JSONObject;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
@@ -23,8 +24,10 @@ import java.util.concurrent.TimeUnit;
 
 import static Listeners.FrameX_Listeners.fileName;
 import static Modules.Login_Module.checkVersion;
+import static Pages.CallPlan_page.gettargetsfrom_db;
 import static Utilities.Constants.*;
 import static Utilities.Mailconfig.sendMailReport;
+import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
 
 
@@ -38,6 +41,7 @@ public class AppiumTestSetup {
     public static HashMap<String,String>props;
     public static HashMap<String,String>queries;
     public static final String TEST_DATA_FILE = System.getProperty("user.dir")+"\\src\\test\\resources\\Datas\\Testdatas.json";
+
 
     static {
         try {
@@ -86,6 +90,7 @@ public class AppiumTestSetup {
             devicemodel = driver.getCapabilities().getCapability("deviceModel").toString();
             driver.manage().timeouts().implicitlyWait(Integer.parseInt(props.get("Implicitywaittimeout")),TimeUnit.SECONDS);
             checkVersion(props.get("Appversion"));
+            JSONObject user1 = gettestdata("Login","User1");
         } catch (IOException e) {
             log.error("An error occurred while starting the app:", e);
             throw new RuntimeException("Error starting the app", e);
