@@ -22,7 +22,7 @@ public class Attendance_page {
     public static String Submit = "Submit";
     public static String imgnonmandatorymsg = "No Image Required";
     public static String imgmandatorymsg = "Please, Take Photo for submit attandance.";
-    public static final String presentsavedmsg = "Your Attendance is Marked for Today  Present "+generateFormattedDate()+" "+getdevicetime();
+    public static final String presentsavedmsg = "Your Attendance is Marked for Today  Present "+generateFormattedDate("dd-MM-yy")+" "+getdevicetime();
     public static final String leavesavedmsg = "Your Attendance is Marked for Today  Leave";
     public static final String absentsavedmsg = "Your Attendance is Marked for Today  Absent";
     public static final String atofficesavedmsg = "Your Attendance is Marked for Today  At Office";

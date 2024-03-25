@@ -245,7 +245,7 @@ public class Utils extends AppiumTestSetup {
     }
 
 
-    public static String generateFormattedDate() {
+    public static String generateFormattedDate(String format) {
         // Get the current date
         LocalDate currentDate = LocalDate.now();
 
@@ -253,7 +253,7 @@ public class Utils extends AppiumTestSetup {
         int lastTwoDigitsOfYear = currentDate.getYear() % 100;
 
         // Format the date in the required format "dd-MM-yy"
-        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yy"));
+        String formattedDate = currentDate.format(DateTimeFormatter.ofPattern(format));
 
         return formattedDate;
     }

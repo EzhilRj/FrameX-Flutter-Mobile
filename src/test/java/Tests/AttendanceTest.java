@@ -14,6 +14,7 @@ import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
 
 public class AttendanceTest {
+
     @Test(priority = 1, groups = {"smoke", "regression"},enabled = true)
     private  void TC_001verifyAttendanceModuleIsDisplayed() throws InterruptedException {
         applogin();
@@ -41,5 +42,12 @@ public class AttendanceTest {
             doattendance(attendanceData.getString("type"), attendanceData.getString("Image"), attendanceData.getString("expectedMessage"));
         }
     }
+
+    @Test(priority = 4,dependsOnMethods = { "TC_003verifyAttendanceSubmission" },groups = {"smoke", "regression"},enabled = true)
+    public void TC_004verifyAttendanceinDatabase() throws Exception {
+
+        verifyattendancedatainDB();
+    }
+
 
 }

@@ -10,6 +10,7 @@ public class CallPlan_page {
 	public static String TodayCalls = "//android.view.View[contains(@content-desc, 'Today Calls')]";
 	public static String syncbuttonvalidation = "You can click after 5 minutes, since it is in Downloading or Uploading Call process.";
 	public static String startworkvalidation = "You cannot view this target because another target  38353 is already in process. Please complete it first";
+	public static String formcompleted = "Store Front Photo Completed";
 	public static String UploadcallButton = "Upload Call";
 	public static String CloseCallButton = "Close Call";
 	//public static String targetUploadnotification =  "//*[@text='Uploading process for "+tid+" is Completed']";  ////android.view.View[@content-desc="You have already uploaded 14906 target"]
@@ -51,18 +52,14 @@ public class CallPlan_page {
 	}
 
 	public static String generateproductlocator(String prodname){
-
 		String productnamelocator = "//android.view.View[@content-desc=\"" + prodname + "\"]";
-
 		return productnamelocator;
 	}
 
 
 	//This Return Xpath
 	public static String generatetextfieldlocator(String field){
-
 		String FormslistsLocator = " //*[@hint='"+field+"']";
-
 		return FormslistsLocator;
 	}
 

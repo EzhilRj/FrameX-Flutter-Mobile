@@ -15,7 +15,7 @@ public class Constants {
     }
 
     public static String gettestserverurl() {
-        return "jdbc:sqlserver://192.168.0.124:1433;DatabaseName=" + LoginTest.dburlproject + ";encrypt=true;trustServerCertificate=true";
+        return "jdbc:sqlserver://192.168.0.124:1433;DatabaseName=jj ;encrypt=true;trustServerCertificate=true";
     }
 
     public static final String LiveDbusername = "Field2020";
@@ -23,7 +23,7 @@ public class Constants {
 
     public static String body = "Dear Team,\n" +
             "\n" +
-            "Please find the attached test automation report for FrameX Mobile executed on "+generateFormattedDate()+" . The test suite covered various scenarios validating the functionalities of FrameX mobile.\n" +
+            "Please find the attached test automation report for FrameX Mobile executed on "+generateFormattedDate("dd-MM-yy")+" . The test suite covered various scenarios validating the functionalities of FrameX mobile.\n" +
             "\n" +
             "The test suite execution results indicate [summary of test outcomes - overall success, challenges, critical issues, etc.].\n" +
             "\n" +

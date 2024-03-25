@@ -1,9 +1,12 @@
 package Modules;
 
 import Base.AppiumTestSetup;
+import org.json.JSONObject;
 import org.testng.Assert;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static Listeners.FrameX_Listeners.*;
 import static Pages.Attendance_page.*;
@@ -11,17 +14,19 @@ import static Pages.HomePage_page.Attendance;
 import static Pages.HomePage_page.Callplan;
 import static Pages.Login_Page.menubutton;
 import static Utilities.Actions.*;
-import static Utilities.Utils.Assertion;
-import static Utilities.Utils.Source;
+import static Utilities.DBConfig.executeQuery;
+import static Utilities.TestDataUtil.gettestdata;
+import static Utilities.Utils.*;
 
 public class Attendance_Module extends AppiumTestSetup {
 
     public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
+    public static String savedmsg;
 
     public static boolean validateattendancesubmission(String attendancetype,String image,String expected) throws InterruptedException {
 
         HashMap<String,String>attendancesuccessmessages =  attendancemessages();
-        String savedmsg = "";
+        savedmsg = "";
 
         try {
             if(Source("Your attendance Marked for today")){
@@ -46,7 +51,7 @@ public class Attendance_Module extends AppiumTestSetup {
     }
 
 
-     static boolean attendancesubmittedvalidation(String type , String response,String confirmresponse) throws InterruptedException {
+    static boolean attendancesubmittedvalidation(String type , String response,String confirmresponse) throws InterruptedException {
 
         if (Source(response)){
             click("ACCESSIBILITYID", Attendance);
@@ -122,6 +127,38 @@ public class Attendance_Module extends AppiumTestSetup {
         }else{
             Assert.fail("Attendance Module is Not showing");
         }
+    }
+
+    public static String getstatusandtime(String username, String columnName) throws Exception {
+        String todaydate = generateFormattedDate("yyyy-MM-dd");
+        String dummyquery  = "select username, status, createddate from Attendancedetail where username = '"+username+"' and date = '"+todaydate+"'";
+        List<Map<String, String>> result = executeQuery("select username, status, createddate from Attendancedetail where username = '"+username+"' and date = '"+todaydate+"'");
+        if (!result.isEmpty()) {
+            Map<String, String> firstRow = result.get(0); // Assuming there's only one row
+            return firstRow.get(columnName);
+        }
+        return null;
+    }
+
+    public static void verifyattendancedatainDB() throws Exception {
+
+        JSONObject user1 = gettestdata("Login","User1");
+        String attendancetime  = savedmsg;
+        String username = user1.getString("username");
+        String attendancestatus  = getstatusandtime(username,"status");
+        String createdTime = getstatusandtime(username,"createddate").split(" ")[1].substring(0, 5);
+
+        if(attendancestatus.equals("P")&&attendancetime.contains(createdTime)){
+            Assert.assertTrue(true);
+            logAndReportSuccess("Attendance datas is matched in Database");
+        }else{
+            Assert.fail("Attendance data is Mismatch in Database");
+            logAndinfo("Attendance time : " + attendancetime);
+            logAndinfo("Time fetched in Database : " + createdTime);
+            logAndReportFailure("Attendance data is Mismatch in Database");
+
+        }
+
     }
 
 }
