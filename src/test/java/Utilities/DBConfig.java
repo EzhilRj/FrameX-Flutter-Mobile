@@ -1,6 +1,6 @@
 package Utilities;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 
 import java.sql.*;
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.*;
 import static Utilities.Constants.*;
 
 
-public class DBConfig extends AppiumTestSetup {
+public class DBConfig extends TestSetup {
 
     public static List<Map<String, String>> executeQuery(String query) throws Exception {
         try (

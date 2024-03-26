@@ -1,6 +1,6 @@
 package Utilities;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.io.FileUtils;
@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-public class Actions extends AppiumTestSetup {
+public class Actions extends TestSetup {
 
     public static WebDriver wait;
 

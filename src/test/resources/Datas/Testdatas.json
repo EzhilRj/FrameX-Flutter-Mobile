@@ -1,8 +1,8 @@
 {
   "Login": {
     "User1": {
-      "username": "Abhisdel",
-      "password": "Abhisdel",
+      "username": "jagache",
+      "password": "jagache",
       "project": "jj",
       "mobileno": "8345667899",
       "expected": "Call Plan"
@@ -88,11 +88,6 @@
   {
     "5minutesSync": {
       "expectedMessage": "You can click after 5 minutes, since it is in Downloading or Uploading Call process."
-    },
-
-    "ConcurrentJob validation": {
-      "Target1": "27503",
-      "Target2": "26501"
     }
   }
 }

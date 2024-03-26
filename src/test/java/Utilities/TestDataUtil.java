@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static Base.AppiumTestSetup.TEST_DATA_FILE;
+import static Base.TestSetup.TEST_DATA_FILE;
 
 public class TestDataUtil {
 

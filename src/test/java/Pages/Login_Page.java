@@ -1,13 +1,5 @@
 package Pages;
 
-import org.json.JSONObject;
-
-import static Base.AppiumTestSetup.driver;
-import static Base.AppiumTestSetup.log;
-import static Utilities.Actions.Enter;
-import static Utilities.Actions.click;
-import static Utilities.TestDataUtil.gettestdata;
-
 public class Login_Page {
 
     public static String username = "//*[@hint='Username']";

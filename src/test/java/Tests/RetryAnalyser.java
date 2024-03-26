@@ -3,7 +3,7 @@ package Tests;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
-import static Base.AppiumTestSetup.props;
+import static Base.TestSetup.props;
 
 public class RetryAnalyser implements IRetryAnalyzer {
     private static final int MAX_RETRY_COUNT= Integer.parseInt(props.get("Testretrycount"));

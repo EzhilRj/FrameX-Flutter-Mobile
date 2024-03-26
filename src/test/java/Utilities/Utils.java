@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Pattern;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import Pages.Login_Page;
 import io.appium.java_client.AppiumBy;
 import org.apache.commons.io.FileUtils;
@@ -19,7 +19,6 @@ import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
-import org.testng.ITestContext;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 
@@ -32,7 +31,7 @@ import static Utilities.Constants.queryfilepath;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
 import static Utilities.TestDataUtil.gettestdata;
 
-public class Utils extends AppiumTestSetup {
+public class Utils extends TestSetup {
 
     public static String screenshotPath;
     public static String screenshotName;
@@ -450,7 +449,7 @@ public class Utils extends AppiumTestSetup {
 
     }
 
-   static void lgpage(){
+   public static void lgpage(){
         JSONObject user1 = gettestdata("Login","User1");
         login(user1.getString("username"), user1.getString("password"),user1.getString("project"),user1.getString("mobileno"));
     }

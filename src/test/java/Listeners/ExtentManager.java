@@ -1,13 +1,13 @@
 package Listeners;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.FileNotFoundException;
 
-import static Base.AppiumTestSetup.props;
+import static Base.TestSetup.props;
 
 
 public class ExtentManager {
@@ -29,7 +29,7 @@ public class ExtentManager {
         extent.setSystemInfo("Organization",  props.get("Organization"));
         extent.setSystemInfo("User", System.getProperty("user.name"));
         extent.setSystemInfo("Environment", props.get("Environment"));
-        extent.setSystemInfo("Device", AppiumTestSetup.devicemodel );
+        extent.setSystemInfo("Device", TestSetup.devicemodel );
 
         return extent;
     }

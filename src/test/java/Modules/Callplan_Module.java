@@ -1,8 +1,7 @@
 package Modules;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import Pages.CallPlan_page;
-import org.testng.Assert;
 
 import java.text.MessageFormat;
 import java.util.LinkedHashMap;
@@ -18,7 +17,7 @@ import static Utilities.DBConfig.getColumnNamesFromDatabase;
 import static Utilities.DBConfig.getDataObject;
 import static Utilities.Utils.*;
 
-public class Callplan_Module extends AppiumTestSetup {
+public class Callplan_Module extends TestSetup {
 
     public static String fieldName;
     private static String Ctrltype;

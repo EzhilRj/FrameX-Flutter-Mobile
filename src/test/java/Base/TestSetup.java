@@ -1,6 +1,5 @@
 package Base;
 
-import Utilities.Constants;
 import Utilities.ExcelReader;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -9,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.json.JSONObject;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -20,6 +18,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static Listeners.FrameX_Listeners.fileName;
@@ -31,17 +30,16 @@ import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
 
 
-public class AppiumTestSetup {
+public class TestSetup {
     public static AndroidDriver driver;
     private static AppiumDriverLocalService service;
-    public static Logger log = Logger.getLogger(AppiumTestSetup.class);
+    public static Logger log = Logger.getLogger(TestSetup.class);
     private static DesiredCapabilities capabilities ;
     public static String devicemodel;
     public static ExcelReader excel;
     public static HashMap<String,String>props;
     public static HashMap<String,String>queries;
     public static final String TEST_DATA_FILE = System.getProperty("user.dir")+"\\src\\test\\resources\\Datas\\Testdatas.json";
-
 
     static {
         try {
@@ -53,6 +51,18 @@ public class AppiumTestSetup {
         }
         // Initialize ExcelReader with the specified data file path
         excel = new ExcelReader(props.get("Datafilepath"));
+    }
+    static JSONObject globalusername = gettestdata("Login","User1");
+    public static JSONObject globalproject = gettestdata("Login","User1");
+
+    public static List<String> Targets;
+
+    static {
+        try {
+            Targets = gettargetsfrom_db(globalusername.getString("username"));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Method to start the app and set up the test environment

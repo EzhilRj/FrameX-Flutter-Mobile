@@ -51,24 +51,6 @@ public class Attendance_page {
         return attendancesuccessmesssages;
     }
 
-    public static HashMap<String,String>attendanceimagevalidation(){
-
-        LinkedHashMap<String, String> attendanceMap = new LinkedHashMap<>();
-        attendanceMap.put("Present", Attendancecamera);
-        attendanceMap.put("Leave", imgnonmandatorymsg);
-        attendanceMap.put("Absent", imgnonmandatorymsg);
-        attendanceMap.put("At Office", Attendancecamera);
-        attendanceMap.put("Week off", imgnonmandatorymsg);
-        attendanceMap.put("Holiday", imgnonmandatorymsg);
-        attendanceMap.put("Tour", imgnonmandatorymsg);
-        attendanceMap.put("Training", Attendancecamera);
-        attendanceMap.put("Monthly Meeting", Attendancecamera);
-
-        return attendanceMap;
-    }
-
-
-
 
 }
 

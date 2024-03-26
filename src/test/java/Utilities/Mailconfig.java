@@ -1,7 +1,5 @@
 package Utilities;
 
-import Base.AppiumTestSetup;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -10,8 +8,8 @@ import javax.mail.internet.*;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
-import static Base.AppiumTestSetup.log;
-import static Base.AppiumTestSetup.props;
+import static Base.TestSetup.log;
+import static Base.TestSetup.props;
 import static Listeners.FrameX_Listeners.attachmentflag;
 import static Listeners.FrameX_Listeners.fileName;
 import static Utilities.Constants.*;

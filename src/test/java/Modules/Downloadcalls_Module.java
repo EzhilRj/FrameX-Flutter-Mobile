@@ -1,6 +1,6 @@
 package Modules;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import Pages.Downloadcalls_page;
 import Pages.HomePage_page;
 
@@ -10,7 +10,7 @@ import static Pages.Downloadcalls_page.*;
 import static Utilities.Actions.*;
 import static Utilities.Utils.*;
 
-public class Downloadcalls_Module extends AppiumTestSetup {
+public class Downloadcalls_Module extends TestSetup {
 
 	public static boolean validatedownloadcalls(String trgtid) throws InterruptedException {
 

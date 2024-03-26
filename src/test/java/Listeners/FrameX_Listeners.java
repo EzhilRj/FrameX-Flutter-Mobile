@@ -18,9 +18,9 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
 
-import static Base.AppiumTestSetup.log;
+import static Base.TestSetup.log;
 
-import static Base.AppiumTestSetup.props;
+import static Base.TestSetup.props;
 import static Utilities.Utils.screenshotName;
 
 public class FrameX_Listeners implements ITestListener, ISuiteListener {

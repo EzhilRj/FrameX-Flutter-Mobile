@@ -1,6 +1,6 @@
 package Modules;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import static Pages.HomePage_page.ResourceCentre;
 import static Utilities.Actions.*;
 import static Utilities.Utils.*;
 
-public class Resourcentre_Module extends AppiumTestSetup {
+public class Resourcentre_Module extends TestSetup {
 	
     public static boolean validateFiles(String filename) throws InterruptedException {
         try {

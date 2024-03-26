@@ -1,6 +1,6 @@
 package Modules;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 import org.json.JSONObject;
 import org.testng.Assert;
 
@@ -18,9 +18,8 @@ import static Utilities.DBConfig.executeQuery;
 import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.*;
 
-public class Attendance_Module extends AppiumTestSetup {
+public class Attendance_Module extends TestSetup {
 
-    public static HashMap<String,String>attendanceimagerule =  attendanceimagevalidation();
     public static String savedmsg;
 
     public static boolean validateattendancesubmission(String attendancetype,String image,String expected) throws InterruptedException {

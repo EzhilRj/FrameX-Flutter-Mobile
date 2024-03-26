@@ -4,16 +4,17 @@ import org.testng.Assert;
 
 import java.util.List;
 
-import static Base.AppiumTestSetup.driver;
-import static Base.AppiumTestSetup.log;
+import static Base.TestSetup.driver;
+import static Base.TestSetup.log;
 import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Listeners.FrameX_Listeners.logAndReportSuccess;
 import static Pages.HomePage_page.Callplan;
-import static Utilities.Actions.click;
+import static Pages.Login_Page.menubutton;
+import static Pages.Login_Page.username;
+import static Utilities.Actions.*;
 import static Utilities.DBConfig.*;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
-import static Utilities.Utils.generateFormattedDate;
-import static Utilities.Utils.sourceExists;
+import static Utilities.Utils.*;
 
 public class CallPlan_page {
 	public static  String currentdate = generateFormattedDate("yyyy-MM-dd");
@@ -124,14 +125,16 @@ public class CallPlan_page {
 		if (!sourceExists(trg1)||!sourceExists(trg2)) {
 			log.info("Target id not found. Navigating back and trying again.");
 			driver.navigate().back();
-			Thread.sleep(3000);
+			Thread.sleep(4500);
 			click("ACCESSIBILITYID", Callplan);
 			log.info("Clicked on Call plan again");
 		}
 		click("xpath",gettargetxpath(trg1));
 		driver.navigate().back();
 		click("xpath",gettargetxpath(trg2));
+		Thread.sleep(1000);
 		if(sourceExists("You cannot view this target because another target  "+trg1+" is already in process. Please complete it first")){
+			click("ACCESSIBILITYID","Ok");
 			logAndReportSuccess("Concurrent job start error message displayed successfully.");
 			Assert.assertTrue(true);
 		}else{
@@ -151,9 +154,40 @@ public class CallPlan_page {
 			List<String>Targetslist= getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' and Pjpdate = '"+currentdate+"' order by createddate desc","TargetId");
 			return Targetslist;
 		}else{
-			logAndReportFailure(username+" No targets Available for this user");
-			Assert.assertTrue(false);
+			Assert.fail("No targets Available for this user : " + username);
 		}
 		return null;
+	}
+
+	public static void navigateToCallplanPage() {
+		if(sourceExists("Username")){
+			lgpage();
+		}
+		if (!sourceExists(Callplan)) {
+			if(isElementDisplayed("xpath",menubutton)){
+				click("Xpath", menubutton);
+			}else{
+				lgpage();
+				click("ACCESSIBILITYID", Callplan);
+			}
+		}
+	}
+
+	public static void formcompletingvalidation(){
+		if(!sourceExists(sync)){
+			navigateToCallplanPage();
+			click("ACCESSIBILITYID",Callplan);
+		}
+		click("xpath",gettargetxpath(Targets.get(0)));
+		click("Xpath", Startworkbutton);
+		WebdriverWait("ACCESSIBILITYID", UploadcallButton, 20);
+		click("ACCESSIBILITYID",UploadcallButton);
+		if(sourceExists(uploadcall_errmsg)){
+			Assert.assertTrue(true);
+		}else{
+			logAndReportFailure("First fill all categories data to upload is Not Displayed");
+			Assert.assertTrue(false);
+		}
+
 	}
 }

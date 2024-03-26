@@ -32,8 +32,8 @@ public class AttendanceTest {
     }
 
 
-    @Test(priority = 3,dependsOnMethods = { "TC_001verifyAttendanceModuleIsDisplayed" },groups = {"smoke", "regression"},enabled = true)
-    public void TC_003_Verify_Attendance_Submission() throws InterruptedException {
+    @Test(priority = 3,dependsOnMethods = { "TC_001_Verify_Attendance_Module_Displayed" },groups = {"smoke", "regression"},enabled = true)
+    private void TC_003_Verify_Attendance_Submission() throws InterruptedException {
         JSONObject attendanceData = gettestdata("Attendance", "Attendance Submission");
         if (sourceExists("Submit") || (sourceExists("Attendance") && sourceExists("Submit"))) {
             doattendance(attendanceData.getString("type"), attendanceData.getString("Image"), attendanceData.getString("expectedMessage"));
@@ -43,8 +43,8 @@ public class AttendanceTest {
         }
     }
 
-    @Test(priority = 4,dependsOnMethods = { "TC_003verifyAttendanceSubmission" },groups = {"smoke", "regression"},enabled = true)
-    public void TC_004_Verify_Attendance_Recorded_In_Database() throws Exception {
+    @Test(priority = 4,dependsOnMethods = { "TC_003_Verify_Attendance_Submission" },groups = {"smoke", "regression"},enabled = true)
+    private void TC_004_Verify_Attendance_Recorded_In_Database() throws Exception {
 
         verifyattendancedatainDB();
     }

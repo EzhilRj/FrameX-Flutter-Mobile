@@ -3,6 +3,7 @@ package Utilities;
 import Tests.LoginTest;
 import org.json.JSONObject;
 
+import static Base.TestSetup.globalproject;
 import static Utilities.Utils.generateFormattedDate;
 import static Utilities.Utils.getDeviceName;
 
@@ -13,11 +14,11 @@ public class Constants {
     public static final String queryfilepath = System.getProperty("user.dir")+"\\src\\test\\resources\\Properties\\queries.sql";
 
     public static String getProdUrl() {
-        return "jdbc:sqlserver://65.1.119.118:1433;DatabaseName=" + LoginTest.dburlproject + ";encrypt=true;trustServerCertificate=true";      //LIVE URL
+        return "jdbc:sqlserver://65.1.119.118:1433;DatabaseName=" + globalproject.getString("project") + ";encrypt=true;trustServerCertificate=true";      //LIVE URL
     }
 
     public static String gettestserverurl() {
-        return "jdbc:sqlserver://192.168.0.124:1433;DatabaseName=jj ;encrypt=true;trustServerCertificate=true";
+        return "jdbc:sqlserver://192.168.0.124:1433;DatabaseName="+globalproject.getString("project")+" ;encrypt=true;trustServerCertificate=true";
     }
 
     public static final String LiveDbusername = "Field2020";

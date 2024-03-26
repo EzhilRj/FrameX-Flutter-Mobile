@@ -1,12 +1,12 @@
 package Modules;
 
-import Base.AppiumTestSetup;
+import Base.TestSetup;
 
 import static Pages.Login_Page.*;
 import static Utilities.Actions.*;
 import static Utilities.Utils.sourceExists;
 
-public class Login_Module extends AppiumTestSetup {
+public class Login_Module extends TestSetup {
 
 
 
