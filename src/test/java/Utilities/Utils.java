@@ -26,9 +26,12 @@ import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Modules.Callplan_Module.fieldName;
 import static Modules.Login_Module.login;
 import static Pages.CallPlan_page.*;
+import static Pages.HomePage_page.Callplan;
+import static Pages.Login_Page.menubutton;
 import static Utilities.Actions.*;
 import static Utilities.Constants.queryfilepath;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
+import static Utilities.DBConfig.getdatafromdatabase;
 import static Utilities.TestDataUtil.gettestdata;
 
 public class Utils extends TestSetup {
@@ -257,6 +260,16 @@ public class Utils extends TestSetup {
         return formattedDate;
     }
 
+    public static String generateyesterdaydate(String format) {
+
+        LocalDate today = LocalDate.now();
+        LocalDate yesterday = today.minusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        String formattedYesterday = yesterday.format(formatter);
+
+        return formattedYesterday;
+    }
+
     public static String generatedateandtime() {
         LocalDateTime currentDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_hh:mm:ss_a");
@@ -455,10 +468,72 @@ public class Utils extends TestSetup {
     }
 
     public static void applogin(String module){
-
         if(!sourceExists(module)){
             lgpage();
         }
+    }
+
+
+
+    public static void navigateto(String module){
+        if(sourceExists("Username")){
+            lgpage();
+        }
+        if (!sourceExists(module)) {
+            if(isElementDisplayed("xpath",menubutton)){
+                click("Xpath", menubutton);
+            }
+        }else {
+            click("ACCESSIBILITYID", module);
+        }
+    }
+
+
+
+    public static Map<String, List<String>> fetchTargetsFromDatabase(String username) throws Exception {
+        try {
+            if(!getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' order by createddate desc","TargetId").isEmpty()) {
+                String PjpDateQuery = "select top 1 Pjpdate from Pjpplan where username = '"+username+"' order by createddate desc";
+                String PjpDate = getdatafromdatabase(PjpDateQuery,"Pjpdate");
+                String TotalCallsCount = "select * from PjpPlan where username = '"+username+"' order by createddate desc";
+                List<String> CallsCount = getColumnNamesFromDatabase(TotalCallsCount,"TargetId");
+                int count = CallsCount.size();
+                int todayCalls = count / 2;
+                int unplannedCalls = count - todayCalls;
+
+                //TODAY CALLS FUNCTIONALITY
+                String TodayCalls = "select top "+todayCalls+" * from Pjpplan where username = '"+username+"' order by createddate desc";
+                List<String> CheckTodayCallsCount = getColumnNamesFromDatabase(TodayCalls, "TargetId");
+                int size = CheckTodayCallsCount.size();
+                String updateTodayCalls = ";WITH T AS (select top "+todayCalls+" * from Pjpplan where username = '"+username+"' order by createddate desc) update t set Pjpdate='2024-03-28', status = 'T'";
+                String todayCall = ";WITH T AS (select top "+todayCalls+" * from PjpPlan where username = '"+username+"' order by createddate desc) select * from t order by createddate desc";
+                List <String> checkTodaysPjpDate = getColumnNamesFromDatabase(todayCall, "Pjpdate");
+                List <String> checkTodaysStatus = getColumnNamesFromDatabase(todayCall, "Status");
+                List <String> checkTodaysTarget = getColumnNamesFromDatabase(todayCall, "TargetId");
+
+                //DOWNLOAD CALLS FUNCTIONALITY
+                String DownloadCalls = "select top "+unplannedCalls+" * from Pjpplan where username = '"+username+"'";
+                List<String> CheckDownloadCallsCount = getColumnNamesFromDatabase(DownloadCalls, "TargetId");
+                int dcsize = CheckDownloadCallsCount.size();
+                String updateDownloadCalls = ";WITH D AS (select top "+unplannedCalls+" * from Pjpplan where username = '"+username+"') update D set Pjpdate = '2024-03-28', status = 'A' ";
+                String downloadCall = ";WITH D AS (select top "+unplannedCalls+" * from PjpPlan where username = '"+username+"') select * from D";
+                List<String> checkDownloadsPjpDate = getColumnNamesFromDatabase(downloadCall, "Pjpdate");
+                List<String> checkDownloadsStatus = getColumnNamesFromDatabase(downloadCall, "Status");
+                List<String> checkDownloadsTarget = getColumnNamesFromDatabase(downloadCall, "TargetId");
+
+                Map<String, List<String>> callsMap = new HashMap<>();
+                callsMap.put("todaycalls", checkTodaysTarget);
+                callsMap.put("downloadcalls", checkDownloadsTarget);
+                return callsMap;
+
+            }else{
+                Assert.fail("No targets Available for this user : " + username);
+            }
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

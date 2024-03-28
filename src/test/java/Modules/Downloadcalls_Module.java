@@ -4,18 +4,23 @@ import Base.TestSetup;
 import Pages.Downloadcalls_page;
 import Pages.HomePage_page;
 
+import java.util.List;
+
 import static Listeners.FrameX_Listeners.formatData;
 import static Listeners.FrameX_Listeners.testReport;
 import static Pages.Downloadcalls_page.*;
+import static Pages.HomePage_page.Callplan;
+import static Pages.HomePage_page.DownloadCalls;
+import static Pages.Login_Page.menubutton;
 import static Utilities.Actions.*;
+import static Utilities.DBConfig.getColumnNamesFromDatabase;
 import static Utilities.Utils.*;
 
 public class Downloadcalls_Module extends TestSetup {
 
 	public static boolean validatedownloadcalls(String trgtid) throws InterruptedException {
 
-		String invalididmsg = "Info&#10;Target ID " + trgtid
-				+ " is invalid. Please enter a valid Target Id and try again.";
+		String invalididmsg = "Info&#10;Target ID " + trgtid + " is invalid. Please enter a valid Target Id and try again.";
 		String alreadydownloadedmsg = "Info&#10;Store " + trgtid + " already downloaded.";
 
 		try {
@@ -67,6 +72,23 @@ public class Downloadcalls_Module extends TestSetup {
 		}
 		return false;
 	}
-	
+
+
+
+	public static void navigateToDownloadcallsPage() {
+		if(sourceExists("Username")){
+			lgpage();
+		}
+		if (!sourceExists(DownloadCalls)) {
+			if(isElementDisplayed("xpath",menubutton)){
+				click("Xpath", menubutton);
+			}else{
+				lgpage();
+				click("ACCESSIBILITYID", DownloadCalls);
+			}
+		}
+	}
+
+
 
 }

@@ -1,9 +1,9 @@
 {
   "Login": {
     "User1": {
-      "username": "jagache",
-      "password": "jagache",
-      "project": "jj",
+      "username": "TGS1296",
+      "password": "TGS1296",
+      "project": "ck",
       "mobileno": "8345667899",
       "expected": "Call Plan"
 
@@ -88,6 +88,27 @@
   {
     "5minutesSync": {
       "expectedMessage": "You can click after 5 minutes, since it is in Downloading or Uploading Call process."
+    }
+  },
+
+  "ResourceCenter": {
+    "validatingpptx": {
+      "filename" : "Lead 2023 design.pptx"
+    },
+    "validatingmp4": {
+      "filename" : "Mobile App Toolkit_free.mp4"
+    },
+    "validatingpdf": {
+      "filename" : "NOGST_NOPAN.pdf"
+    },
+    "validatingdocx": {
+      "filename" : "redipae.docx"
+    },
+    "validatingjpg": {
+      "filename" : "retail-industry-trends.jpg"
+    },
+    "validatingxlsx": {
+      "filename" : "Task Target Mapping (29)(1).xlsx"
     }
   }
 }

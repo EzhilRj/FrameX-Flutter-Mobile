@@ -24,20 +24,13 @@ public class Attendance_Module extends TestSetup {
 
     public static boolean validateattendancesubmission(String attendancetype,String image,String expected) throws InterruptedException {
 
-        HashMap<String,String>attendancesuccessmessages =  attendancemessages();
-        savedmsg = "";
-
         try {
             if(sourceExists("Your attendance Marked for today")){
                 logAndReportFailure("Attendance is already Marked for this user");
                 return false;
             }
             performAttendanceActivity(attendancetype,image);
-            for (String key : attendancesuccessmessages.keySet()) {
-                if(key.equalsIgnoreCase(attendancetype)){
-                    savedmsg =  attendancesuccessmessages.get(key);
-                }
-            }
+            String attendancepopupxpath = "";
             WebdriverWait("ACCESSIBILITYID",savedmsg,15);
             // Verifying attendance submission success/failure
             return attendancesubmittedvalidation(attendancetype,savedmsg,expected);

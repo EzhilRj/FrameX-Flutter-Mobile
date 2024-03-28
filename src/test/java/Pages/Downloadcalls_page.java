@@ -1,7 +1,10 @@
 package Pages;
 
+import static Utilities.Utils.generateyesterdaydate;
+
 public class Downloadcalls_page {
 
+    public static String getyesterdaydate = generateyesterdaydate("yyyy-MM-dd");
     public static String addtarget = "   Add Target   ";
     public static String searchtarget = "Search Target";
     public static String submit = "   Submit   ";

@@ -2,7 +2,9 @@ package Pages;
 
 import org.testng.Assert;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static Base.TestSetup.driver;
 import static Base.TestSetup.log;
@@ -10,10 +12,9 @@ import static Listeners.FrameX_Listeners.logAndReportFailure;
 import static Listeners.FrameX_Listeners.logAndReportSuccess;
 import static Pages.HomePage_page.Callplan;
 import static Pages.Login_Page.menubutton;
-import static Pages.Login_Page.username;
 import static Utilities.Actions.*;
-import static Utilities.DBConfig.*;
 import static Utilities.DBConfig.getColumnNamesFromDatabase;
+import static Utilities.DBConfig.getdatafromdatabase;
 import static Utilities.Utils.*;
 
 public class CallPlan_page {
@@ -145,20 +146,6 @@ public class CallPlan_page {
 	}
 
 
-	public static List<String> gettargetsfrom_db(String username) throws Exception {
-		if(!getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' order by createddate desc","TargetId").isEmpty()) {
-			String pjpdate = getdatafromdatabase("select top 1 Pjpdate, Status, createddate from Pjpplan where username = '"+username+"' order by createddate desc","Pjpdate");
-			String created_date = getdatafromdatabase("select top 1 Pjpdate, Status, createddate from Pjpplan where username = '"+username+"' order by createddate desc","createddate");
-			String updatequery = "update Pjpplan set Pjpdate = '"+currentdate+"' , status = 'T' , createddate = '"+currentdate+" 11:52:59.927' where username = '"+username+"' and Pjpdate = '"+pjpdate+"' and createddate = '"+created_date+"'";
-			executeQuery(updatequery);
-			List<String>Targetslist= getColumnNamesFromDatabase("select * from Pjpplan where username = '"+username+"' and Pjpdate = '"+currentdate+"' order by createddate desc","TargetId");
-			return Targetslist;
-		}else{
-			Assert.fail("No targets Available for this user : " + username);
-		}
-		return null;
-	}
-
 	public static void navigateToCallplanPage() {
 		if(sourceExists("Username")){
 			lgpage();
@@ -173,12 +160,14 @@ public class CallPlan_page {
 		}
 	}
 
+
+
 	public static void formcompletingvalidation(){
 		if(!sourceExists(sync)){
 			navigateToCallplanPage();
 			click("ACCESSIBILITYID",Callplan);
 		}
-		click("xpath",gettargetxpath(Targets.get(0)));
+		click("xpath",gettargetxpath(todaycalls.get(0)));
 		click("Xpath", Startworkbutton);
 		WebdriverWait("ACCESSIBILITYID", UploadcallButton, 20);
 		click("ACCESSIBILITYID",UploadcallButton);

@@ -1,21 +1,29 @@
 package Utilities;
 
-import org.json.JSONObject;
-
 import java.util.List;
-import java.util.Map;
 
-import static Pages.CallPlan_page.gettargetsfrom_db;
+import static Pages.Downloadcalls_page.getyesterdaydate;
 import static Utilities.DBConfig.*;
-import static Utilities.TestDataUtil.gettestdata;
-import static Utilities.Utils.generateFormattedDate;
+import static Utilities.Utils.fetchTargetsFromDatabase;
 
 public class Rough {
-
-
+    
     public static void main(String[] args) throws Exception {
 
-        JSONObject user1 = gettestdata("Login","User1");
-        System.out.println(gettargetsfrom_db(user1.getString("username")));
+       List<String> todaycalls =  fetchTargetsFromDatabase("TGS1296").get("todaycalls");
+        List<String> downloadcalls =  fetchTargetsFromDatabase("TGS1296").get("downloadcalls");
+
+       for(String todaycall : todaycalls){
+
+           System.out.println("Todaycalls : "+todaycall);
+       }
+
+        for(String downloadcall : downloadcalls){
+
+            System.out.println("download : "+downloadcall);
+        }
     }
+
+
+
 }

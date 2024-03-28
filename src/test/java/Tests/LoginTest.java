@@ -10,10 +10,14 @@ import static Utilities.Actions.click;
 import static Utilities.TestDataUtil.gettestdata;
 import static Utilities.Utils.Assertion;
 
-
 public class LoginTest extends TestSetup {
 
     public static String dburlproject = "";
+    /**
+     * Test case to verify login with valid credentials.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     */
     @Test(priority = 1, groups = {"smoke", "regression"},enabled = true)
       private void TC_001_Verify_Login_With_Valid_Credentials() {
 
@@ -24,6 +28,11 @@ public class LoginTest extends TestSetup {
         logout();
     }
 
+    /**
+     * Test case to verify login with invalid username.
+     * 
+     * @throws JSONException if there is an error in parsing the test data.
+     */
     @Test(priority = 2, groups = {"negative", "regression"},enabled = true)
     private void TC_002_Verify_Login_With_Invalid_Username() {
         JSONObject user2 = gettestdata("Login","User2");
@@ -32,6 +41,11 @@ public class LoginTest extends TestSetup {
         click("ACCESSIBILITYID","Ok");
     }
 
+    /**
+     * Test case to verify login with invalid password.
+     * 
+     * @throws JSONException if there is an error in parsing the test data.
+     */
     @Test(priority = 3, groups = {"negative", "regression"},enabled = true)
     private void TC_003_Verify_Login_With_Invalid_Password() {
         JSONObject user3 = gettestdata("Login","User3");
@@ -40,6 +54,11 @@ public class LoginTest extends TestSetup {
         click("ACCESSIBILITYID","Ok");
     }
 
+    /**
+     * Test case to verify login with invalid project.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     */
     @Test(priority = 4, groups = {"negative", "regression"},enabled = true)
     private void TC_004_Verify_Login_With_Invalid_Project() {
         JSONObject user4 = gettestdata("Login","User4");
@@ -48,6 +67,13 @@ public class LoginTest extends TestSetup {
         click("ACCESSIBILITYID","Ok");
     }
 
+    /**
+     * Test case to verify login with invalid mobile number.
+     * 
+     * @Test(priority = 5, groups = {"negative", "regression"}, enabled = true)
+     * 
+     * @throws JSONException if there is an error in parsing JSON data
+     */
     @Test(priority = 5, groups = {"negative", "regression"},enabled = true)
     private void TC_005_Verify_Login_With_Invalid_Mobile_Number() {
         JSONObject user5 = gettestdata("Login","User5");
@@ -55,6 +81,11 @@ public class LoginTest extends TestSetup {
         Assertion(user5.getString("expectedErrorMessage"), "Invalid Mobilenumber Error message is Not showing");
     }
 
+    /**
+     * Test case to verify login without entering username.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     */
     @Test(priority = 6, groups = {"negative", "regression"},enabled = true)
     private void TC_006_Verify_Login_Without_Entering_Username() {
         JSONObject user6 = gettestdata("Login","User6");
@@ -62,6 +93,11 @@ public class LoginTest extends TestSetup {
         Assertion(user6.getString("expectedErrorMessage"), "Please Enter username Error message is Not showing");
     }
 
+    /**
+     * Test case to verify login without entering password.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     */
     @Test(priority = 7, groups = {"negative", "regression"},enabled = true)
     private void TC_007_Verify_Login_Without_Entering_Password() {
         JSONObject user7 = gettestdata("Login","User7");
@@ -69,6 +105,11 @@ public class LoginTest extends TestSetup {
         Assertion(user7.getString("expectedErrorMessage"), "Please Enter password Error message is Not showing");
     }
 
+    /**
+     * Test case to verify login without entering project.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     */
     @Test(priority = 8, groups = {"negative", "regression"},enabled = true)
     private void TC_008_Verify_Login_Without_Entering_Project() {
         JSONObject user8 = gettestdata("Login","User8");
@@ -76,6 +117,12 @@ public class LoginTest extends TestSetup {
         Assertion(user8.getString("expectedErrorMessage"), "Please Enter project Error message is Not showing");
     }
 
+    /**
+     * Test case to verify login without entering mobile number.
+     * 
+     * @throws JSONException if there is an error in parsing JSON data.
+     *
+     */
     @Test(priority = 9, groups = {"negative", "regression"},enabled = true)
     private void TC_009_Verify_Login_Without_Entering_Mobile_Number() {
         JSONObject user9 = gettestdata("Login","User9");

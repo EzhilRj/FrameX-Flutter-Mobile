@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 
 import static Listeners.FrameX_Listeners.fileName;
 import static Modules.Login_Module.checkVersion;
-import static Pages.CallPlan_page.gettargetsfrom_db;
 import static Utilities.Constants.*;
 import static Utilities.Mailconfig.sendMailReport;
 import static Utilities.TestDataUtil.gettestdata;
@@ -52,14 +51,16 @@ public class TestSetup {
         // Initialize ExcelReader with the specified data file path
         excel = new ExcelReader(props.get("Datafilepath"));
     }
-    static JSONObject globalusername = gettestdata("Login","User1");
+    public static JSONObject globalusername = gettestdata("Login","User1");
     public static JSONObject globalproject = gettestdata("Login","User1");
 
-    public static List<String> Targets;
+    public static List<String> todaycalls;
+    public static List<String> unplannedcalls;
 
     static {
         try {
-            Targets = gettargetsfrom_db(globalusername.getString("username"));
+            todaycalls = fetchTargetsFromDatabase(globalusername.getString("username")).get("todaycalls");
+            unplannedcalls = fetchTargetsFromDatabase(globalusername.getString("username")).get("downloadcalls");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
